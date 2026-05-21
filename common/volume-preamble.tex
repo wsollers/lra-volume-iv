@@ -1,0 +1,17 @@
+\input{common/preamble}
+\input{common/boxes}
+\input{common/colors}
+\input{common/environments}
+\input{common/macros}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalize,noabbrev]{cleveref}
+\usepackage{bookmark}
+\crefname{theorem}{Theorem}{Theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black}
+\pdfstringdefDisableCommands{\def\hyperref[#1]#2{#2}}
+\usepackage{imakeidx}
+\makeindex[name=tech,title={Technique Index}]
+\makeindex[name=dep,title={Dependency Index}]
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
