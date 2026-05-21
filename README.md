@@ -1,2 +1,5 @@
 # lra-volume-iv
-LRA Volume IV — Applied and Computational Mathematics (Overleaf-ready)
+
+**Volume IV: Applied and Computational Mathematics** — Overleaf-ready.
+
+Note: Volume IV is excluded from card extraction by default (see DESIGN.md).
