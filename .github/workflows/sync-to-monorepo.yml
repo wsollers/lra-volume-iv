@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'volume-iv/**'
+      - 'bibliography/volume-iv-algebra.bib'
 
 jobs:
   sync:
@@ -22,6 +23,11 @@ jobs:
           token: ${{ secrets.SYNC_PAT }}
           path: monorepo
 
+      - name: Validate volume bibliography
+        run: |
+          cd source
+          python scripts/check_bibliography.py --bib-dir bibliography
+
       - name: Validate leaf proof stubs
         run: |
           cd source
@@ -31,12 +37,17 @@ jobs:
         run: |
           rsync -av --delete source/volume-iv/ monorepo/volume-iv/
 
+      - name: Sync volume-iv bibliography into monorepo
+        run: |
+          mkdir -p monorepo/bibliography
+          cp source/bibliography/volume-iv-algebra.bib monorepo/bibliography/volume-iv-algebra.bib
+
       - name: Commit and push if changed
         run: |
           cd monorepo
           git config user.name  "lra-sync-bot"
           git config user.email "sync-bot@noreply.github.com"
-          git add volume-iv/
+          git add volume-iv/ bibliography/volume-iv-algebra.bib
           git diff --cached --quiet && echo "No changes to sync" && exit 0
           git commit -m "chore: sync volume-iv from lra-volume-iv"
           git push
