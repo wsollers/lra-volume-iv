@@ -10,13 +10,13 @@
 Two lists $L = (x_1, \dots, x_n)$ and $M = (y_1, \dots, y_m)$ are equal if and only if $n = m$ and $x_j = y_j$ for all $j \in \{1, \dots, n\}$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 A list of length $n$ is formally defined as a function $f: \{1, \dots, n\} \to S$. By the axiom of extensionality for functions, two functions $f$ and $g$ are equal if and only if they have the same domain and $f(j) = g(j)$ for all $j$ in that domain. Let $L$ be the function $j \mapsto x_j$ and $M$ be $j \mapsto y_j$. Then $L = M$ if and only if their domains $\{1, \dots, n\}$ and $\{1, \dots, m\}$ are equal (implying $n = m$) and $x_j = y_j$ for all $j \in \{1, \dots, n\}$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1. Address the global constraint (Length).}
 Before examining individual elements, we observe that the length $n$ is an intrinsic property of the list. If $n \neq m$, the lists are distinct objects in different spaces (e.g., $\mathbb{F}^n$ vs $\mathbb{F}^m$). Thus, $n=m$ is a necessary condition.
