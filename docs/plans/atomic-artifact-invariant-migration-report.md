@@ -92,7 +92,7 @@ Specific active candidate files:
 - `volume-viii/lambda-calculus/notes/introduction/notes-introduction.tex`
 - `volume-viii/algebras-of-sets/notes/rings-of-sets/notes-rings-of-sets.tex`
 - `volume-vii/numerical-analysis/notes/ieee-floating-point/notes-ieee-floting-point.tex`
-- `volume-iv/algebra/order-and-lattice/lattice-order/notes/ordered-sets/notes-ordered-sets.tex`
+- `volume-iv/algebra/lattice-order/notes/ordered-sets/notes-ordered-sets.tex`
 - `volume-iv/algebra/linear-algebra/notes/vector-spaces/notes-vector-spaces.tex`
 - `volume-iv/algebra/algebraic-structures/notes/formal-model-theoretic-structures.tex`
 - `volume-iv/algebra/algebraic-structures/notes/fields/notes-fields-definition.tex`

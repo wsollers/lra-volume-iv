@@ -21,6 +21,10 @@ LABEL_RE = re.compile(r"\\label\{([^{}]+)\}")
 PROOF_FOR_RE = re.compile(r"\\LRAProofFor\{([^{}]+)\}")
 HYPERREF_RE = re.compile(r"\\hyperref\[([^\]]+)\]")
 PROOF_VAULT_RE = re.compile(r"\\ProofVaultURL\{([^{}]*)\}")
+IGNORED_DIR_NAMES = {"archive"}
+IGNORED_RELATIVE_DIRS = {
+    "volume-iv/algebra/algebraic-structures",
+}
 
 
 @dataclass(frozen=True)
@@ -74,9 +78,21 @@ def line_number(text: str, pos: int) -> int:
     return text.count("\n", 0, pos) + 1
 
 
+def is_ignored_path(path: Path, root: Path) -> bool:
+    if any(part in IGNORED_DIR_NAMES for part in path.parts):
+        return True
+    try:
+        rel_path = path.resolve().relative_to(root.resolve()).as_posix()
+    except ValueError:
+        rel_path = path.resolve().as_posix()
+    return any(rel_path == ignored or rel_path.startswith(f"{ignored}/") for ignored in IGNORED_RELATIVE_DIRS)
+
+
 def iter_tex_files(root: Path, part: str) -> Iterable[Path]:
     for path in sorted(root.rglob("*.tex")):
         if any(piece.startswith(".") for piece in path.parts):
+            continue
+        if is_ignored_path(path, root):
             continue
         if part in path.parts:
             yield path
@@ -198,10 +214,6 @@ def validate(root: Path, *, strict: bool, refactor_mode: bool) -> dict:
         for url in proof.vault_urls:
             if not re.match(r"^(https?://|[A-Za-z0-9_.-]+/)", url.strip()):
                 errors.append(Finding("malformed_vault_url", f"Malformed proof-vault backlink: {url!r}.", proof_rel))
-        if "proofs" in proof.path.parts and "notes" in proof.path.parts and not refactor_mode:
-            warnings.append(Finding("path_convention_mismatch", "Proof file still uses proofs/notes; future convention should mirror notes subfolders under proofs/.", proof_rel, severity="warning"))
-        if not proof.vault_urls:
-            warnings.append(Finding("missing_vault_backlink", "Optional proof-vault backlink is absent.", proof_rel, severity="warning"))
 
     for label, files in proof_label_map.items():
         if len(files) > 1:

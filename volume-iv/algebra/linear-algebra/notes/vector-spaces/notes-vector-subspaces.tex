@@ -2,7 +2,7 @@
 % Vector Subspaces — Notes
 % =========================================================
 
-\begin{toolkitbox}{Toolkit --- Vector Subspaces}
+\begin{remark*}[Toolkit --- Vector Subspaces]
 \textbf{Concept family:} Subspaces, their sums, and direct sums.
 
 \medskip
@@ -30,7 +30,7 @@
 \]
 \textbf{Key test:} $U$ is a subspace $\iff$ $0\in U$, $U$ closed under $+$,
 $U$ closed under scalar multiplication.
-\end{toolkitbox}
+\end{remark*}
 
 % =========================================================
 % Definition — Subspace
@@ -119,6 +119,12 @@ Then $U$ is a subspace of $V$ if and only if the following three conditions hold
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+$U$ fails to be a subspace via exactly one of three routes: it omits the zero
+vector, it contains two vectors whose sum falls outside $U$, or it contains a
+vector and a scalar whose product falls outside $U$.
+\end{remark*}
+
 \begin{remark*}[Contrapositive quantified statement]
 \[
 \neg\,\operatorname{Subspace}(U,V)
@@ -129,12 +135,6 @@ Then $U$ is a subspace of $V$ if and only if the following three conditions hold
 \;\vee\;
 \neg\,\operatorname{ClosedUnderScalarMultiplication}(U,\mathbf{F}).
 \]
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-$U$ fails to be a subspace via exactly one of three routes: it omits the zero
-vector, it contains two vectors whose sum falls outside $U$, or it contains a
-vector and a scalar whose product falls outside $U$.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
