@@ -1,10 +1,10 @@
 subject: abstract-algebra
-volume: volume-iv
-path: volume-iv/algebra/abstract-algebra
 display_title: ''
+volume: volume-iv
 status: in-progress
 dependencies:
   prior: ''
   next: ''
+path: volume-iv/algebra/abstract-algebra
 environments: []
 proof_files: []

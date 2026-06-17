@@ -2,10 +2,10 @@ subject: algebraic-structures
 display_title: Introduction to Algebraic Structures
 volume: volume-iv
 status: active
-path: volume-iv/algebra/algebraic-structures
 dependencies:
   prior: ''
   next: ''
+path: volume-iv/algebra/algebraic-structures
 environments:
 - label: def:abelian-group
   type: def

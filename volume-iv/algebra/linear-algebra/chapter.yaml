@@ -2,10 +2,10 @@ subject: linear-algebra
 display_title: Linear Algebra
 volume: volume-iv
 status: planned
-path: volume-iv/algebra/linear-algebra
 dependencies:
   prior: ''
   next: ''
+path: volume-iv/algebra/linear-algebra
 environments:
 - label: def:list
   type: def
