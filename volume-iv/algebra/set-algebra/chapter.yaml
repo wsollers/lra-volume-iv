@@ -1,6 +1,10 @@
-chapter: set-algebra
+subject: set-algebra
+display_title: Set Algebra
 volume: volume-iv
-path: volume-iv/algebra/set-algebra
-display_title: "Set Algebra"
 status: active
-entries: []
+path: volume-iv/algebra/set-algebra
+dependencies:
+  prior: ''
+  next: ''
+environments: []
+proof_files: []
