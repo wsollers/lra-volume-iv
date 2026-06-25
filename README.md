@@ -1,5 +1,7 @@
 # lra-volume-iv
 
-**Volume IV: Applied and Computational Mathematics** — Overleaf-ready.
+**Volume IV: Spaces** — Overleaf-ready.
 
-Note: Volume IV is excluded from card extraction by default (see DESIGN.md).
+This volume is the arena volume for metric spaces, topological spaces, and
+measure spaces. During the reorganization, legacy algebra material may remain on
+disk until the Volume VI migration pass moves it.

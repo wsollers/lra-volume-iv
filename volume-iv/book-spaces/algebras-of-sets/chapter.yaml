@@ -1,0 +1,17 @@
+# =========================================================
+# chapter.yaml — Algebras Of Sets
+# volume-iv/book-spaces/algebras-of-sets/
+#
+# Machine-readable card data for all labelled environments.
+# Replaces Flash macros in .tex files.
+# =========================================================
+
+chapter: algebras-of-sets
+volume: volume-iv
+path: volume-iv/book-spaces/algebras-of-sets
+book: book-spaces
+display_title: "Algebras of Sets"
+
+entries:
+  # Add entries here as notes are written.
+  # Schema: see DESIGN.md §10-yaml

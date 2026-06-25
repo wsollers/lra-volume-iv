@@ -1,0 +1,11 @@
+subject: measure-spaces
+display_title: Measure Spaces
+volume: volume-iv
+status: planned
+dependencies:
+  prior: topological-spaces
+  next: ''
+path: volume-iv/book-spaces/measure-spaces
+book: book-spaces
+environments: []
+proof_files: []

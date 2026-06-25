@@ -1,0 +1,11 @@
+subject: metric-spaces
+display_title: Metric Spaces
+volume: volume-iv
+status: planned
+dependencies:
+  prior: ''
+  next: topological-spaces
+path: volume-iv/book-spaces/metric-spaces
+book: book-spaces
+environments: []
+proof_files: []

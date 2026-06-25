@@ -1,0 +1,62 @@
+% =========================================================
+% volume-iv-mathematical-spaces-main.tex --- Standalone book root
+% Volume IV: Mathematical Spaces / Mathematical Spaces
+% =========================================================
+\documentclass[12pt, a4paper]{report}
+\input{common/volume-preamble}
+
+\begin{document}
+\ExplSyntaxOff
+\renewcommand{\familydefault}{\rmdefault}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\centering
+\vspace*{3.5cm}
+
+{\Large\scshape Volume IV\par}
+\vspace{0.35cm}
+{\large Mathematical Spaces\par}
+
+\vspace{1.4cm}
+
+{\Huge\bfseries Mathematical Spaces\par}
+
+\vspace{0.6cm}
+{\large\itshape Self-Study Notes\par}
+
+\vfill
+
+{\large William Sollers\par}
+\vspace{0.35cm}
+{\large \today\par}
+
+\vfill
+
+{\large\scshape From Cantor to Ito\par}
+\end{titlepage}
+
+\clearpage
+\thispagestyle{plain}
+\chapter*{Front Matter}
+\noindent\textbf{Series.} From Cantor to Ito\\[0.5em]
+\textbf{Volume.} Volume IV: Mathematical Spaces\\[0.5em]
+\textbf{Book.} Mathematical Spaces
+
+\clearpage
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\input{volume-iv/book-spaces/index}
+
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{%
+  bibliography/volume-iv-algebra%
+}
+
+\printindex[tech]
+\printindex[dep]
+
+\end{document}
