@@ -6,7 +6,7 @@ Use `✅` to record completion after the canonical proof file has both proof bod
 Open proofs to do: 1
 Completed in this tracker: 0
 
-1. () `thm:sigma-intersection` — **Intersection of $ $-algebras is a $ $-algebra**
+1. () `thm:sigma-intersection` — **Intersection of $\sigma$-algebras is a $\sigma$-algebra**
    > **Statement.**
    > Let $\{\mathcal{M}_\alpha\}_{\alpha \in I}$ be any family of $\sigma$-algebras
    > on $X$ (indexed by any set $I$). Then
