@@ -1,5 +1,5 @@
 % =========================================================
-% volume-iv.tex --- Standalone root for Volume IV
+% volume-iv.tex --- Standalone volume root
 % Volume IV: Mathematical Spaces
 %
 % Build (local): latexmk -lualatex volume-iv.tex
@@ -13,10 +13,10 @@
 \renewcommand{\familydefault}{\rmdefault}
 
 \pagenumbering{roman}
-\input{volume-iv/euler-quote}
-\input{volume-iv/volume-iv-title}
+\input{volume-iv/frontmatter}
+\LRAFrontMatterPage{From Cantor to Ito}{Mathematical Spaces}{}{Constantin Caratheodory}{1873-1950}{images/caratheodory.png}
+\input{common/dedication}
 
-\clearpage
 \tableofcontents
 \clearpage
 \pagenumbering{arabic}
@@ -27,7 +27,7 @@
 \clearpage
 \bibliographystyle{plainnat}
 \bibliography{%
-  bibliography/volume-iv-mathematical-spaces%
+  bibliography/volume-iv-mathematical-spaces
 }
 
 \printindex[tech]
