@@ -1,0 +1,97 @@
+\begin{remark*}[Exposition]
+A mathematical space is an arena in which a particular kind of mathematics can
+be performed.  At the base there is a set of objects.  Added structure then
+specifies the ground rules: which objects can be compared, which subsets are
+distinguished, which operations are allowed, which limits make sense, or which
+quantities can be measured.  The same underlying set can support many different
+spaces because different structures make different questions meaningful.
+\end{remark*}
+
+\begin{remark*}[Structural Pattern]
+The general pattern is
+\[
+  \text{space} = \text{underlying set} + \text{chosen structure}.
+\]
+A metric space chooses a distance function.  A topological space chooses a
+collection of open sets.  A measurable space chooses a $\sigma$-algebra of
+measurable sets, and a measure space adds a measure to that measurable
+structure.  Algebraic spaces choose operations and laws.  Each choice controls
+which statements are legitimate inside that setting.
+\end{remark*}
+
+\begin{figure}[htbp]
+\centering
+\input{volume-iv/book-spaces/mathematical-spaces/figures/fig-nested-mathematical-spaces}
+\caption{Mathematical spaces are built by adding structure to an underlying
+set.  Some structures refine others: a metric induces a topology, while a
+measure requires measurable sets.}
+\label{fig:nested-mathematical-spaces}
+\end{figure}
+
+\begin{remark*}[Interpretation]
+The nesting in Figure~\ref{fig:nested-mathematical-spaces} should be read as
+an increase in available structure, not as a claim that every subject lies on a
+single chain.  Metric spaces sit naturally over topology because every metric
+determines open balls and hence open sets.  Measure spaces follow a different
+branch: they organize size rather than nearness.  The common feature is the
+same: mathematical work begins only after the arena and its rules have been
+specified.
+\end{remark*}
+
+\begin{figure}[htbp]
+\centering
+\input{volume-iv/book-spaces/mathematical-spaces/figures/fig-sets-to-spaces-hierarchy}
+\caption{One common route from sets to structured spaces.  A topology begins
+with selected open subsets of a set.  A metric gives a distance and thereby
+generates open balls, so metric spaces naturally carry topologies.  Linear,
+normed, inner product, Banach, and Hilbert spaces add further compatible
+structure.}
+\label{fig:sets-to-spaces-hierarchy}
+\end{figure}
+
+\begin{remark*}[Exposition]
+The hierarchy in Figure~\ref{fig:sets-to-spaces-hierarchy} is a guide to
+structure, not a universal taxonomy.  Some spaces are formed by adding data to
+a set.  Others are formed by adding compatibility requirements to an already
+structured space.  The following table records the construction pattern that
+will be used throughout this volume.
+\end{remark*}
+
+\begin{remark*}[Structure Table]
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.22\linewidth}
+                            >{\raggedright\arraybackslash}p{0.24\linewidth}
+                            >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Space} & \textbf{Comes from} & \textbf{Additional structure or rules} \\
+\midrule
+Set & Primitive arena & A collection of objects; no nearness, size, or
+operation is specified. \\
+Family of subsets & Set \(X\) & A selected collection
+\(\mathcal{A}\subseteq\mathcal{P}(X)\). \\
+Topological space & Set \(X\) & A topology \(\mathcal{T}\): open sets
+containing \(\varnothing\) and \(X\), closed under arbitrary unions and finite
+intersections. \\
+Metric space & Set \(X\) & A metric \(d:X\times X\to[0,\infty)\) satisfying
+identity of indiscernibles, symmetry, and the triangle inequality; the metric
+induces open balls and hence a topology. \\
+Vector space & Set \(V\) & Addition and scalar multiplication satisfying the
+vector space axioms over a chosen field. \\
+Normed vector space & Vector space & A norm \(\lVert\cdot\rVert\) measuring vector
+length, compatible with scalar multiplication and addition. \\
+Inner product space & Vector space & An inner product \(\langle\cdot,\cdot\rangle\)
+measuring angles and lengths; it induces a norm. \\
+Banach space & Normed vector space & Completeness: every Cauchy sequence
+converges in the norm. \\
+Hilbert space & Inner product space & Completeness with respect to the norm
+induced by the inner product. \\
+Measurable space & Set \(X\) & A \(\sigma\)-algebra \(\mathcal{M}\) of subsets
+regarded as measurable. \\
+Measure space & Measurable space & A measure \(\mu:\mathcal{M}\to[0,\infty]\)
+assigning size and satisfying countable additivity. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\end{remark*}

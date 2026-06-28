@@ -1,0 +1,48 @@
+\begin{tikzpicture}[
+  font=\small,
+  box/.style={
+    draw=black!45,
+    rounded corners=2pt,
+    align=center,
+    inner xsep=8pt,
+    inner ysep=6pt,
+    minimum height=1cm
+  },
+  base/.style={box, fill=gray!8, minimum width=11.2cm},
+  branch/.style={box, fill=blue!6, minimum width=3.2cm},
+  refine/.style={box, fill=green!6, minimum width=3.2cm},
+  measure/.style={box, fill=orange!8, minimum width=3.2cm},
+  algebra/.style={box, fill=violet!7, minimum width=3.2cm},
+  arrow/.style={-Latex, thick, draw=black!55}
+]
+\node[base] (set) at (0,0) {Underlying set \(X\)};
+\node[base] (space) at (0,-1.45)
+  {Mathematical space: \(X\) with selected structure};
+
+\node[branch] (top) at (-3.9,-3.15)
+  {Topological space\\open sets};
+\node[refine] (metric) at (-3.9,-4.75)
+  {Metric space\\distance \(d\)};
+\node[refine] (normed) at (-3.9,-6.35)
+  {Normed vector space\\linear structure + norm};
+
+\node[measure] (measurable) at (0,-3.15)
+  {Measurable space\\\(\sigma\)-algebra};
+\node[measure] (measure) at (0,-4.75)
+  {Measure space\\measure \(\mu\)};
+
+\node[algebra] (algebraic) at (3.9,-3.15)
+  {Algebraic structure\\operations + laws};
+
+\draw[arrow] (set) -- (space);
+\draw[arrow] (space) -- (top);
+\draw[arrow] (top) -- (metric);
+\draw[arrow] (metric) -- (normed);
+
+\draw[arrow] (space) -- (measurable);
+\draw[arrow] (measurable) -- (measure);
+
+\draw[arrow] (space) -- (algebraic);
+
+\draw[arrow, dashed] (metric.east) to[bend left=14] (top.east);
+\end{tikzpicture}

@@ -1,0 +1,90 @@
+\newpage
+\phantomsection
+\label{prf:cauchy-schwarz-inequality}
+\LRAProofFor{thm:cauchy-schwarz-inequality}
+
+\begin{remark*}[Return]
+\hyperref[thm:cauchy-schwarz-inequality]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Cauchy--Schwarz Inequality]
+For every \(x,y\in\mathbb{R}^n\),
+\[
+  |x\cdot y|\leq |x|\,|y|.
+\]
+Equality holds if and only if \(x\) and \(y\) are linearly dependent.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+If \(y=0\), then both sides are \(0\), and the equality condition is immediate.
+Assume \(y\neq 0\).  For every \(t\in\mathbb{R}\),
+\[
+  0\leq |x-ty|^2
+  = |x|^2-2t(x\cdot y)+t^2|y|^2.
+\]
+Choose \(t=(x\cdot y)/|y|^2\).  Substitution gives
+\[
+  0\leq |x|^2-\frac{(x\cdot y)^2}{|y|^2}.
+\]
+Hence
+\[
+  (x\cdot y)^2\leq |x|^2|y|^2,
+\]
+and taking square roots gives \(|x\cdot y|\leq |x|\,|y|\).
+
+Equality holds exactly when the chosen square has value \(0\), namely when
+\[
+  x-\frac{x\cdot y}{|y|^2}y=0.
+\]
+Thus equality implies that \(x\) is a scalar multiple of \(y\), so \(x\) and
+\(y\) are linearly dependent.  Conversely, if \(x=\lambda y\), then
+\[
+  |x\cdot y|=|\lambda|\,|y|^2=|\lambda y|\,|y|=|x|\,|y|,
+\]
+so equality holds.  This also covers the case in which one vector is zero.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The key observation is that squared length is always nonnegative.  For any
+real number \(t\), the vector \(x-ty\) therefore satisfies
+\[
+  0\leq |x-ty|^2.
+\]
+Expanding this square with the dot product gives a quadratic expression in
+\(t\):
+\[
+  |x-ty|^2=|x|^2-2t(x\cdot y)+t^2|y|^2.
+\]
+When \(y\neq 0\), the choice \(t=(x\cdot y)/|y|^2\) minimizes this quadratic.
+Since the minimum is still nonnegative,
+\[
+  |x|^2-\frac{(x\cdot y)^2}{|y|^2}\geq 0.
+\]
+Multiplying by \(|y|^2\) gives
+\[
+  (x\cdot y)^2\leq |x|^2|y|^2.
+\]
+The desired inequality follows by taking square roots.
+
+The equality case occurs precisely when the minimized square is zero.  That
+means \(x-ty=0\) for the minimizing value of \(t\), so \(x=ty\).  Hence the two
+vectors are linearly dependent.  If two vectors are linearly dependent, one is
+a scalar multiple of the other, and direct substitution gives equality.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+The proof minimizes the nonnegative quadratic \(t\mapsto |x-ty|^2\).  The
+inequality comes from the minimum being nonnegative; the equality condition
+comes from the minimum being zero.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclidean-space]{Definition: Euclidean Space}
+  \item \hyperref[def:euclidean-distance-rn]{Definition: Euclidean Distance on \(\mathbb{R}^n\)}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

@@ -1,0 +1,67 @@
+\newpage
+\phantomsection
+\label{prf:euclidean-metric}
+\LRAProofFor{cor:euclidean-metric}
+
+\begin{remark*}[Return]
+\hyperref[cor:euclidean-metric]{Return to Corollary}
+\end{remark*}
+
+\begin{corollary*}[Euclidean Metric]
+For \(x,y\in\mathbb{R}^n\), define
+\[
+  d_2(x,y)=\sqrt{\sum_{i=1}^{n}|x_i-y_i|^2}.
+\]
+Then \((\mathbb{R}^n,d_2)\) is a metric space.
+\end{corollary*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+The function \(d_2\) is the Euclidean distance on \(\mathbb{R}^n\).  For all
+\(x,y\in\mathbb{R}^n\), \(d_2(x,y)\geq 0\), and \(d_2(x,y)=0\) if and only if
+each coordinate difference \(x_i-y_i\) is \(0\), equivalently \(x=y\).
+Symmetry follows from \(|x_i-y_i|=|y_i-x_i|\) for every coordinate.
+
+For the triangle inequality, write
+\[
+  x-y=(x-z)+(z-y).
+\]
+Applying \hyperref[cor:minkowski-inequality-rn]{Minkowski's inequality} gives
+\[
+  d_2(x,y)\leq d_2(x,z)+d_2(z,y).
+\]
+Thus \(d_2\) satisfies the metric axioms, so \((\mathbb{R}^n,d_2)\) is a
+metric space.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The formula for \(d_2\) is the length of the vector \(x-y\).  A length is
+nonnegative.  It is zero exactly when every coordinate of \(x-y\) is zero,
+which means \(x=y\).  It is symmetric because replacing \(x-y\) by \(y-x\)
+only changes signs before absolute values and squares are taken.
+
+The only structural point is the triangle inequality.  The displacement from
+\(y\) to \(x\) can be split through \(z\):
+\[
+  x-y=(x-z)+(z-y).
+\]
+Minkowski's inequality says that the length of a sum is at most the sum of
+the lengths.  Therefore the direct distance \(d_2(x,y)\) is at most
+\(d_2(x,z)+d_2(z,y)\).
+\end{proof}
+
+\begin{remark*}[Proof structure]
+The proof checks the easy metric axioms coordinatewise and uses Minkowski's
+inequality for the triangle inequality.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:euclidean-distance-rn]{Definition: Euclidean Distance on \(\mathbb{R}^n\)}
+  \item \hyperref[cor:minkowski-inequality-rn]{Corollary: Minkowski's Inequality}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

@@ -1,0 +1,77 @@
+\begin{tikzpicture}[
+  font=\small,
+  space/.style={
+    draw=#1!70,
+    fill=#1!10,
+    rounded corners=5pt,
+    line width=0.8pt,
+    align=center,
+    minimum width=3.1cm,
+    minimum height=1.05cm,
+    inner sep=4pt
+  },
+  smallspace/.style={
+    draw=#1!70,
+    fill=#1!10,
+    rounded corners=5pt,
+    line width=0.8pt,
+    align=center,
+    minimum width=2.55cm,
+    minimum height=0.9cm,
+    inner sep=4pt,
+    font=\scriptsize
+  },
+  note/.style={
+    align=center,
+    font=\scriptsize,
+    text=black!70
+  },
+  arrow/.style={-Latex, thick, draw=black!55},
+  softarrow/.style={-Latex, thick, dashed, draw=black!45}
+]
+
+\node[space=gray, minimum width=4.0cm] (sets) at (0,3.0)
+  {\textbf{Sets}\\[-1pt]\scriptsize objects only};
+
+\node[space=teal] (families) at (-3.55,1.45)
+  {\textbf{Families of subsets}\\[-1pt]\scriptsize chosen subsets of \(X\)};
+\node[space=blue] (topology) at (-3.55,-0.05)
+  {\textbf{Topological spaces}\\[-1pt]\scriptsize open sets};
+\node[smallspace=cyan] (metric) at (-3.55,-1.55)
+  {\textbf{Metric spaces}\\[-1pt] distance \(d\)};
+
+\node[space=green] (vector) at (1.25,1.45)
+  {\textbf{Vector spaces}\\[-1pt]\scriptsize addition and scalars};
+\node[smallspace=orange] (normed) at (-0.25,-0.05)
+  {\textbf{Normed vector}\\\textbf{spaces}\\[-1pt] length};
+\node[smallspace=purple] (inner) at (3.05,-0.05)
+  {\textbf{Inner product}\\\textbf{spaces}\\[-1pt] angles and length};
+\node[smallspace=red] (banach) at (-0.25,-1.55)
+  {\textbf{Banach spaces}\\[-1pt] complete\\normed};
+\node[smallspace=violet] (hilbert) at (3.05,-1.55)
+  {\textbf{Hilbert spaces}\\[-1pt] complete\\inner product};
+
+\node[space=brown] (measurable) at (5.8,1.45)
+  {\textbf{Measurable spaces}\\[-1pt]\scriptsize \(\sigma\)-algebra};
+\node[smallspace=red] (measure) at (5.8,-0.05)
+  {\textbf{Measure spaces}\\[-1pt] size \(\mu\)};
+
+\draw[arrow] (sets.south west) to[bend right=8] (families.north);
+\draw[arrow] (families) -- (topology);
+\draw[arrow] (sets.south) to[bend left=4] (vector.north);
+\draw[arrow] (sets.south east) to[bend left=10] (measurable.north);
+
+\draw[softarrow] (metric.north) -- (topology.south);
+\draw[arrow] (vector) -- (normed);
+\draw[arrow] (vector) -- (inner);
+\draw[arrow] (normed) -- (banach);
+\draw[arrow] (inner) -- (hilbert);
+\draw[softarrow] (inner.south west) to[bend left=12] (normed.south east);
+\draw[arrow] (measurable) -- (measure);
+
+\node[note, text width=11.6cm] at (1.0,-2.85)
+  {The branches record added structure.  A topology selects open sets, a
+  metric supplies distance and induces open sets, linear spaces add operations,
+  and measure spaces add measurable sets together with size.};
+
+\end{tikzpicture}

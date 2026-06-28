@@ -1,0 +1,146 @@
+\begin{definition}[Metric Space]\label{def:metric-space}
+Let \(X\) be a nonempty set.  A function
+\[
+  d : X \times X \to \mathbb{R}
+\]
+is called a \emph{metric} on \(X\) if for all \(x,y,z \in X\),
+\begin{enumerate}
+  \item \(d(x,y) \geq 0\), and \(d(x,y) = 0\) if and only if \(x = y\)
+        \hfill\textit{(positive definiteness)};
+  \item \(d(x,y) = d(y,x)\)
+        \hfill\textit{(symmetry)};
+  \item \(d(x,y) \leq d(x,z) + d(z,y)\)
+        \hfill\textit{(triangle inequality)}.
+\end{enumerate}
+A \emph{metric space} is a pair \((X,d)\), where \(X\) is a nonempty set and
+\(d\) is a metric on \(X\).
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\operatorname{Metric}(X,d)
+\;\Longleftrightarrow\;
+&X \neq \varnothing
+\;\land\;
+d:X\times X\to\mathbb{R}
+\\
+&{}\land
+\forall x,y,z\in X{:}\;
+d(x,y)\geq 0
+\land
+\bigl(d(x,y)=0 \Longleftrightarrow x=y\bigr)
+\\
+&{}\land d(x,y)=d(y,x)
+\land d(x,y)\leq d(x,z)+d(z,y).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A metric turns a set into a distance arena.  Positive definiteness says that
+distance is never negative and that zero distance identifies exactly one
+point.  Symmetry says that distance does not depend on direction.  The
+triangle inequality says that moving through an intermediate point cannot
+make the direct distance larger than the two-step route.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This convention appears as Definition~2.2 in
+Kainth's \emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{definition}[Pseudo-Metric]\label{def:pseudo-metric}
+Let \(X\) be a nonempty set.  A function
+\[
+  d : X \times X \to \mathbb{R}
+\]
+is called a \emph{pseudo-metric} on \(X\) if for all \(x,y,z \in X\),
+\begin{enumerate}
+  \item \(d(x,y) \geq 0\), and \(d(x,x) = 0\)
+        \hfill\textit{(positive semi-definiteness)};
+  \item \(d(x,y) = d(y,x)\)
+        \hfill\textit{(symmetry)};
+  \item \(d(x,y) \leq d(x,z) + d(z,y)\)
+        \hfill\textit{(triangle inequality)}.
+\end{enumerate}
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\operatorname{PseudoMetric}(X,d)
+\;\Longleftrightarrow\;
+&X \neq \varnothing
+\;\land\;
+d:X\times X\to\mathbb{R}
+\\
+&{}\land
+\forall x,y,z\in X{:}\;
+d(x,y)\geq 0
+\land d(x,x)=0
+\\
+&{}\land d(x,y)=d(y,x)
+\land d(x,y)\leq d(x,z)+d(z,y).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A pseudo-metric keeps the distance-like laws of nonnegativity, symmetry, and
+the triangle inequality, but it weakens positive definiteness.  Distinct
+points may have distance \(0\).  Thus a pseudo-metric measures separation only
+up to possible zero-distance identifications.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This convention appears as Definition~2.6 in
+Kainth's \emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{lemmabox}{Lemma}
+\begin{lemma}[Metrics are Pseudo-Metrics]\label{lem:metrics-are-pseudo-metrics}
+Every metric on a nonempty set \(X\) is a pseudo-metric on \(X\).
+The converse is false: there exist pseudo-metrics that are not metrics.
+
+\smallskip
+\noindent
+\hyperref[prf:metrics-are-pseudo-metrics]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\forall X\,\forall d{:}\;
+\operatorname{Metric}(X,d)
+\Longrightarrow
+\operatorname{PseudoMetric}(X,d),
+\\
+&\exists X\,\exists d{:}\;
+\operatorname{PseudoMetric}(X,d)
+\land
+\neg\operatorname{Metric}(X,d).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The implication is immediate because the metric axioms contain all
+pseudo-metric axioms.  The only difference is the zero-distance law:
+a metric forces \(d(x,y)=0\) exactly when \(x=y\), while a pseudo-metric only
+requires \(d(x,x)=0\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:pseudo-metric]{Definition: Pseudo-Metric}
+\end{itemize}
+\end{dependencies}

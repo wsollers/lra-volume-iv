@@ -1,0 +1,195 @@
+\begin{remark*}[Exposition]
+The preceding metrics become metric spaces once their domains are paired with
+the verified distance functions.  This section records the resulting spaces as
+objects in their own right.
+\end{remark*}
+
+\begin{definitionbox}{Definition --- Discrete Metric Space}
+\begin{definition}[Discrete Metric Space]\label{def:discrete-metric-space}
+Let \(X\) be a nonempty set.  The \emph{discrete metric space on \(X\)} is the
+metric space
+\[
+  (X,d_{\mathrm{disc}}),
+\]
+where \(d_{\mathrm{disc}}\) is the discrete metric on \(X\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+X\neq\varnothing
+\Longrightarrow
+\operatorname{MetricSpace}(X,d_{\mathrm{disc}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A discrete metric space is a space where distinct points are all separated by
+the same positive distance.  Its geometry records equality and inequality, but
+no finer notion of nearness.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:discrete-metric]{Definition: Discrete Metric}
+  \item \hyperref[prop:discrete-metric-space]{Proposition: The Discrete Distance is a Metric}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Euclidean Metric Space}
+\begin{definition}[Euclidean Metric Space]\label{def:euclidean-metric-space}
+For \(n\in\mathbb{N}\), the \emph{standard Euclidean metric space} is
+\[
+  (\mathbb{R}^n,d_2),
+\]
+where \(d_2\) is the Euclidean metric on \(\mathbb{R}^n\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+n\in\mathbb{N}
+\Longrightarrow
+\operatorname{MetricSpace}(\mathbb{R}^n,d_2).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Euclidean metric space is the standard finite-dimensional distance model:
+points are coordinate vectors, and distance is ordinary straight-line length.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:euclidean-space]{Definition: Euclidean Space}
+  \item \hyperref[def:euclidean-distance-rn]{Definition: Euclidean Distance on \(\mathbb{R}^n\)}
+  \item \hyperref[cor:euclidean-metric]{Corollary: Euclidean Metric}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Taxicab Metric Space}
+\begin{definition}[Taxicab Metric Space]\label{def:taxicab-metric-space}
+For \(n\in\mathbb{N}\), the \emph{taxicab metric space} is
+\[
+  (\mathbb{R}^n,d_1),
+\]
+where \(d_1\) is the taxicab metric on \(\mathbb{R}^n\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+n\in\mathbb{N}
+\Longrightarrow
+\operatorname{MetricSpace}(\mathbb{R}^n,d_1).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The taxicab metric space has the same underlying set as Euclidean space, but
+distance is measured by summing coordinatewise displacements.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:taxicab-metric-rn]{Definition: Taxicab Metric}
+  \item \hyperref[prop:taxicab-metric-rn]{Proposition: Taxicab Metric}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- \(p\)-Metric Space}
+\begin{definition}[\(p\)-Metric Space]\label{def:lp-metric-space}
+Let \(1\leq p<\infty\) and let \(n\in\mathbb{N}\).  The \emph{\(p\)-metric
+space} is
+\[
+  (\mathbb{R}^n,d_p),
+\]
+where \(d_p\) is the \(p\)-metric on \(\mathbb{R}^n\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+1\leq p<\infty,\; n\in\mathbb{N}
+\Longrightarrow
+\operatorname{MetricSpace}(\mathbb{R}^n,d_p).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The \(p\)-metric spaces form a family of finite-dimensional metric spaces on
+the same coordinate set, with different rules for turning coordinate
+displacements into distance.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:lp-metric-rn]{Definition: \(p\)-Metric on \(\mathbb{R}^n\)}
+  \item \hyperref[thm:lp-metric-rn]{Theorem: \(d_p\) is a Metric}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Complex Metric Space}
+\begin{definition}[Complex Metric Space]\label{def:complex-metric-space}
+The \emph{complex metric space} is
+\[
+  (\mathbb{C},d_{\mathbb{C}}),
+\]
+where \(d_{\mathbb{C}}\) is the usual Euclidean distance on the complex plane.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{MetricSpace}(\mathbb{C},d_{\mathbb{C}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The complex metric space treats complex numbers as points in the Euclidean
+plane, while retaining the notation and algebra of \(\mathbb{C}\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:complex-metric]{Definition: Complex Metric}
+  \item \hyperref[prop:complex-plane-metric-space]{Proposition: The Complex Plane is a Metric Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Bounded Sequence Metric Space}
+\begin{definition}[Bounded Sequence Metric Space]
+\label{def:bounded-sequence-metric-space}
+The \emph{bounded sequence metric space} is
+\[
+  (\ell^\infty(\mathbb{R}),d_\infty),
+\]
+where \(\ell^\infty(\mathbb{R})\) is the set of bounded real sequences and
+\(d_\infty\) is the supremum metric.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{MetricSpace}(\ell^\infty(\mathbb{R}),d_\infty).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The bounded sequence metric space is an infinite-dimensional example.  Its
+distance measures the largest coordinatewise discrepancy between two bounded
+real sequences.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:bounded-real-sequence-space]{Definition: Supremum Metric on Bounded Real Sequences}
+  \item \hyperref[prop:bounded-real-sequence-space-sup-metric]{Proposition: Supremum Metric on Bounded Sequences}
+\end{itemize}
+\end{dependencies}

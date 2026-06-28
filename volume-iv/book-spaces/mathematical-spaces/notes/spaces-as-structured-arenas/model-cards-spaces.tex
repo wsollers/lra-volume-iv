@@ -1,0 +1,216 @@
+% BEGIN STRUCTURAL ARTIFACTS: mathematical-spaces
+\begin{remark*}[Structural Cards]
+The following cards use the structural presentation layer: each card records
+the inherited arena, the new data or laws, and the role of the resulting
+space.  These are blueprint artifacts, not formal definitions; formal
+definitions remain authoritative when they are introduced.
+
+\begin{structureblueprint}{Structural Card: Set}
+\StructureMetadata{id=struct:space-set; kind=structure; structure=set}
+\begin{structuresection}{TAXONOMY}
+Primitive arena.
+\end{structuresection}
+\begin{structurenew}
+A nonempty domain \(X\) of objects.
+\end{structurenew}
+\begin{structuretheory}
+No nearness, size, operation, or distinguished family of subsets is specified.
+\end{structuretheory}
+\end{structureblueprint}
+
+\begin{structureblueprint}{Structural Card: Family of Subsets}
+\StructureMetadata{id=struct:space-family-of-subsets; kind=structure; structure=family-of-subsets}
+\begin{structureinherits}
+Set \(X\).
+\end{structureinherits}
+\begin{structurenew}
+A chosen collection \(\mathcal A\subseteq\mathcal P(X)\).
+\end{structurenew}
+\begin{structuresection}{TAXONOMY}
+Subset-selection structure.  No closure law is imposed at this level.
+\end{structuresection}
+\end{structureblueprint}
+
+\begin{structureblueprint}{Structural Card: Topological Space}
+\StructureMetadata{id=struct:space-topological; kind=structure; structure=topological-space}
+\begin{structureinherits}
+Set \(X\) with a distinguished family of subsets.
+\end{structureinherits}
+\begin{structurenew}
+A topology \(\mathcal T\subseteq\mathcal P(X)\), read as the open subsets of
+\(X\).
+\end{structurenew}
+\begin{structuretheory}
+\(\varnothing,X\in\mathcal T\); arbitrary unions of members of
+\(\mathcal T\) lie in \(\mathcal T\); finite intersections of members of
+\(\mathcal T\) lie in \(\mathcal T\).
+\end{structuretheory}
+\begin{structuresection}{TAXONOMY}
+Open-set structure for continuity, convergence, interior, closure, and
+neighborhood arguments.
+\end{structuresection}
+\end{structureblueprint}
+
+\begin{structureblueprint}{Structural Card: Metric Space}
+\StructureMetadata{id=struct:space-metric; kind=structure; structure=metric-space}
+\begin{structureinherits}
+Set \(X\).
+\end{structureinherits}
+\begin{structurenew}
+A distance function
+\[
+  d:X\times X\to[0,\infty).
+\]
+\end{structurenew}
+\begin{structuretheory}
+Identity of indiscernibles, symmetry, and the triangle inequality.
+\end{structuretheory}
+\begin{structureusesa}
+Open balls \(B(x,r)=\{y\in X:d(x,y)<r\}\).
+\end{structureusesa}
+\begin{structuresection}{TAXONOMY}
+Distance structure.  The metric induces a topology by declaring sets open
+when they contain a metric ball around each of their points.
+\end{structuresection}
+\end{structureblueprint}
+
+\begin{structureblueprint}{Structural Card: Vector Space}
+\StructureMetadata{id=struct:space-vector; kind=structure; structure=vector-space}
+\begin{structureinherits}
+Set \(V\) and a scalar field \(\mathbb F\).
+\end{structureinherits}
+\begin{structurenew}
+Vector addition \(+:V\times V\to V\), scalar multiplication
+\(\cdot:\mathbb F\times V\to V\), and a zero vector \(0\in V\).
+\end{structurenew}
+\begin{structuretheory}
+\((V,+,0)\) is an abelian group; scalar multiplication is unital and
+associative; scalar multiplication distributes over vector addition and field
+addition.
+\end{structuretheory}
+\begin{structuresection}{TAXONOMY}
+Linear structure.  The space supports linear combinations before any length,
+angle, or limit structure is chosen.
+\end{structuresection}
+\end{structureblueprint}
+
+\begin{structureblueprint}{Structural Card: Normed Vector Space}
+\StructureMetadata{id=struct:space-normed-vector; kind=structure; structure=normed-vector-space}
+\begin{structureinherits}
+Vector space \(V\) over \(\mathbb F\).
+\end{structureinherits}
+\begin{structurenew}
+A norm \(\lVert\cdot\rVert:V\to[0,\infty)\).
+\end{structurenew}
+\begin{structuretheory}
+\(\lVert v\rVert=0\) if and only if \(v=0\);
+\(\lVert\alpha v\rVert=|\alpha|\,\lVert v\rVert\);
+\(\lVert u+v\rVert\leq\lVert u\rVert+\lVert v\rVert\).
+\end{structuretheory}
+\begin{structureusesa}
+The induced metric \(d(u,v)=\lVert u-v\rVert\).
+\end{structureusesa}
+\begin{structuresection}{TAXONOMY}
+Linear metric structure.  Algebraic operations and metric notions become
+compatible.
+\end{structuresection}
+\end{structureblueprint}
+
+\begin{structureblueprint}{Structural Card: Inner Product Space}
+\StructureMetadata{id=struct:space-inner-product; kind=structure; structure=inner-product-space}
+\begin{structureinherits}
+Real or complex vector space \(V\).
+\end{structureinherits}
+\begin{structurenew}
+An inner product \(\langle\cdot,\cdot\rangle:V\times V\to\mathbb F\).
+\end{structurenew}
+\begin{structuretheory}
+Positive definiteness, conjugate symmetry, and linearity in the chosen
+argument.
+\end{structuretheory}
+\begin{structureusesa}
+The induced norm \(\lVert v\rVert=\sqrt{\langle v,v\rangle}\).
+\end{structureusesa}
+\begin{structuresection}{TAXONOMY}
+Linear geometry.  Length, angle, and orthogonality are available, and the
+metric structure is derived from the inner product.
+\end{structuresection}
+\end{structureblueprint}
+
+\begin{structureblueprint}{Structural Card: Banach Space}
+\StructureMetadata{id=struct:space-banach; kind=structure; structure=banach-space}
+\begin{structureinherits}
+Normed vector space \((V,\lVert\cdot\rVert)\).
+\end{structureinherits}
+\begin{structurenew}
+Completeness with respect to the norm-induced metric.
+\end{structurenew}
+\begin{structuretheory}
+Every Cauchy sequence in \(V\) converges to a point of \(V\) in the norm.
+\end{structuretheory}
+\begin{structuresection}{TAXONOMY}
+Complete normed linear space.  Approximation by Cauchy sequences remains
+inside the space.
+\end{structuresection}
+\end{structureblueprint}
+
+\begin{structureblueprint}{Structural Card: Hilbert Space}
+\StructureMetadata{id=struct:space-hilbert; kind=structure; structure=hilbert-space}
+\begin{structureinherits}
+Inner product space \(H\).
+\end{structureinherits}
+\begin{structurenew}
+Completeness with respect to the norm induced by the inner product.
+\end{structurenew}
+\begin{structuretheory}
+Every Cauchy sequence in the induced norm converges to a point of \(H\).
+\end{structuretheory}
+\begin{structuresection}{TAXONOMY}
+Complete inner product space.  Orthogonality and projection arguments take
+place in a complete metric environment.
+\end{structuresection}
+\end{structureblueprint}
+
+\begin{structureblueprint}{Structural Card: Measurable Space}
+\StructureMetadata{id=struct:space-measurable; kind=structure; structure=measurable-space}
+\begin{structureinherits}
+Set \(X\) with a distinguished family of subsets.
+\end{structureinherits}
+\begin{structurenew}
+A \(\sigma\)-algebra \(\mathcal M\subseteq\mathcal P(X)\), read as the
+measurable subsets of \(X\).
+\end{structurenew}
+\begin{structuretheory}
+\(X\in\mathcal M\); complements of measurable sets are measurable; countable
+unions of measurable sets are measurable.
+\end{structuretheory}
+\begin{structuresection}{TAXONOMY}
+Countably closed subset-selection structure.  It specifies which subsets are
+legal inputs for size assignments.
+\end{structuresection}
+\end{structureblueprint}
+
+\begin{structureblueprint}{Structural Card: Measure Space}
+\StructureMetadata{id=struct:space-measure; kind=structure; structure=measure-space}
+\begin{structureinherits}
+Measurable space \((X,\mathcal M)\).
+\end{structureinherits}
+\begin{structurenew}
+A measure \(\mu:\mathcal M\to[0,\infty]\).
+\end{structurenew}
+\begin{structuretheory}
+\(\mu(\varnothing)=0\), and \(\mu\) is countably additive on pairwise disjoint
+measurable sets:
+\[
+  \mu\!\left(\bigcup_{n=1}^{\infty}A_n\right)
+  =
+  \sum_{n=1}^{\infty}\mu(A_n).
+\]
+\end{structuretheory}
+\begin{structuresection}{TAXONOMY}
+Quantitative measurable structure.  The \(\sigma\)-algebra determines the
+admissible subsets, and the measure assigns their size.
+\end{structuresection}
+\end{structureblueprint}
+\end{remark*}
+% END STRUCTURAL ARTIFACTS: mathematical-spaces

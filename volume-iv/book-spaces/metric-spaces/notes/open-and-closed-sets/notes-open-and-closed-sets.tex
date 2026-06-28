@@ -1,0 +1,292 @@
+\begin{remark*}[Exposition]
+Open and closed sets describe how subsets sit inside a metric space.  Open
+sets are subsets that contain a small ball around each of their points.
+Closed sets are subsets whose complements are open.
+\end{remark*}
+
+\begin{definitionbox}{Definition --- Metric Interior Point}
+\begin{definition}[Metric Interior Point]\label{def:metric-interior-point}
+Let \((X,d)\) be a metric space, let \(E\subseteq X\), and let \(x\in X\).
+The point \(x\) is an \emph{interior point of \(E\)} if there exists
+\(\delta>0\) such that
+\[
+  B_d(x;\delta)\subseteq E.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+x\text{ is an interior point of }E
+\quad\Longleftrightarrow\quad
+x\in X
+\;\land\;
+\exists\delta>0{:}\ B_d(x;\delta)\subseteq E.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An interior point of \(E\) is a point with positive-radius room inside \(E\).
+The entire ball around the point must remain in \(E\), not merely the point
+itself.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Metric Interior}
+\begin{definition}[Metric Interior]\label{def:metric-interior}
+Let \((X,d)\) be a metric space and let \(E\subseteq X\).  The \emph{interior
+of \(E\)} is the set of all interior points of \(E\).  It is denoted by
+\[
+  E^\circ.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+E^\circ
+=
+\{x\in X:\exists\delta>0\text{ such that }B_d(x;\delta)\subseteq E\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The interior \(E^\circ\) collects exactly the points of \(E\) that have
+positive-radius room inside \(E\).
+\end{remark*}
+
+\begin{remark*}[Notation]
+The notation \(E^\circ\) is read as the \emph{interior of \(E\)} or
+\emph{\(E\)-interior}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-interior-point]{Definition: Metric Interior Point}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Metric Open Set}
+\begin{definition}[Metric Open Set]\label{def:metric-open-set}
+Let \((X,d)\) be a metric space.  A subset \(E\subseteq X\) is \emph{open in
+\((X,d)\)} if either \(E=\varnothing\) or every \(x\in E\) is an interior point
+of \(E\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+E\text{ is open in }(X,d)
+\quad\Longleftrightarrow\quad
+E\subseteq X
+\;\land\;
+\bigl(E=\varnothing
+\;\lor\;
+\forall x\in E\,\exists\varepsilon>0{:}\ B_d(x;\varepsilon)\subseteq E\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An open set contains room around each of its points.  The amount of room may
+depend on the point, but every point of the set must have some positive-radius
+ball that stays inside the set.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+  \item \hyperref[def:metric-epsilon-neighborhood]{Definition: Epsilon Neighborhood}
+  \item \hyperref[def:metric-interior-point]{Definition: Metric Interior Point}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Metric Open Set Closure Properties]
+\label{thm:metric-open-set-closure-properties}
+Let \(X\) be a metric space.  Then:
+\begin{enumerate}
+  \item the empty set \(\varnothing\) and the space \(X\) are open sets;
+  \item an arbitrary union of open subsets of \(X\) is open;
+  \item any finite intersection of open subsets of \(X\) is open.
+\end{enumerate}
+
+\smallskip
+\noindent
+\hyperref[prf:metric-open-set-closure-properties]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+If \(X\) is a metric space, then
+\[
+\varnothing\text{ is open in }X,
+\qquad
+X\text{ is open in }X,
+\]
+\[
+\{U_\alpha\}_{\alpha\in A}\text{ open in }X
+\Longrightarrow
+\bigcup_{\alpha\in A}U_\alpha\text{ is open in }X,
+\]
+and, for \(n\in\mathbb{N}\),
+\[
+U_1,\ldots,U_n\text{ open in }X
+\Longrightarrow
+\bigcap_{k=1}^{n}U_k\text{ is open in }X.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Metric open sets are stable under the same basic operations that define a
+topology: arbitrary unions and finite intersections.  Thus every metric
+determines a topology by declaring its metric-open subsets to be open.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Theorem~3.2 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-set]{Definition: Metric Open Set}
+  \item \hyperref[def:metric-interior-point]{Definition: Metric Interior Point}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Open Balls are Open]
+\label{thm:metric-open-balls-are-open}
+Open balls in metric spaces are open sets.
+
+\smallskip
+\noindent
+\hyperref[prf:metric-open-balls-are-open]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall (X,d)\,\forall x\in X\,\forall r>0{:}\quad
+B_d(x;r)\text{ is open in }(X,d).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every metric ball contains room around each of its points.  The triangle
+inequality is the mechanism that transfers room around the center to room
+around an arbitrary point inside the ball.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Theorem~3.4 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+  \item \hyperref[def:metric-open-set]{Definition: Metric Open Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Interior is the Largest Open Subset]
+\label{thm:metric-interior-largest-open-subset}
+Let \(E\) be a subset of a metric space \(X\).  Then \(E^\circ\) is the
+largest open subset of \(X\) contained in \(E\).  In other words:
+\begin{enumerate}
+  \item \(E^\circ\subseteq E\);
+  \item \(E^\circ\) is open;
+  \item \(E^\circ\supseteq O\), for every open set \(O\subseteq E\).
+\end{enumerate}
+
+\smallskip
+\noindent
+\hyperref[prf:metric-interior-largest-open-subset]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+E^\circ\subseteq E,
+\qquad
+E^\circ\text{ is open in }X,
+\qquad
+\forall O\subseteq E{:}\;
+O\text{ open in }X\Longrightarrow O\subseteq E^\circ.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The interior operation extracts the open part of a set.  It keeps exactly the
+points with room inside \(E\), and it contains every open subset already lying
+inside \(E\).
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Theorem~3.5 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-interior]{Definition: Metric Interior}
+  \item \hyperref[def:metric-open-set]{Definition: Metric Open Set}
+  \item \hyperref[thm:metric-open-balls-are-open]{Theorem: Open Balls are Open}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Metric Closed Set}
+\begin{definition}[Metric Closed Set]\label{def:metric-closed-set}
+Let \((X,d)\) be a metric space.  A subset \(E\subseteq X\) is \emph{closed in
+\((X,d)\)} if its complement \(E^c=X\setminus E\) is open in \((X,d)\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+E\text{ is closed in }(X,d)
+\quad\Longleftrightarrow\quad
+E\subseteq X
+\;\land\;
+E^c=X\setminus E
+\;\land\;
+E^c\text{ is open in }(X,d).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A closed set is defined by the openness of what lies outside it.  In metric
+spaces this means every point outside \(E\) has some positive-radius ball that
+misses \(E\).
+\end{remark*}
+
+\begin{remark*}[Notation]
+When \(E\) is a subset of a fixed ambient space \(X\), the symbol \(E^c\)
+denotes the complement of \(E\) in \(X\):
+\[
+  E^c=X\setminus E.
+\]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-set]{Definition: Metric Open Set}
+\end{itemize}
+\end{dependencies}

@@ -1,0 +1,66 @@
+\newpage
+\phantomsection
+\label{prf:minkowski-inequality-rn}
+\LRAProofFor{cor:minkowski-inequality-rn}
+
+\begin{remark*}[Return]
+\hyperref[cor:minkowski-inequality-rn]{Return to Corollary}
+\end{remark*}
+
+\begin{corollary*}[Minkowski's Inequality]
+For every \(x,y\in\mathbb{R}^n\),
+\[
+  |x+y|\leq |x|+|y|.
+\]
+\end{corollary*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Using the dot product and Cauchy--Schwarz,
+\[
+\begin{aligned}
+|x+y|^2
+  &= (x+y)\cdot(x+y) \\
+  &= |x|^2+2x\cdot y+|y|^2 \\
+  &\leq |x|^2+2|x|\,|y|+|y|^2 \\
+  &= (|x|+|y|)^2.
+\end{aligned}
+\]
+Both sides are nonnegative, so taking square roots gives
+\[
+  |x+y|\leq |x|+|y|.
+\]
+Writing the norms in coordinates gives the displayed coordinate form.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The Euclidean norm satisfies
+\[
+  |x+y|^2=(x+y)\cdot(x+y).
+\]
+Expanding the dot product gives
+\[
+  |x+y|^2=|x|^2+2x\cdot y+|y|^2.
+\]
+Cauchy--Schwarz gives \(x\cdot y\leq |x|\,|y|\), so
+\[
+  |x+y|^2\leq |x|^2+2|x|\,|y|+|y|^2=(|x|+|y|)^2.
+\]
+Since lengths are nonnegative, the square-root operation preserves this
+inequality.  Hence \( |x+y|\leq |x|+|y| \).
+\end{proof}
+
+\begin{remark*}[Proof structure]
+The proof expands the squared length of \(x+y\), bounds the cross term by
+Cauchy--Schwarz, and then takes square roots.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:cauchy-schwarz-inequality]{Theorem: Cauchy--Schwarz Inequality}
+  \item \hyperref[def:euclidean-distance-rn]{Definition: Euclidean Distance on \(\mathbb{R}^n\)}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

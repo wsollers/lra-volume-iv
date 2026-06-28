@@ -1,0 +1,633 @@
+\begin{remark*}[Exposition]
+A metric is the distance function itself.  A metric space is the set together
+with that function.  This section records standard metric functions and then
+states, one by one, that each function satisfies the metric axioms.
+\end{remark*}
+
+\subsection{Norms Induce Metrics}
+
+\begin{definitionbox}{Definition --- Norm}
+\begin{definition}[Norm]\label{def:norm-on-real-vector-space}
+Let \(V\) be a real vector space.  A \emph{norm} on \(V\) is a function
+\[
+  \|\cdot\|:V\to\mathbb{R}_{\geq 0}
+\]
+such that for all \(x,y\in V\) and all \(\lambda\in\mathbb{R}\),
+\begin{enumerate}
+  \item \(\|x\|=0\) if and only if \(x=0\)
+        \hfill\textit{(positive definiteness)};
+  \item \(\|\lambda x\|=|\lambda|\,\|x\|\)
+        \hfill\textit{(absolute homogeneity)};
+  \item \(\|x+y\|\leq \|x\|+\|y\|\)
+        \hfill\textit{(triangle inequality)}.
+\end{enumerate}
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\operatorname{Norm}(V,\|\cdot\|)
+\Longleftrightarrow\;
+&\|\cdot\|:V\to\mathbb{R}_{\geq 0}
+\\
+&{}\land
+\forall x\in V{:}\; \|x\|=0 \Longleftrightarrow x=0
+\\
+&{}\land
+\forall \lambda\in\mathbb{R}\;\forall x\in V{:}\;
+\|\lambda x\|=|\lambda|\,\|x\|
+\\
+&{}\land
+\forall x,y\in V{:}\; \|x+y\|\leq \|x\|+\|y\|.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A norm measures the size of one vector.  The metric induced by a norm measures
+the size of the displacement vector \(x-y\).  Thus a norm is a length
+structure, and the induced metric is the corresponding distance structure.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[A Norm Induces a Metric]\label{thm:norm-induces-metric}
+Let \(V\) be a real vector space and let \(\|\cdot\|\) be a norm on \(V\).
+Define
+\[
+  d_{\|\cdot\|}:V\times V\to\mathbb{R}_{\geq 0},
+  \qquad
+  d_{\|\cdot\|}(x,y):=\|x-y\|.
+\]
+Then \(d_{\|\cdot\|}\) is a metric on \(V\).
+
+\smallskip
+\noindent
+\hyperref[prf:norm-induces-metric]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Norm}(V,\|\cdot\|)
+\Longrightarrow
+\operatorname{Metric}(V,d_{\|\cdot\|}),
+\qquad
+d_{\|\cdot\|}(x,y)=\|x-y\|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The metric axioms are exactly the norm axioms applied to displacement
+vectors.  Zero distance says the displacement \(x-y\) has zero norm, hence is
+the zero vector.  Symmetry follows from absolute homogeneity with scalar
+\(-1\).  The triangle inequality follows by writing \(x-y=(x-z)+(z-y)\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:norm-on-real-vector-space]{Definition: Norm}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Discrete Metric}
+\begin{definition}[Discrete Metric]\label{def:discrete-metric}
+Let \(X\) be a nonempty set.  The \emph{discrete metric} on \(X\) is the
+function
+\[
+  d_{\mathrm{disc}}:X\times X\to\mathbb{R}_{\geq 0}
+\]
+defined by
+\[
+  d_{\mathrm{disc}}(x,y)
+  =
+  \begin{cases}
+    0, & x=y,\\
+    1, & x\neq y.
+  \end{cases}
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&X\neq\varnothing,\qquad
+d_{\mathrm{disc}}:X\times X\to\mathbb{R}_{\geq 0},\\
+&\forall x,y\in X{:}\quad
+d_{\mathrm{disc}}(x,y)=0 \Longleftrightarrow x=y,\\
+&\forall x,y\in X{:}\quad
+x\neq y \Longleftrightarrow d_{\mathrm{disc}}(x,y)=1.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The discrete metric treats equality as the only closeness relation.  Distinct
+points are all placed at the same positive distance from each other.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[The Discrete Distance is a Metric]
+\label{prop:discrete-metric-space}
+For every nonempty set \(X\), the discrete distance
+\(d_{\mathrm{disc}}\) is a metric on \(X\).
+
+\smallskip
+\noindent
+\hyperref[prf:discrete-metric-space]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+X\neq\varnothing
+\Longrightarrow
+\operatorname{Metric}(X,d_{\mathrm{disc}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The only point at distance \(0\) from \(x\) is \(x\) itself.  Symmetry is built
+into the two-case definition, and the triangle inequality is automatic because
+the only possible distances are \(0\) and \(1\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:discrete-metric]{Definition: Discrete Metric}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Euclidean Distance on the Real Line}
+\begin{definition}[Euclidean Distance on \(\mathbb{R}\)]
+\label{def:real-line-euclidean-distance}
+The \emph{Euclidean distance} on \(\mathbb{R}\) is the function
+\[
+  d_{\mathbb{R}}:\mathbb{R}\times\mathbb{R}\to\mathbb{R}_{\geq 0},
+  \qquad
+  d_{\mathbb{R}}(x,y)=|x-y|.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+d_{\mathbb{R}}:\mathbb{R}\times\mathbb{R}\to\mathbb{R}_{\geq 0},
+\qquad
+\forall x,y\in\mathbb{R}{:}\quad d_{\mathbb{R}}(x,y)=|x-y|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real-line distance records absolute displacement between two real numbers.
+It forgets direction and keeps only separation.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[The Real-Line Euclidean Distance is a Metric]
+\label{prop:real-line-euclidean-distance-metric}
+The function \(d_{\mathbb{R}}(x,y)=|x-y|\) is a metric on \(\mathbb{R}\).
+
+\smallskip
+\noindent
+\hyperref[prf:real-line-euclidean-distance-metric]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Metric}(\mathbb{R},d_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This proposition says that the usual absolute-value distance satisfies the
+abstract metric axioms.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:real-line-euclidean-distance]{Definition: Euclidean Distance on \(\mathbb{R}\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Euclidean Space}
+\begin{definition}[Euclidean Space]\label{def:euclidean-space}
+For \(n\in\mathbb{N}\), the \emph{\(n\)-dimensional Euclidean space} is
+\(\mathbb{R}^n\) equipped with its standard coordinate structure, dot product,
+Euclidean norm, and Euclidean distance.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+For each \(n\in\mathbb{N}\), \(\operatorname{EuclideanSpace}(n)\) denotes
+\(\mathbb{R}^n\) together with its standard coordinate structure, dot product,
+Euclidean norm, and Euclidean distance.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Euclidean space is the coordinate model of ordinary distance geometry.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This convention is the setting for the Euclidean examples in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{definitionbox}{Definition --- Euclidean Distance on \(\mathbb{R}^n\)}
+\begin{definition}[Euclidean Distance on \(\mathbb{R}^n\)]
+\label{def:euclidean-distance-rn}
+For \(x=(x_1,\ldots,x_n)\) and \(y=(y_1,\ldots,y_n)\) in \(\mathbb{R}^n\),
+the \emph{Euclidean distance} is the function
+\[
+  d_2:\mathbb{R}^n\times\mathbb{R}^n\to\mathbb{R}_{\geq 0},
+  \qquad
+  d_2(x,y)
+  =
+  \sqrt{(x_1-y_1)^2+\cdots+(x_n-y_n)^2}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+d_2:\mathbb{R}^n\times\mathbb{R}^n\to\mathbb{R}_{\geq 0},
+\qquad
+d_2(x,y)=\sqrt{\sum_{i=1}^n (x_i-y_i)^2}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Euclidean distance measures the length of the coordinate difference vector
+\(x-y\).
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Cauchy--Schwarz Inequality]
+\label{thm:cauchy-schwarz-inequality}
+For every \(x,y\in\mathbb{R}^n\),
+\[
+  |x\cdot y|\leq |x|\,|y|.
+\]
+Equality holds if and only if \(x\) and \(y\) are linearly dependent.
+
+\smallskip
+\noindent
+\hyperref[prf:cauchy-schwarz-inequality]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{R}^n{:}\quad |x\cdot y|\leq |x|\,|y|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Cauchy--Schwarz controls the dot product by the lengths of the two vectors.
+It is the algebraic estimate behind Euclidean triangle inequalities.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclidean-space]{Definition: Euclidean Space}
+  \item \hyperref[def:euclidean-distance-rn]{Definition: Euclidean Distance on \(\mathbb{R}^n\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary}
+\begin{corollary}[Minkowski's Inequality]\label{cor:minkowski-inequality-rn}
+For every \(x,y\in\mathbb{R}^n\),
+\[
+  |x+y|\leq |x|+|y|.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:minkowski-inequality-rn]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{R}^n{:}\quad |x+y|\leq |x|+|y|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Minkowski's inequality is the triangle inequality for Euclidean length.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:cauchy-schwarz-inequality]{Theorem: Cauchy--Schwarz Inequality}
+  \item \hyperref[def:euclidean-distance-rn]{Definition: Euclidean Distance on \(\mathbb{R}^n\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[The Euclidean Distance on \(\mathbb{R}^n\) is a Metric]
+\label{prop:euclidean-distance-rn-metric}
+The function \(d_2\) is a metric on \(\mathbb{R}^n\).
+
+\smallskip
+\noindent
+\hyperref[prf:euclidean-distance-rn-metric]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Metric}(\mathbb{R}^n,d_2).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Euclidean distance makes \(\mathbb{R}^n\) into the standard finite
+dimensional metric space.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:euclidean-distance-rn]{Definition: Euclidean Distance on \(\mathbb{R}^n\)}
+  \item \hyperref[cor:minkowski-inequality-rn]{Corollary: Minkowski's Inequality}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary}
+\begin{corollary}[Euclidean Metric]\label{cor:euclidean-metric}
+For every \(x,y\in\mathbb{R}^n\), define
+\[
+  d_2(x,y):=\sqrt{|x_1-y_1|^2+\cdots+|x_n-y_n|^2}.
+\]
+Then \((\mathbb{R}^n,d_2)\) is a metric space.
+
+\smallskip
+\noindent
+\hyperref[prf:euclidean-metric]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Metric}(\mathbb{R}^n,d_2).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This records the standard Euclidean metric-space structure on
+\(\mathbb{R}^n\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:euclidean-distance-rn]{Definition: Euclidean Distance on \(\mathbb{R}^n\)}
+  \item \hyperref[cor:minkowski-inequality-rn]{Corollary: Minkowski's Inequality}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Taxicab Metric}
+\begin{definition}[Taxicab Metric]\label{def:taxicab-metric-rn}
+For \(x,y\in\mathbb{R}^n\), the \emph{taxicab metric} is the function
+\[
+  d_1(x,y):=\sum_{i=1}^{n}|x_i-y_i|.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+d_1:\mathbb{R}^n\times\mathbb{R}^n\to\mathbb{R}_{\geq 0},
+\qquad
+d_1(x,y)=\sum_{i=1}^{n}|x_i-y_i|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taxicab distance measures coordinate displacement additively, as if travel
+were constrained to coordinate-parallel streets.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Taxicab Metric]\label{prop:taxicab-metric-rn}
+The function \(d_1\) is a metric on \(\mathbb{R}^n\).
+
+\smallskip
+\noindent
+\hyperref[prf:taxicab-metric-rn]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Metric}(\mathbb{R}^n,d_1).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The taxicab metric satisfies the metric axioms coordinate by coordinate, with
+the real absolute-value triangle inequality summed over all coordinates.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:taxicab-metric-rn]{Definition: Taxicab Metric}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- \(p\)-Metric on \(\mathbb{R}^n\)}
+\begin{definition}[\(p\)-Metric on \(\mathbb{R}^n\)]\label{def:lp-metric-rn}
+Let \(1\leq p<\infty\).  For \(x,y\in\mathbb{R}^n\), define
+\[
+  d_p(x,y)
+  :=
+  \left(\sum_{i=1}^{n}|x_i-y_i|^p\right)^{1/p}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+1\leq p<\infty
+\Longrightarrow
+d_p:\mathbb{R}^n\times\mathbb{R}^n\to\mathbb{R}_{\geq 0}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The \(p\)-metrics interpolate between taxicab distance at \(p=1\) and
+Euclidean distance at \(p=2\), and they form the standard finite-dimensional
+\(\ell^p\) family.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[\(d_p\) is a Metric]\label{thm:lp-metric-rn}
+For every \(1\leq p<\infty\), the function \(d_p\) is a metric on
+\(\mathbb{R}^n\).
+
+\smallskip
+\noindent
+\hyperref[prf:lp-metric-rn]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+1\leq p<\infty
+\Longrightarrow
+\operatorname{Metric}(\mathbb{R}^n,d_p).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The proof is the \(p\)-norm version of Minkowski's inequality.  The theorem
+packages a whole family of metric structures on the same underlying set.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:lp-metric-rn]{Definition: \(p\)-Metric on \(\mathbb{R}^n\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Complex Metric}
+\begin{definition}[Complex Metric]\label{def:complex-metric}
+Identify \(\mathbb{C}\) with \(\mathbb{R}^2\).  The \emph{complex metric} is
+\[
+  d_{\mathbb{C}}(z,w):=|z-w|.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+d_{\mathbb{C}}:\mathbb{C}\times\mathbb{C}\to\mathbb{R}_{\geq 0},
+\qquad
+d_{\mathbb{C}}(z,w)=|z-w|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+As a distance function, the complex metric is the Euclidean metric on
+\(\mathbb{R}^2\) written in complex notation.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[The Complex Plane is a Metric Space]
+\label{prop:complex-plane-metric-space}
+The pair \((\mathbb{C},d_{\mathbb{C}})\) is a metric space.
+
+\smallskip
+\noindent
+\hyperref[prf:complex-plane-metric-space]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Metric}(\mathbb{C},d_{\mathbb{C}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The metric on \(\mathbb{C}\) is inherited from the Euclidean plane.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:complex-metric]{Definition: Complex Metric}
+  \item \hyperref[cor:euclidean-metric]{Corollary: Euclidean Metric}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Supremum Metric on Bounded Real Sequences}
+\begin{definition}[Supremum Metric on Bounded Real Sequences]
+\label{def:bounded-real-sequence-space}
+Let \(\ell^\infty(\mathbb{R})\) denote the set of all bounded real sequences:
+\[
+  \ell^\infty(\mathbb{R})
+  :=
+  \left\{x=(x_n)_{n\in\mathbb{N}}:
+  \exists M\geq 0\;\forall n\in\mathbb{N}\; |x_n|\leq M\right\}.
+\]
+For \(x,y\in\ell^\infty(\mathbb{R})\), define
+\[
+  d_\infty(x,y)
+  :=
+  \sup_{n\in\mathbb{N}} |x_n-y_n|.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+d_\infty:
+\ell^\infty(\mathbb{R})\times\ell^\infty(\mathbb{R})
+\to
+\mathbb{R}_{\geq 0},
+\qquad
+d_\infty(x,y)=\sup_{n\in\mathbb{N}} |x_n-y_n|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The supremum metric measures the largest coordinatewise discrepancy between
+two bounded sequences.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[The Supremum Distance on Bounded Sequences is a Metric]
+\label{prop:bounded-real-sequence-space-sup-metric}
+The function \(d_\infty\) is a metric on \(\ell^\infty(\mathbb{R})\).
+
+\smallskip
+\noindent
+\hyperref[prf:bounded-real-sequence-space-sup-metric]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Metric}(\ell^\infty(\mathbb{R}),d_\infty).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two bounded sequences are close in this metric when every coordinate is close
+by the same tolerance.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:bounded-real-sequence-space]{Definition: Supremum Metric on Bounded Real Sequences}
+\end{itemize}
+\end{dependencies}

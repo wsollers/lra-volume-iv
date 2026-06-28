@@ -1,0 +1,282 @@
+\begin{remark*}[Exposition]
+Limit points and isolated points separate two ways a subset can contain or
+approach a point.  A limit point is repeatedly approached by other points of
+the set at every scale.  An isolated point belongs to the set but has a small
+ball in which it is the only point of the set.
+\end{remark*}
+
+\begin{definitionbox}{Definition --- Metric Limit Point and Isolated Point}
+\begin{definition}[Metric Limit Point and Isolated Point]
+\label{def:metric-limit-point-isolated-point}
+Let \(E\) be a subset of a metric space \((X,d)\), and let \(x\in X\).
+\begin{enumerate}
+  \item The point \(x\) is a \emph{limit point of \(E\)} if, for every
+        \(\varepsilon>0\), the ball \(B_d(x;\varepsilon)\) contains a point of
+        \(E\setminus\{x\}\).
+  \item The point \(x\) is an \emph{isolated point of \(E\)} if \(x\in E\) and
+        \(x\) is not a limit point of \(E\).
+\end{enumerate}
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+x\text{ is a limit point of }E
+\quad\Longleftrightarrow\quad
+\forall\varepsilon>0{:}\;
+B_d(x;\varepsilon)\cap(E\setminus\{x\})\neq\varnothing.
+\]
+\[
+x\text{ is an isolated point of }E
+\quad\Longleftrightarrow\quad
+x\in E
+\;\land\;
+\exists\varepsilon>0{:}\;
+B_d(x;\varepsilon)\cap E=\{x\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A limit point of \(E\) may lie in \(E\) or outside \(E\); what matters is that
+points of \(E\) distinct from \(x\) occur arbitrarily close to \(x\).  An
+isolated point must belong to \(E\), and some positive-radius ball around it
+contains no other point of \(E\).
+\end{remark*}
+
+\begin{remark*}[Notation]
+The set of limit points of \(E\) is denoted by \(E'\), read as
+\emph{\(E\)-prime}.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Limit points are also called \emph{cluster points} or \emph{accumulation
+points}.  In later work with functions on subsets of metric spaces, limits of
+the form \(\lim_{y\to x}f(y)\) are only meaningful when \(x\) is a limit point
+of the domain being approached.
+\end{remark*}
+
+\begin{remark*}[Examples]
+In the usual metric on \(\mathbb{R}\), if
+\[
+  E=(0,1)\cup\{2\},
+\]
+then \(2\) is an isolated point of \(E\), while \([0,1]\) is the set of limit
+points of \(E\).
+
+There are also metric spaces with infinite subsets that have no limit points.
+For example, if \(X\) is an infinite discrete metric space and \(E=X\), then
+\(E'=\varnothing\).  Also, in \(X=\mathbb{R}\setminus\mathbb{Q}\), the set
+\[
+  E=\{\sqrt{2}/n:n\in\mathbb{N}\}
+\]
+has no limit point in \(X\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Closed Sets Contain Their Limit Points]
+\label{thm:metric-closed-sets-contain-limit-points}
+Let \(X\) be a metric space and let \(E\subseteq X\).  Then \(E\) is closed if
+and only if \(E'\subseteq E\).
+
+\smallskip
+\noindent
+\hyperref[prf:metric-closed-sets-contain-limit-points]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+E\text{ is closed in }X
+\quad\Longleftrightarrow\quad
+E'\subseteq E.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closed sets contain all points that can be approached by other points of the
+set.  Equivalently, no limit point of a closed set is missing from the set.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Theorem~3.10 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-closed-set]{Definition: Metric Closed Set}
+  \item \hyperref[def:metric-limit-point-isolated-point]{Definition: Metric Limit Point and Isolated Point}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Sequential Characterization of Limit Points]
+\label{thm:metric-limit-point-sequential-characterization}
+Let \((X,d)\) be a metric space, let \(E\subseteq X\), and let \(x\in X\).
+Then \(x\in E'\) if and only if there exists a sequence of distinct terms in
+\(E\) that converges to \(x\).
+
+\smallskip
+\noindent
+\hyperref[prf:metric-limit-point-sequential-characterization]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+x\in E'
+\quad\Longleftrightarrow\quad
+\exists \{x_n\}\subseteq E{:}\;
+\bigl(\forall n\neq m,\;x_n\neq x_m\bigr)
+\;\land\;
+x_n\to x.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Limit points can be detected sequentially.  A point is a limit point exactly
+when the set supplies infinitely many distinct approximating terms converging
+to that point.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Theorem~3.11 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-limit-point-isolated-point]{Definition: Metric Limit Point and Isolated Point}
+  \item \hyperref[def:metric-sequential-convergence]{Definition: Metric Sequential Convergence}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary}
+\begin{corollary}[Neighborhood Characterization of Limit Points]
+\label{cor:metric-limit-point-neighborhood-characterization}
+Let \((X,d)\) be a metric space, let \(E\subseteq X\), and let \(x\in X\).
+Then \(x\in E'\) if and only if every neighborhood of \(x\) contains
+infinitely many points of \(E\).
+
+\smallskip
+\noindent
+\hyperref[prf:metric-limit-point-neighborhood-characterization]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+x\in E'
+\quad\Longleftrightarrow\quad
+\forall U{:}\;
+\bigl(U\text{ is a neighborhood of }x\bigr)
+\Longrightarrow
+U\cap E\text{ is infinite}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The neighborhood form strengthens the ball definition into a count statement:
+near a limit point, every neighborhood contains not just one nearby point of
+\(E\), but infinitely many.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Corollary~3.12 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-neighborhood]{Definition: Metric Neighborhood}
+  \item \hyperref[thm:metric-limit-point-sequential-characterization]{Theorem: Sequential Characterization of Limit Points}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Bolzano--Weierstrass for Bounded Infinite Subsets]
+\label{thm:metric-bolzano-weierstrass-bounded-infinite-subsets}
+Every bounded infinite subset of \(\mathbb{R}^m\) has a limit point in
+\(\mathbb{R}^m\).
+
+\smallskip
+\noindent
+\hyperref[prf:metric-bolzano-weierstrass-bounded-infinite-subsets]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+E\subseteq\mathbb{R}^m,\quad
+E\text{ bounded},\quad
+E\text{ infinite}
+\quad\Longrightarrow\quad
+\exists x\in\mathbb{R}^m{:}\;x\in E'.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+In finite-dimensional Euclidean space, boundedness prevents an infinite set
+from spreading out completely.  Some point of the ambient space must be
+approached by infinitely many points of the set.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Theorem~3.13 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:metric-euclidean-bolzano-weierstrass]{Theorem: Bolzano--Weierstrass in \(\mathbb{R}^m\)}
+  \item \hyperref[thm:metric-limit-point-sequential-characterization]{Theorem: Sequential Characterization of Limit Points}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[The Derived Set is Closed]
+\label{prop:metric-derived-set-closed}
+The set of limit points of any set is closed.
+
+\smallskip
+\noindent
+\hyperref[prf:metric-derived-set-closed]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+E\subseteq X
+\quad\Longrightarrow\quad
+E'\text{ is closed in }X.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taking limit points produces a closed set.  Once a point is approached by
+limit points of \(E\), it is itself forced to be a limit point of \(E\).
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Proposition~3.15 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-limit-point-isolated-point]{Definition: Metric Limit Point and Isolated Point}
+  \item \hyperref[thm:metric-closed-sets-contain-limit-points]{Theorem: Closed Sets Contain Their Limit Points}
+\end{itemize}
+\end{dependencies}

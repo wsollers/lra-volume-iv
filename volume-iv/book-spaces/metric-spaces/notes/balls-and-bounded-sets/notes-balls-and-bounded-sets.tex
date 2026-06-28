@@ -1,0 +1,71 @@
+\begin{definitionbox}{Definition --- Open Ball}
+\begin{definition}[Open Ball]\label{def:metric-open-ball}
+Let \((X,d)\) be a metric space, let \(x\in X\), and let \(r>0\).  The
+\emph{open ball} of radius \(r\) centered at \(x\) is
+\[
+  B_d(x;r)
+  :=
+  \{\,y\in X : d(y,x)<r\,\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall y\in X{:}\quad
+y\in B_d(x;r)
+\Longleftrightarrow
+d(y,x)<r.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An open ball collects exactly the points whose distance from the center is
+strictly less than the chosen radius.  The strict inequality leaves the
+boundary points out.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This notation follows Definition~2.15 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Closed Ball}
+\begin{definition}[Closed Ball]\label{def:metric-closed-ball}
+Let \((X,d)\) be a metric space, let \(x\in X\), and let \(r>0\).  The
+\emph{closed ball} of radius \(r\) centered at \(x\) is
+\[
+  \overline{B}_d(x;r)
+  :=
+  \{\,y\in X : d(y,x)\leq r\,\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall y\in X{:}\quad
+y\in \overline{B}_d(x;r)
+\Longleftrightarrow
+d(y,x)\leq r.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A closed ball uses the same center and radius as the corresponding open ball,
+but it includes the boundary points at distance exactly \(r\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+\end{itemize}
+\end{dependencies}

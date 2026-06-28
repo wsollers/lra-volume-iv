@@ -1,0 +1,446 @@
+\begin{definitionbox}{Definition --- Metric Sequential Convergence}
+\begin{definition}[Metric Sequential Convergence]
+\label{def:metric-sequential-convergence}
+Let \((X,d)\) be a metric space.  A sequence \(\{x_n\}\) in \(X\) is
+\emph{convergent in \(X\)} if there exists \(x_0\in X\) such that for every
+\(\varepsilon>0\), there exists \(N\in\mathbb{N}\) such that
+\[
+  d(x_n,x_0)<\varepsilon
+  \qquad\text{for all } n\geq N.
+\]
+In this case, \(\{x_n\}\) converges to \(x_0\), written
+\[
+  x_n\to x_0,
+  \qquad
+  x_0=\lim_{n\to\infty}x_n.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+x_n\to x_0
+\quad\Longleftrightarrow\quad
+&x_0\in X
+\;\land\;
+\forall\varepsilon>0\,\exists N\in\mathbb{N}\,\forall n\in\mathbb{N}{:}
+\\
+&n\geq N
+\Longrightarrow
+d(x_n,x_0)<\varepsilon.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A sequence converges to \(x_0\) when its tail eventually lies inside every
+metric tolerance around \(x_0\).  The metric supplies the meaning of
+``within \(\varepsilon\)'' in the ambient space \(X\).
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This convention follows Definition~2.20 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Metric Neighborhood}
+\begin{definition}[Metric Neighborhood]
+\label{def:metric-neighborhood}
+Let \((X,d)\) be a metric space and let \(x\in X\).  A subset \(U\subseteq X\)
+is a \emph{neighborhood of \(x\)} if there exists \(\delta>0\) such that
+\[
+  B_d(x;\delta)\subseteq U.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+U\text{ is a neighborhood of }x
+\quad\Longleftrightarrow\quad
+U\subseteq X
+\;\land\;
+\exists\delta>0{:}\ B_d(x;\delta)\subseteq U.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A metric neighborhood of \(x\) is any subset of \(X\) that contains at least
+one open ball centered at \(x\).  The set \(U\) may be larger than that ball;
+the essential condition is that \(x\) has some positive-radius room inside
+\(U\).
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This convention follows Definition~2.21 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Epsilon Neighborhood}
+\begin{definition}[Epsilon Neighborhood]
+\label{def:metric-epsilon-neighborhood}
+Let \((X,d)\) be a metric space, let \(x\in X\), and let
+\(\varepsilon>0\).  The \emph{\(\varepsilon\)-neighborhood of \(x\)} is the
+open ball
+\[
+  B_d(x;\varepsilon)
+  =
+  \{y\in X:d(y,x)<\varepsilon\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+y\in B_d(x;\varepsilon)
+\quad\Longleftrightarrow\quad
+y\in X\;\land\; d(y,x)<\varepsilon.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An \(\varepsilon\)-neighborhood is the concrete neighborhood obtained by
+choosing a particular positive radius \(\varepsilon\).  It consists exactly of
+the points whose distance from \(x\) is less than that tolerance.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+  \item \hyperref[def:metric-neighborhood]{Definition: Metric Neighborhood}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Metric Neighborhood Criterion for Sequential Convergence]
+\label{thm:metric-neighborhood-criterion-sequential-convergence}
+Let \((X,d)\) be a metric space, let \(\{x_n\}\) be a sequence in \(X\), and
+let \(x\in X\).  Then
+\[
+  x_n\to x
+\]
+if and only if every neighborhood of \(x\) contains all but finitely many terms
+of \(\{x_n\}\).
+
+\smallskip
+\noindent
+\hyperref[prf:metric-neighborhood-criterion-sequential-convergence]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+x_n\to x
+\quad\Longleftrightarrow\quad
+\forall U\subseteq X{:}\;
+\bigl(U\text{ is a neighborhood of }x\bigr)
+\Longrightarrow
+\exists N\in\mathbb{N}\,\forall n\geq N{:}\ x_n\in U.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Sequential convergence can be tested by neighborhoods instead of numerical
+\(\varepsilon\)-bounds.  A convergent sequence eventually remains inside every
+set that contains some open ball around the limit.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This is the neighborhood characterization stated immediately after
+Definition~2.21 in Kainth's \emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-sequential-convergence]{Definition: Metric Sequential Convergence}
+  \item \hyperref[def:metric-neighborhood]{Definition: Metric Neighborhood}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Metric Cauchy Sequence}
+\begin{definition}[Metric Cauchy Sequence]
+\label{def:metric-cauchy-sequence}
+Let \((X,d)\) be a metric space.  A sequence \(\{x_n\}\) in \(X\) is
+\emph{Cauchy} if for every \(\varepsilon>0\), there exists \(N\in\mathbb{N}\)
+such that
+\[
+  d(x_n,x_m)<\varepsilon
+  \qquad\text{for all } n,m\geq N.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\{x_n\}\text{ is Cauchy}
+\quad\Longleftrightarrow\quad
+\forall\varepsilon>0\,\exists N\in\mathbb{N}\,\forall n,m\in\mathbb{N}{:}\;
+n,m\geq N
+\Longrightarrow
+d(x_n,x_m)<\varepsilon.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A Cauchy sequence is eventually internally stable: sufficiently late terms are
+close to one another, regardless of whether a limit point has already been
+identified in \(X\).
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This convention follows Definition~2.22 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Metric Convergent Sequences Have Unique Limits]
+\label{thm:metric-convergent-sequences-unique-limits}
+In metric spaces, convergent sequences have unique limits.
+
+\smallskip
+\noindent
+\hyperref[prf:metric-convergent-sequences-unique-limits]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \{x_n\}\subseteq X\,\forall x,y\in X{:}\quad
+\bigl(x_n\to x\ \land\ x_n\to y\bigr)
+\Longrightarrow
+x=y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+In a metric space, a convergent sequence cannot settle at two different
+points.  The positive definiteness of the metric turns zero distance between
+candidate limits into equality of the points.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Theorem~2.23 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-sequential-convergence]{Definition: Metric Sequential Convergence}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Metric Cauchy Sequence with Convergent Subsequence]
+\label{thm:metric-cauchy-sequence-convergent-subsequence}
+Let \(\{x_n\}\) be a Cauchy sequence in a metric space \((X,d)\), let
+\(x\in X\), and let \(\{x_{n_k}\}\) be a subsequence of \(\{x_n\}\) such that
+\[
+  \lim_{k\to\infty}x_{n_k}=x.
+\]
+Then \(x_n\to x\).
+
+\smallskip
+\noindent
+\hyperref[prf:metric-cauchy-sequence-convergent-subsequence]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\forall \{x_n\}\subseteq X\,\forall x\in X{:}\quad
+&\Bigl(
+\{x_n\}\text{ is Cauchy}
+\\
+&{}\land
+\exists\{x_{n_k}\}\text{ subsequence of }\{x_n\}{:}\ x_{n_k}\to x
+\Bigr)
+\Longrightarrow
+x_n\to x.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For a Cauchy sequence, one convergent subsequence determines the behavior of
+the whole sequence.  The Cauchy condition forces the full tail to follow any
+subsequence tail that has already converged.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Theorem~2.24 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-cauchy-sequence]{Definition: Metric Cauchy Sequence}
+  \item \hyperref[def:metric-sequential-convergence]{Definition: Metric Sequential Convergence}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Coordinatewise Sequences in \(\mathbb{R}^m\)]
+\label{thm:metric-euclidean-coordinatewise-sequences}
+Let \(\{x_n\}\) be a sequence in \(\mathbb{R}^m\), and let
+\(x_0\in\mathbb{R}^m\).  Write
+\[
+  x_n=\bigl(x_n^{(1)},\ldots,x_n^{(m)}\bigr)
+  \qquad\text{for all } n\in\mathbb{N}\cup\{0\}.
+\]
+Then:
+\begin{enumerate}
+  \item \(x_n\to x_0\) if and only if
+        \(x_n^{(j)}\to x_0^{(j)}\) for every \(j=1,\ldots,m\).
+  \item \(\{x_n\}\) is Cauchy if and only if
+        \(\{x_n^{(j)}\}\) is Cauchy for every \(j=1,\ldots,m\).
+\end{enumerate}
+
+\smallskip
+\noindent
+\hyperref[prf:metric-euclidean-coordinatewise-sequences]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+x_n\to x_0
+&\Longleftrightarrow
+\forall j\in\{1,\ldots,m\}{:}\; x_n^{(j)}\to x_0^{(j)},\\
+\{x_n\}\text{ is Cauchy}
+&\Longleftrightarrow
+\forall j\in\{1,\ldots,m\}{:}\; \{x_n^{(j)}\}\text{ is Cauchy}.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+In finite-dimensional Euclidean space, convergence and Cauchy behavior can be
+checked one coordinate at a time.  The Euclidean metric packages the finitely
+many coordinate estimates into one distance estimate.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Theorem~2.25 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-sequential-convergence]{Definition: Metric Sequential Convergence}
+  \item \hyperref[def:metric-cauchy-sequence]{Definition: Metric Cauchy Sequence}
+  \item \hyperref[def:euclidean-distance-rn]{Definition: Euclidean Distance on \(\mathbb{R}^n\)}
+  \item \hyperref[cor:euclidean-metric]{Corollary: Euclidean Metric}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Euclidean Cauchy Sequences Converge]
+\label{thm:metric-euclidean-cauchy-sequences-converge}
+Every Cauchy sequence in \(\mathbb{R}^m\) is convergent in \(\mathbb{R}^m\).
+
+\smallskip
+\noindent
+\hyperref[prf:metric-euclidean-cauchy-sequences-converge]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \{x_n\}\subseteq\mathbb{R}^m{:}\quad
+\{x_n\}\text{ is Cauchy}
+\Longrightarrow
+\exists x\in\mathbb{R}^m{:}\; x_n\to x.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+\(\mathbb{R}^m\) contains the limits of all of its Cauchy sequences.  This is
+the finite-dimensional Euclidean completeness property.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Theorem~2.26 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-cauchy-sequence]{Definition: Metric Cauchy Sequence}
+  \item \hyperref[def:metric-sequential-convergence]{Definition: Metric Sequential Convergence}
+  \item \hyperref[thm:metric-euclidean-coordinatewise-sequences]{Theorem: Coordinatewise Sequences in \(\mathbb{R}^m\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Bolzano--Weierstrass in \(\mathbb{R}^m\)]
+\label{thm:metric-euclidean-bolzano-weierstrass}
+Every bounded sequence in \(\mathbb{R}^m\) contains a subsequence that
+converges in \(\mathbb{R}^m\).
+
+\smallskip
+\noindent
+\hyperref[prf:metric-euclidean-bolzano-weierstrass]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \{x_n\}\subseteq\mathbb{R}^m{:}\quad
+\{x_n\}\text{ is bounded}
+\Longrightarrow
+\exists\{x_{n_k}\}\text{ subsequence }\exists x\in\mathbb{R}^m{:}\;
+x_{n_k}\to x.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Boundedness in finite-dimensional Euclidean space is strong enough to force
+some subsequence to settle to a Euclidean limit.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Theorem~2.27 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-sequential-convergence]{Definition: Metric Sequential Convergence}
+  \item \hyperref[def:euclidean-distance-rn]{Definition: Euclidean Distance on \(\mathbb{R}^n\)}
+  \item \hyperref[cor:euclidean-metric]{Corollary: Euclidean Metric}
+\end{itemize}
+\end{dependencies}

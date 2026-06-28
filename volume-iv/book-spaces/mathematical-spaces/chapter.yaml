@@ -1,0 +1,11 @@
+subject: mathematical-spaces
+display_title: Mathematical Spaces
+volume: volume-iv
+status: active
+dependencies:
+  prior: ''
+  next: metric-spaces
+path: volume-iv/book-spaces/mathematical-spaces
+book: book-spaces
+environments: []
+proof_files: []
