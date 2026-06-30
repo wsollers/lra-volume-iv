@@ -1,0 +1,83 @@
+\begin{definitionbox}{Definition --- Basis for a Topology}
+\begin{definition}[Basis for a Topology]\label{def:topological-basis}
+Let \((X,\tau)\) be a topological space.  A collection
+\(\mathcal{B}\subseteq\tau\) is a \emph{basis for the topology} \(\tau\) if
+every open set \(O\in\tau\) is the union of some subcollection of
+\(\mathcal{B}\).  The elements of \(\mathcal{B}\) are called
+\emph{basic elements} or \emph{basic open sets}.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\mathcal{B}\text{ is a basis for }\tau
+\Longleftrightarrow
+\mathcal{B}\subseteq\tau
+\text{ and }
+\forall O\in\tau\,\exists\mathcal{A}\subseteq\mathcal{B}{:}\;
+O=\bigcup_{B\in\mathcal{A}}B.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A basis is a smaller supply of open sets from which all open sets can be
+assembled by unions.  It records local building blocks for the topology.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Pointwise Characterization of a Basis]
+\label{prop:topological-basis-pointwise-characterization}
+Let \((X,\tau)\) be a topological space, and let
+\(\mathcal{B}\subseteq\tau\).  Then \(\mathcal{B}\) is a basis for \(\tau\)
+if and only if for every open set \(O\in\tau\) and every \(x\in O\), there is
+\(B\in\mathcal{B}\) such that
+\[
+  x\in B\subseteq O.
+\]
+Consequently, a subset \(A\subseteq X\) is open if and only if for each
+\(x\in A\), there is \(B\in\mathcal{B}\) such that
+\[
+  x\in B\subseteq A.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:topological-basis-pointwise-characterization]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\mathcal{B}\text{ is a basis for }\tau
+\Longleftrightarrow
+\forall O\in\tau\,\forall x\in O\,\exists B\in\mathcal{B}{:}\;
+x\in B\subseteq O.
+\]
+\[
+A\in\tau
+\Longleftrightarrow
+A\subseteq X
+\text{ and }
+\forall x\in A\,\exists B\in\mathcal{B}{:}\;
+x\in B\subseteq A.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The pointwise test says that a basis can be checked locally.  Around every
+point of every open set, there must be a basic open set that still lies inside
+the original open set.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+  \item \hyperref[def:topological-basis]{Definition: Basis for a Topology}
+\end{itemize}
+\end{dependencies}

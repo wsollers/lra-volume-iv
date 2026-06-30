@@ -13,56 +13,15 @@ The function \(d_2\) is a metric on \(\mathbb{R}^n\).
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-For \(x,y\in\mathbb{R}^n\),
-\[
-  d_2(x,y)=\sqrt{\sum_{i=1}^n (x_i-y_i)^2}\geq 0.
-\]
-This distance is \(0\) if and only if every square \((x_i-y_i)^2\) is \(0\),
-which is equivalent to \(x_i=y_i\) for every \(i\), hence to \(x=y\).
-Symmetry follows from \((x_i-y_i)^2=(y_i-x_i)^2\).
-
-For the triangle inequality, set \(u=x-z\) and \(v=z-y\).  Then
-\[
-  d_2(x,y)=|u+v|,\qquad d_2(x,z)=|u|,\qquad d_2(z,y)=|v|.
-\]
-Using \hyperref[thm:cauchy-schwarz-inequality]{Cauchy--Schwarz},
-\[
-  |u+v|^2
-  = |u|^2+2u\cdot v+|v|^2
-  \leq |u|^2+2|u|\,|v|+|v|^2
-  = (|u|+|v|)^2.
-\]
-Both sides are nonnegative, so \( |u+v|\leq |u|+|v| \).  Therefore
-\[
-  d_2(x,y)\leq d_2(x,z)+d_2(z,y).
-\]
-Thus \(d_2\) is a metric.
+TODO: professional standard proof for euclidean-distance-rn-metric.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-The first three metric requirements are coordinate checks.  A sum of squares
-is nonnegative, and it vanishes exactly when every coordinate difference
-vanishes.  Symmetry holds because changing \(x_i-y_i\) to \(y_i-x_i\) only
-changes the sign before squaring.
-
-The triangle inequality is the vector-length statement
-\[
-  |u+v|\leq |u|+|v|.
-\]
-After squaring, it becomes
-\[
-  |u+v|^2\leq (|u|+|v|)^2.
-\]
-Expanding the left side gives \(|u|^2+2u\cdot v+|v|^2\).  Cauchy--Schwarz gives
-\(u\cdot v\leq |u|\,|v|\), so the desired squared inequality follows.  Taking
-square roots preserves the inequality because both sides are nonnegative.
+TODO: detailed learning proof for euclidean-distance-rn-metric.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-The proof verifies nonnegativity, zero-distance, and symmetry by coordinates.
-The triangle inequality is Minkowski's inequality in finite dimensions, proved
-from Cauchy--Schwarz.
 \end{remark*}
 
 \begin{dependencies}

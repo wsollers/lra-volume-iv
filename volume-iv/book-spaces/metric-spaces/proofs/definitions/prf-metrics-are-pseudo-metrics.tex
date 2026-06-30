@@ -14,57 +14,15 @@ The converse is false: there exist pseudo-metrics that are not metrics.
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Let \(d\) be a metric on \(X\).  The metric axioms give
-\[
-d(x,y)\geq 0,\qquad d(x,y)=d(y,x),\qquad
-d(x,y)\leq d(x,z)+d(z,y)
-\]
-for all \(x,y,z\in X\).  They also give \(d(x,x)=0\), since
-\(d(x,y)=0\) if and only if \(x=y\).  Hence \(d\) satisfies every
-pseudo-metric axiom.
-
-For the converse, let \(X=\{a,b\}\) with \(a\neq b\), and define
-\(d:X\times X\to\mathbb{R}\) by \(d(x,y)=0\) for all \(x,y\in X\).
-Then \(d\) is nonnegative, symmetric, satisfies \(d(x,x)=0\), and
-satisfies the triangle inequality.  Thus \(d\) is a pseudo-metric.
-But \(d(a,b)=0\) while \(a\neq b\), so \(d\) is not a metric.
+TODO: professional standard proof for metrics-are-pseudo-metrics.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-
-\textbf{Step 1.} Compare the axioms.
-
-A metric has nonnegativity, symmetry, and the triangle inequality.  These are
-exactly three of the pseudo-metric requirements.  The remaining pseudo-metric
-requirement is \(d(x,x)=0\), which follows from the metric condition
-\[
-  d(x,y)=0 \Longleftrightarrow x=y
-\]
-by substituting \(y=x\).  Therefore every metric is a pseudo-metric.
-
-\textbf{Step 2.} Build a pseudo-metric that fails to be a metric.
-
-Take a two-point set \(X=\{a,b\}\) and assign distance zero to every pair:
-\[
-  d(a,a)=d(a,b)=d(b,a)=d(b,b)=0.
-\]
-All pseudo-metric axioms hold.  Nonnegativity and symmetry are immediate, and
-the triangle inequality says \(0\leq 0+0\), which is true.
-
-\textbf{Step 3.} Identify the failed metric axiom.
-
-The metric zero-distance condition would require
-\[
-  d(a,b)=0 \Longrightarrow a=b.
-\]
-But \(d(a,b)=0\) and \(a\neq b\).  Hence this pseudo-metric is not a metric,
-so the converse implication is false.
+TODO: detailed learning proof for metrics-are-pseudo-metrics.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-The forward direction is an axiom comparison.  The reverse direction is
-disproved by a two-point zero-distance example.
 \end{remark*}
 
 \begin{dependencies}

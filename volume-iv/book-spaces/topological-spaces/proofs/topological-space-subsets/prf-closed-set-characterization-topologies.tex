@@ -1,0 +1,97 @@
+\newpage
+\phantomsection
+\label{prf:closed-set-characterization-topologies}
+\LRAProofFor{thm:closed-set-characterization-topologies}
+
+\begin{remark*}[Return]
+\hyperref[thm:closed-set-characterization-topologies]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Closed-Set Characterization of Topologies]
+Let \(X\) be a set, and let \(\mathcal{C}\) be a collection of subsets of
+\(X\).  Suppose that \(\emptyset,X\in\mathcal{C}\), arbitrary intersections
+of elements of \(\mathcal{C}\) belong to \(\mathcal{C}\), and unions of two
+elements of \(\mathcal{C}\) belong to \(\mathcal{C}\).  Then there is a
+unique topology \(\tau\) on \(X\) whose family of closed sets is exactly
+\(\mathcal{C}\).
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Define
+\[
+  \tau=\{X\setminus C:C\in\mathcal{C}\}.
+\]
+Since \(X\in\mathcal{C}\) and \(\emptyset\in\mathcal{C}\), the sets
+\(\emptyset=X\setminus X\) and \(X=X\setminus\emptyset\) belong to \(\tau\).
+
+Let \(\{U_i\}_{i\in I}\) be any family of elements of \(\tau\).  For each
+\(i\in I\), choose \(C_i\in\mathcal{C}\) such that \(U_i=X\setminus C_i\).
+Then De Morgan's law gives
+\[
+  \bigcup_{i\in I}U_i
+  =
+  X\setminus\bigcap_{i\in I}C_i.
+\]
+The intersection \(\bigcap_{i\in I}C_i\) belongs to \(\mathcal{C}\), so
+\(\bigcup_{i\in I}U_i\in\tau\).  If \(U_1,U_2\in\tau\), write
+\(U_1=X\setminus C_1\) and \(U_2=X\setminus C_2\) with
+\(C_1,C_2\in\mathcal{C}\).  Then
+\[
+  U_1\cap U_2
+  =
+  X\setminus(C_1\cup C_2).
+\]
+Since \(C_1\cup C_2\in\mathcal{C}\), it follows that \(U_1\cap U_2\in\tau\).
+By induction, finite intersections of elements of \(\tau\) belong to \(\tau\).
+Thus \(\tau\) is a topology on \(X\).
+
+For this topology, a subset \(F\subseteq X\) is closed exactly when
+\(X\setminus F\in\tau\).  By the definition of \(\tau\), this holds exactly
+when \(F\in\mathcal{C}\).  Hence the family of closed sets is
+\(\mathcal{C}\).
+
+Finally, if \(\sigma\) is any topology on \(X\) whose closed sets are exactly
+\(\mathcal{C}\), then its open sets are precisely the complements of elements
+of \(\mathcal{C}\).  Therefore
+\[
+  \sigma=\{X\setminus C:C\in\mathcal{C}\}=\tau,
+\]
+so the topology is unique.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The closed sets determine the open sets by taking complements.  Therefore the
+only possible topology with closed-set family \(\mathcal{C}\) is
+\[
+  \tau=\{X\setminus C:C\in\mathcal{C}\}.
+\]
+The assumptions on \(\mathcal{C}\) are exactly the complement-dual versions of
+the topology axioms.  The sets \(\emptyset\) and \(X\) are open because they
+are complements of \(X\) and \(\emptyset\).  Arbitrary unions of open sets are
+open because the complement of an arbitrary union is an arbitrary
+intersection.  Finite intersections of open sets are open because the
+complement of a finite intersection is a finite union.
+
+Thus \(\tau\) is a topology.  Its closed sets are exactly the sets in
+\(\mathcal{C}\), by construction.  Since any topology with closed sets
+\(\mathcal{C}\) must have exactly the complements of those sets as its open
+sets, no second topology can have the same closed-set family.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Construct the only possible topology from complements of the proposed closed
+sets.  The three closure assumptions on \(\mathcal{C}\) verify the topology
+axioms through De Morgan's laws.  Uniqueness follows because closed sets
+determine open sets by complementation.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+  \item \hyperref[def:topological-closed-subset]{Definition: Closed Subset of a Topological Space}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

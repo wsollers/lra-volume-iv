@@ -1,0 +1,151 @@
+\begin{definitionbox}{Definition --- Closed Subset of a Topological Space}
+\begin{definition}[Closed Subset of a Topological Space]
+\label{def:topological-closed-subset}
+Let \((X,\tau)\) be a topological space, and let \(F\subseteq X\).  The subset
+\(F\) is \emph{closed in \((X,\tau)\)} if its complement
+\[
+  X\setminus F
+\]
+is open in \((X,\tau)\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+F\text{ is closed in }(X,\tau)
+\Longleftrightarrow
+F\subseteq X
+\text{ and }
+X\setminus F\in\tau.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closedness is defined by openness of the complement.  A subset is closed when
+everything outside it forms an open subset of the ambient topological space.
+\end{remark*}
+
+\begin{remark*}[Examples]
+The empty set \(\emptyset\) and the whole space \(X\) are both open and
+closed in every topological space \((X,\tau)\).  The set \(X\) is open by the
+topology axioms and closed because \(X\setminus X=\emptyset\) is open.  The
+set \(\emptyset\) is open by the topology axioms and closed because
+\(X\setminus\emptyset=X\) is open.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Closed-Set Characterization of Topologies]
+\label{thm:closed-set-characterization-topologies}
+Let \(X\) be a set, and let \(\mathcal{C}\) be a collection of subsets of
+\(X\).  Suppose that:
+\begin{enumerate}
+  \item \(\emptyset\in\mathcal{C}\) and \(X\in\mathcal{C}\);
+  \item the intersection of any family of elements of \(\mathcal{C}\) belongs
+        to \(\mathcal{C}\);
+  \item the union of any two elements of \(\mathcal{C}\) belongs to
+        \(\mathcal{C}\).
+\end{enumerate}
+Then there is a unique topology \(\tau\) on \(X\) whose family of closed sets
+is exactly \(\mathcal{C}\).
+
+\smallskip
+\noindent
+\hyperref[prf:closed-set-characterization-topologies]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\emptyset,X\in\mathcal{C}
+\land
+\forall \mathcal{A}\subseteq\mathcal{C}{:}\;
+\bigcap_{A\in\mathcal{A}}A\in\mathcal{C}
+\\
+&{}\land
+\forall C_1,C_2\in\mathcal{C}{:}\;
+C_1\cup C_2\in\mathcal{C}
+\\
+&\Longrightarrow
+\exists!\tau{:}\;
+\operatorname{Topology}(X,\tau)
+\land
+\mathcal{C}
+=
+\{F\subseteq X:X\setminus F\in\tau\}.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The topology axioms can be stated dually in terms of closed sets.  Open sets
+are closed under arbitrary unions and finite intersections, while closed sets
+are closed under arbitrary intersections and finite unions.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+  \item \hyperref[def:topological-closed-subset]{Definition: Closed Subset of a Topological Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Finer and Coarser Topologies}
+\begin{definition}[Finer and Coarser Topologies]
+\label{def:finer-coarser-topologies}
+Let \(\tau_1\) and \(\tau_2\) be topologies on a set \(X\).  The topology
+\(\tau_1\) is \emph{finer than} \(\tau_2\) if
+\[
+  \tau_2\subseteq\tau_1.
+\]
+Equivalently, \(\tau_2\) is \emph{coarser than} \(\tau_1\).  The two
+topologies are \emph{comparable} if one is finer than the other.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\tau_1\text{ is finer than }\tau_2
+\Longleftrightarrow
+\tau_2\subseteq\tau_1.
+\]
+\[
+\tau_1\text{ and }\tau_2\text{ are comparable}
+\Longleftrightarrow
+\tau_2\subseteq\tau_1
+\text{ or }
+\tau_1\subseteq\tau_2.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A finer topology has at least as many open sets as the coarser topology.
+Thus it can distinguish points and subsets at least as sharply as the coarser
+topology.
+\end{remark*}
+
+\begin{remark*}[Examples]
+If \(\mathcal{F}_i\) is the family of closed subsets determined by
+\(\tau_i\), then
+\[
+\tau_1\text{ is finer than }\tau_2
+\Longleftrightarrow
+\mathcal{F}_2\subseteq\mathcal{F}_1.
+\]
+The discrete topology is the finest topology on a given set because every
+subset is open.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+  \item \hyperref[def:discrete-topology]{Definition: Discrete Topology}
+  \item \hyperref[def:topological-closed-subset]{Definition: Closed Subset of a Topological Space}
+\end{itemize}
+\end{dependencies}

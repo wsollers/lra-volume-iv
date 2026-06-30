@@ -1,1 +1,167 @@
-% Definition source capture pending.
+\begin{definitionbox}{Definition --- Topological Space}
+\begin{definition}[Topological Space]\label{def:topological-space}
+Let \(X\) be a set.  A \emph{topology} on \(X\) is a collection
+\(\tau \subseteq \mathcal{P}(X)\) such that:
+\begin{enumerate}
+  \item \(\emptyset \in \tau\) and \(X \in \tau\);
+  \item if \(\{U_i\}_{i \in I}\) is any family of sets in \(\tau\), then
+        \(\bigcup_{i \in I} U_i \in \tau\);
+  \item if \(U_1,\ldots,U_n \in \tau\), then
+        \(\bigcap_{k=1}^{n} U_k \in \tau\).
+\end{enumerate}
+A \emph{topological space} is a pair \((X,\tau)\), where \(X\) is a set and
+\(\tau\) is a topology on \(X\).  The members of \(\tau\) are called the
+\emph{open sets} of the space.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Interpretation]
+A topology records which subsets are treated as open.  The axioms say that
+openness includes the impossible and total regions, is preserved under
+arbitrary unions, and is preserved under finite intersections.
+\end{remark*}
+
+\begin{remark*}[Examples]
+The same set may carry different topologies.  If \(\tau_1\) and \(\tau_2\)
+are different topologies on the same set \(X\), then \((X,\tau_1)\) and
+\((X,\tau_2)\) are different topological spaces because they generally
+declare different subsets of \(X\) to be open.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-open-set]{Definition: Metric Open Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Discrete Topology}
+\begin{definition}[Discrete Topology]\label{def:discrete-topology}
+Let \(X\) be a set.  The \emph{discrete topology} on \(X\) is the topology
+\[
+  \tau_{\mathrm{disc}}=\mathcal{P}(X).
+\]
+Thus every subset of \(X\) is open in the topological space
+\((X,\tau_{\mathrm{disc}})\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\tau_{\mathrm{disc}}=\mathcal{P}(X),
+\qquad
+U\text{ is open in }(X,\tau_{\mathrm{disc}})
+\Longleftrightarrow
+U\subseteq X.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The discrete topology makes the strongest possible declaration of openness:
+no subset is excluded.  It is the topology with the most open sets on the
+underlying set \(X\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Sierpinski Topology}
+\begin{definition}[Sierpinski Topology]\label{def:sierpinski-topology}
+Let \(X=\{0,1\}\).  The \emph{Sierpinski topology} on \(X\) is the topology
+\[
+  \tau_{\mathrm{S}}=\{\emptyset,\{1\},X\}.
+\]
+The topological space \((X,\tau_{\mathrm{S}})\) is called the
+\emph{Sierpinski space}.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+U\text{ is open in }(X,\tau_{\mathrm{S}})
+\Longleftrightarrow
+U=\emptyset\text{ or }U=\{1\}\text{ or }U=X.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Sierpinski topology is the smallest nontrivial topology on a two-point
+set.  It distinguishes the two points topologically: one singleton is open
+and the other singleton is not.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Cofinite Topology}
+\begin{definition}[Cofinite Topology]\label{def:cofinite-topology}
+Let \(X\) be a set.  The \emph{cofinite topology} on \(X\) is the topology
+\[
+  \tau_{\mathrm{cof}}
+  =
+  \{\,U\subseteq X : X\setminus U\text{ is finite}\,\}\cup\{\emptyset\}.
+\]
+Thus a subset of \(X\) is open exactly when it is empty or its complement in
+the ambient set is finite.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+U\text{ is open in }(X,\tau_{\mathrm{cof}})
+\Longleftrightarrow
+U=\emptyset
+\text{ or }
+X\setminus U\text{ is finite}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The cofinite topology treats almost all of \(X\) as open.  A nonempty open set
+may omit only finitely many points, so on an infinite set any two nonempty
+open sets must intersect.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Trivial Topology}
+\begin{definition}[Trivial Topology]\label{def:trivial-topology}
+Let \(X\) be a set.  The \emph{trivial topology} on \(X\) is the topology
+\[
+  \tau_{\mathrm{triv}}=\{\emptyset,X\}.
+\]
+Thus only \(\emptyset\) and \(X\) are open in the topological space
+\((X,\tau_{\mathrm{triv}})\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\tau_{\mathrm{triv}}=\{\emptyset,X\},
+\qquad
+U\text{ is open in }(X,\tau_{\mathrm{triv}})
+\Longleftrightarrow
+U=\emptyset\text{ or }U=X.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The trivial topology makes the weakest possible declaration of openness:
+only the sets required by the topology axioms are open.  It is the topology
+with the fewest open sets on the underlying set \(X\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+\end{itemize}
+\end{dependencies}
