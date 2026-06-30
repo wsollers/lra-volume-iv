@@ -1,0 +1,21 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=stealth]
+  \node[draw,rounded corners=3pt,minimum width=2.8cm,minimum height=1cm]
+    (product) at (0,1.6) {\(X\times X\)};
+  \node[draw,rounded corners=3pt,minimum width=2.8cm,minimum height=1cm]
+    (nonneg) at (5,1.6) {\(\mathbb{R}_{\geq 0}\)};
+  \draw[->,thick] (product) -- node[above] {\(d\)} (nonneg);
+
+  \node[draw,rounded corners=3pt,minimum width=2.8cm,minimum height=1cm]
+    (space) at (0,-0.2) {\(X\)};
+  \node[draw,rounded corners=3pt,minimum width=2.8cm,minimum height=1cm]
+    (profile) at (5,-0.2) {\(\mathbb{R}_{\geq 0}\)};
+  \draw[->,thick,blue!70] (space) -- node[below] {\(\delta_z(x)=d(z,x)\)} (profile);
+
+  \draw[->,gray!70,thick] (space.north) -- node[left] {\(x\mapsto(z,x)\)} (product.south);
+  \node[blue!70] at (2.5,-1.15) {freeze the first input at \(z\)};
+
+  \fill[blue!70] (-0.9,-0.2) circle (2pt);
+  \node[below=3pt] at (-0.9,-0.2) {\(x\)};
+  \fill[blue!70] (0.9,-0.2) circle (2pt);
+  \node[below=3pt] at (0.9,-0.2) {\(z\)};
+\end{tikzpicture}

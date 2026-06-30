@@ -1,8 +1,364 @@
 \begin{remark*}[Exposition]
-Open and closed sets describe how subsets sit inside a metric space.  Open
-sets are subsets that contain a small ball around each of their points.
-Closed sets are subsets whose complements are open.
+Open and closed sets describe how subsets sit inside a metric space.  The
+primitive local objects are open balls: a set is open when every one of its
+points has a small ball that remains inside the set.  Closed sets are then
+defined by open complements, and closure, interior, and boundary record the
+points forced by these local tests.
 \end{remark*}
+
+\begin{definitionbox}{Definition --- Metric Open Set}
+\begin{definition}[Metric Open Set]\label{def:metric-open-set}
+Let \((X,d)\) be a metric space.  A subset \(E\subseteq X\) is \emph{open in
+\((X,d)\)} if either \(E=\varnothing\) or, for every \(x\in E\), there exists
+\(\varepsilon>0\) such that
+\[
+  B_d(x;\varepsilon)\subseteq E.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+E\text{ is open in }(X,d)
+\quad\Longleftrightarrow\quad
+E\subseteq X
+\;\land\;
+\bigl(E=\varnothing
+\;\lor\;
+\forall x\in E\,\exists\varepsilon>0{:}\ B_d(x;\varepsilon)\subseteq E\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An open set contains room around each of its points.  The amount of room may
+depend on the point, but every point of the set must have some positive-radius
+ball that stays inside the set.
+\end{remark*}
+
+\begin{remark*}[Examples]
+In \(\mathbb{R}\) with the usual metric, each interval \((a,b)\) is open.
+The interval \([a,b]\) is not open when \(a<b\), because the endpoints have no
+positive-radius open interval contained in \([a,b]\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Open Balls are Open]
+\label{thm:metric-open-balls-are-open}
+Let \((X,d)\) be a metric space.  For every \(x\in X\) and every \(r>0\),
+the open ball \(B_d(x;r)\) is open in \((X,d)\).
+
+\smallskip
+\noindent
+\hyperref[prf:metric-open-balls-are-open]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in X\,\forall r>0{:}\quad
+B_d(x;r)\text{ is open in }(X,d).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every metric ball contains room around each of its points.  The triangle
+inequality is the mechanism that transfers room around the center to room
+around an arbitrary point inside the ball.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Theorem~3.4 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+  \item \hyperref[def:metric-open-set]{Definition: Metric Open Set}
+  \item \hyperref[lem:metric-key-local-ball]{Lemma: Key Local Ball Lemma}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Metric Open Set Closure Properties]
+\label{thm:metric-open-set-closure-properties}
+Let \(X\) be a metric space.  Then:
+\begin{enumerate}
+  \item the empty set \(\varnothing\) and the space \(X\) are open sets;
+  \item an arbitrary union of open subsets of \(X\) is open;
+  \item any finite intersection of open subsets of \(X\) is open.
+\end{enumerate}
+
+\smallskip
+\noindent
+\hyperref[prf:metric-open-set-closure-properties]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+If \(X\) is a metric space, then
+\[
+\varnothing\text{ is open in }X,
+\qquad
+X\text{ is open in }X,
+\]
+\[
+\{U_\alpha\}_{\alpha\in A}\text{ open in }X
+\Longrightarrow
+\bigcup_{\alpha\in A}U_\alpha\text{ is open in }X,
+\]
+and, for \(n\in\mathbb{N}\),
+\[
+U_1,\ldots,U_n\text{ open in }X
+\Longrightarrow
+\bigcap_{k=1}^{n}U_k\text{ is open in }X.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Metric open sets are stable under the same basic operations that define a
+topology: arbitrary unions and finite intersections.  Thus every metric
+determines a topology by declaring its metric-open subsets to be open.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This result corresponds to Theorem~3.2 in Kainth's
+\emph{A Comprehensive Textbook on Metric Spaces}
+\cite{KainthComprehensiveMetricSpaces2023}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-set]{Definition: Metric Open Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Metric Closed Set}
+\begin{definition}[Metric Closed Set]\label{def:metric-closed-set}
+Let \((X,d)\) be a metric space.  A subset \(E\subseteq X\) is \emph{closed in
+\((X,d)\)} if its complement \(E^c=X\setminus E\) is open in \((X,d)\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+E\text{ is closed in }(X,d)
+\quad\Longleftrightarrow\quad
+E\subseteq X
+\;\land\;
+E^c=X\setminus E
+\;\land\;
+E^c\text{ is open in }(X,d).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A closed set is defined by the openness of what lies outside it.  In metric
+spaces this means every point outside \(E\) has some positive-radius ball that
+misses \(E\).
+\end{remark*}
+
+\begin{remark*}[Notation]
+When \(E\) is a subset of a fixed ambient space \(X\), the symbol \(E^c\)
+denotes the complement of \(E\) in \(X\):
+\[
+  E^c=X\setminus E.
+\]
+\end{remark*}
+
+\begin{remark*}[Examples]
+In \(\mathbb{R}\) with the usual metric, each interval \([a,b]\) is closed.
+The interval \((a,b)\) is not closed when \(a<b\), because it omits its
+endpoints.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-set]{Definition: Metric Open Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Complement of a Closed Ball Is Open]
+\label{thm:metric-complement-closed-ball-open}
+Let \((X,d)\) be a metric space.  For every \(x\in X\) and every \(r\geq 0\),
+\[
+  X\setminus \overline{B}_d(x;r)
+  =
+  \{\,y\in X:d(x,y)>r\,\}
+\]
+is open.
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+X\setminus \overline{B}_d(x;r)
+\text{ is open in }(X,d).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The complement of a closed ball is the region strictly beyond its radius.
+Every point there has a positive margin from the boundary, so a small ball
+around it stays in the complement.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+  \item \hyperref[def:metric-closed-ball]{Definition: Closed Ball}
+  \item \hyperref[def:metric-open-set]{Definition: Metric Open Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Closed Balls Are Closed]\label{thm:metric-closed-balls-are-closed}
+Let \((X,d)\) be a metric space.  For every \(x\in X\) and every \(r\geq 0\),
+the closed ball
+\[
+  \overline{B}_d(x;r)=\{\,y\in X:d(x,y)\leq r\,\}
+\]
+is closed.
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in X\,\forall r\geq 0{:}\quad
+\overline{B}_d(x;r)\text{ is closed in }(X,d).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closed balls are closed because their complements are open.  Points outside a
+closed ball have a positive margin beyond the radius, and that margin gives an
+open ball disjoint from the closed ball.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-closed-ball]{Definition: Closed Ball}
+  \item \hyperref[def:metric-closed-set]{Definition: Metric Closed Set}
+  \item \hyperref[thm:metric-complement-closed-ball-open]{Theorem: Complement of a Closed Ball Is Open}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Metric Closure}
+\begin{definition}[Metric Closure]\label{def:metric-closure}
+Let \((X,d)\) be a metric space and let \(E\subseteq X\).  The
+\emph{closure} of \(E\), denoted \(\operatorname{cl}(E)\), is
+\[
+  \operatorname{cl}(E)
+  =
+  \{x\in X:\forall\varepsilon>0,\ B_d(x;\varepsilon)\cap E\neq\varnothing\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+x\in\operatorname{cl}(E)
+\quad\Longleftrightarrow\quad
+\forall\varepsilon>0{:}\ B_d(x;\varepsilon)\cap E\neq\varnothing.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The closure of \(E\) contains the points of \(E\) and all points that cannot
+be separated from \(E\) by any positive-radius ball.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Closure of an Open Ball Is Contained in the Closed Ball]
+\label{thm:metric-closure-open-ball-contained-closed-ball}
+Let \((X,d)\) be a metric space.  For every \(x\in X\) and every \(r>0\),
+\[
+  \operatorname{cl}\bigl(B_d(x;r)\bigr)\subseteq \overline{B}_d(x;r).
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+z\in \operatorname{cl}\bigl(B_d(x;r)\bigr)
+\Longrightarrow
+d(x,z)\leq r.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taking the closure of an open ball may add boundary points, but it cannot add
+points whose distance from the center is larger than the radius.  Important
+trap: equality need not hold in every metric space,
+\[
+  \operatorname{cl}\bigl(B_d(x;r)\bigr)\neq \overline{B}_d(x;r),
+\]
+and can occur.  For example, in a discrete metric space, the closure of an
+open ball may be strictly smaller than the corresponding closed ball.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+  \item \hyperref[def:metric-closed-ball]{Definition: Closed Ball}
+  \item \hyperref[def:metric-closure]{Definition: Metric Closure}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Dense Subset}
+\begin{definition}[Dense Subset]\label{def:metric-dense-subset}
+Let \((X,d)\) be a metric space and let \(A\subseteq X\).  The set \(A\) is
+\emph{dense in \(X\)} if
+\[
+  \operatorname{cl}(A)=X.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\text{ is dense in }X
+\quad\Longleftrightarrow\quad
+\operatorname{cl}(A)=X.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A dense set reaches every point of the ambient space by approximation.  Every
+point of \(X\) either belongs to \(A\) or is arbitrarily close to points of
+\(A\).
+\end{remark*}
+
+\begin{remark*}[Examples]
+In \(\mathbb{R}\) with the usual metric, \(\mathbb{Q}\) is dense in
+\(\mathbb{R}\), and \(\mathbb{R}\setminus\mathbb{Q}\) is also dense in
+\(\mathbb{R}\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-closure]{Definition: Metric Closure}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition --- Metric Interior Point}
 \begin{definition}[Metric Interior Point]\label{def:metric-interior-point}
@@ -73,135 +429,6 @@ The notation \(E^\circ\) is read as the \emph{interior of \(E\)} or
 \end{itemize}
 \end{dependencies}
 
-\begin{definitionbox}{Definition --- Metric Open Set}
-\begin{definition}[Metric Open Set]\label{def:metric-open-set}
-Let \((X,d)\) be a metric space.  A subset \(E\subseteq X\) is \emph{open in
-\((X,d)\)} if either \(E=\varnothing\) or every \(x\in E\) is an interior point
-of \(E\).
-\end{definition}
-\end{definitionbox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-E\text{ is open in }(X,d)
-\quad\Longleftrightarrow\quad
-E\subseteq X
-\;\land\;
-\bigl(E=\varnothing
-\;\lor\;
-\forall x\in E\,\exists\varepsilon>0{:}\ B_d(x;\varepsilon)\subseteq E\bigr).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-An open set contains room around each of its points.  The amount of room may
-depend on the point, but every point of the set must have some positive-radius
-ball that stays inside the set.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:metric-space]{Definition: Metric Space}
-  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
-  \item \hyperref[def:metric-epsilon-neighborhood]{Definition: Epsilon Neighborhood}
-  \item \hyperref[def:metric-interior-point]{Definition: Metric Interior Point}
-\end{itemize}
-\end{dependencies}
-
-\begin{theorembox}{Theorem}
-\begin{theorem}[Metric Open Set Closure Properties]
-\label{thm:metric-open-set-closure-properties}
-Let \(X\) be a metric space.  Then:
-\begin{enumerate}
-  \item the empty set \(\varnothing\) and the space \(X\) are open sets;
-  \item an arbitrary union of open subsets of \(X\) is open;
-  \item any finite intersection of open subsets of \(X\) is open.
-\end{enumerate}
-
-\smallskip
-\noindent
-\hyperref[prf:metric-open-set-closure-properties]{\textit{Go to proof.}}
-\end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-If \(X\) is a metric space, then
-\[
-\varnothing\text{ is open in }X,
-\qquad
-X\text{ is open in }X,
-\]
-\[
-\{U_\alpha\}_{\alpha\in A}\text{ open in }X
-\Longrightarrow
-\bigcup_{\alpha\in A}U_\alpha\text{ is open in }X,
-\]
-and, for \(n\in\mathbb{N}\),
-\[
-U_1,\ldots,U_n\text{ open in }X
-\Longrightarrow
-\bigcap_{k=1}^{n}U_k\text{ is open in }X.
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Metric open sets are stable under the same basic operations that define a
-topology: arbitrary unions and finite intersections.  Thus every metric
-determines a topology by declaring its metric-open subsets to be open.
-\end{remark*}
-
-\begin{remark*}[Historical note]
-This result corresponds to Theorem~3.2 in Kainth's
-\emph{A Comprehensive Textbook on Metric Spaces}
-\cite{KainthComprehensiveMetricSpaces2023}.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:metric-space]{Definition: Metric Space}
-  \item \hyperref[def:metric-open-set]{Definition: Metric Open Set}
-  \item \hyperref[def:metric-interior-point]{Definition: Metric Interior Point}
-\end{itemize}
-\end{dependencies}
-
-\begin{theorembox}{Theorem}
-\begin{theorem}[Open Balls are Open]
-\label{thm:metric-open-balls-are-open}
-Open balls in metric spaces are open sets.
-
-\smallskip
-\noindent
-\hyperref[prf:metric-open-balls-are-open]{\textit{Go to proof.}}
-\end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\forall (X,d)\,\forall x\in X\,\forall r>0{:}\quad
-B_d(x;r)\text{ is open in }(X,d).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Every metric ball contains room around each of its points.  The triangle
-inequality is the mechanism that transfers room around the center to room
-around an arbitrary point inside the ball.
-\end{remark*}
-
-\begin{remark*}[Historical note]
-This result corresponds to Theorem~3.4 in Kainth's
-\emph{A Comprehensive Textbook on Metric Spaces}
-\cite{KainthComprehensiveMetricSpaces2023}.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:metric-space]{Definition: Metric Space}
-  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
-  \item \hyperref[def:metric-open-set]{Definition: Metric Open Set}
-\end{itemize}
-\end{dependencies}
-
 \begin{theorembox}{Theorem}
 \begin{theorem}[Interior is the Largest Open Subset]
 \label{thm:metric-interior-largest-open-subset}
@@ -251,42 +478,35 @@ This result corresponds to Theorem~3.5 in Kainth's
 \end{itemize}
 \end{dependencies}
 
-\begin{definitionbox}{Definition --- Metric Closed Set}
-\begin{definition}[Metric Closed Set]\label{def:metric-closed-set}
-Let \((X,d)\) be a metric space.  A subset \(E\subseteq X\) is \emph{closed in
-\((X,d)\)} if its complement \(E^c=X\setminus E\) is open in \((X,d)\).
+\begin{definitionbox}{Definition --- Metric Boundary}
+\begin{definition}[Metric Boundary]\label{def:metric-boundary}
+Let \((X,d)\) be a metric space and let \(E\subseteq X\).  The
+\emph{boundary} of \(E\) is
+\[
+  \partial E
+  =
+  \operatorname{cl}(E)\cap \operatorname{cl}(X\setminus E).
+\]
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-E\text{ is closed in }(X,d)
+x\in\partial E
 \quad\Longleftrightarrow\quad
-E\subseteq X
+x\in\operatorname{cl}(E)
 \;\land\;
-E^c=X\setminus E
-\;\land\;
-E^c\text{ is open in }(X,d).
+x\in\operatorname{cl}(X\setminus E).
 \]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-A closed set is defined by the openness of what lies outside it.  In metric
-spaces this means every point outside \(E\) has some positive-radius ball that
-misses \(E\).
-\end{remark*}
-
-\begin{remark*}[Notation]
-When \(E\) is a subset of a fixed ambient space \(X\), the symbol \(E^c\)
-denotes the complement of \(E\) in \(X\):
-\[
-  E^c=X\setminus E.
-\]
+Boundary points are touched from both sides: every small ball around a
+boundary point meets \(E\) and also meets the complement of \(E\).
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:metric-space]{Definition: Metric Space}
-  \item \hyperref[def:metric-open-set]{Definition: Metric Open Set}
+  \item \hyperref[def:metric-closure]{Definition: Metric Closure}
 \end{itemize}
 \end{dependencies}

@@ -69,3 +69,191 @@ but it includes the boundary points at distance exactly \(r\).
   \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
 \end{itemize}
 \end{dependencies}
+
+\begin{lemmabox}{Lemma}
+\begin{lemma}[Key Local Ball Lemma]\label{lem:metric-key-local-ball}
+Let \((X,d)\) be a metric space.  If \(y\in B_d(x;r)\), then
+\[
+  B_d(y;r-d(x,y))\subseteq B_d(x;r).
+\]
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in X\,\forall r>0{:}\quad
+y\in B_d(x;r)
+\Longrightarrow
+B_d(y;r-d(x,y))\subseteq B_d(x;r).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every point inside an open ball has some positive-radius room that remains
+inside the original ball.  The available radius is the unused distance from
+\(y\) to the boundary.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Ball Nesting]\label{thm:metric-ball-nesting}
+Let \((X,d)\) be a metric space, let \(x\in X\), and let \(0<r\leq s\).
+Then
+\[
+  B_d(x;r)\subseteq B_d(x;s).
+\]
+If \(r<s\), then also
+\[
+  \overline{B}_d(x;r)\subseteq B_d(x;s).
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+0<r\leq s
+\Longrightarrow
+B_d(x;r)\subseteq B_d(x;s),
+\]
+and
+\[
+0<r<s
+\Longrightarrow
+\overline{B}_d(x;r)\subseteq B_d(x;s).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Balls with the same center are ordered by radius.  A strictly larger open
+ball even contains the closed ball of the smaller radius.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+  \item \hyperref[def:metric-closed-ball]{Definition: Closed Ball}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Ball Containment by Center Distance]
+\label{thm:metric-ball-containment-by-center-distance}
+Let \((X,d)\) be a metric space, let \(x,y\in X\), and let \(r,s>0\).
+
+If
+\[
+  d(x,y)+r\leq s,
+\]
+then
+\[
+  B_d(x;r)\subseteq B_d(y;s).
+\]
+If
+\[
+  d(x,y)+r<s,
+\]
+then
+\[
+  \overline{B}_d(x;r)\subseteq B_d(y;s).
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+d(x,y)+r\leq s
+\Longrightarrow
+B_d(x;r)\subseteq B_d(y;s),
+\]
+and
+\[
+d(x,y)+r<s
+\Longrightarrow
+\overline{B}_d(x;r)\subseteq B_d(y;s).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A ball centered at \(x\) sits inside a ball centered at \(y\) when the radius
+available at \(y\) is large enough to pay for both the center distance and
+the radius around \(x\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+  \item \hyperref[def:metric-closed-ball]{Definition: Closed Ball}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Intersecting Balls Imply Center-Distance Bound]
+\label{thm:metric-intersecting-balls-center-distance-bound}
+Let \((X,d)\) be a metric space, let \(x,y\in X\), and let \(r,s>0\).  If
+\[
+  B_d(x;r)\cap B_d(y;s)\neq\varnothing,
+\]
+then
+\[
+  d(x,y)<r+s.
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+B_d(x;r)\cap B_d(y;s)\neq\varnothing
+\Longrightarrow
+d(x,y)<r+s.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+If two open balls overlap, a point in the overlap gives a two-step path from
+one center to the other.  The triangle inequality bounds the center distance
+by the sum of the two radii.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Closed Balls Contain Open Balls]
+\label{thm:metric-closed-balls-contain-open-balls}
+Let \((X,d)\) be a metric space.  For every \(x\in X\) and every \(r>0\),
+\[
+  B_d(x;r)\subseteq \overline{B}_d(x;r).
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+d(x,y)<r
+\Longrightarrow
+d(x,y)\leq r.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The closed ball of radius \(r\) keeps all points of the open ball and adds
+the possible boundary points at distance exactly \(r\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-open-ball]{Definition: Open Ball}
+  \item \hyperref[def:metric-closed-ball]{Definition: Closed Ball}
+\end{itemize}
+\end{dependencies}
