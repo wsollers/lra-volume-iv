@@ -1,0 +1,32 @@
+\begin{tikzpicture}[scale=0.95,>=stealth]
+  \fill[blue!8]
+    (0.0,0.0) .. controls (0.6,0.9) and (2.3,1.0) .. (2.85,0.2)
+    .. controls (3.35,-0.55) and (2.55,-1.25) .. (1.45,-1.2)
+    .. controls (0.25,-1.15) and (-0.45,-0.55) .. (0.0,0.0);
+  \draw[blue!65,thick]
+    (0.0,0.0) .. controls (0.6,0.9) and (2.3,1.0) .. (2.85,0.2)
+    .. controls (3.35,-0.55) and (2.55,-1.25) .. (1.45,-1.2)
+    .. controls (0.25,-1.15) and (-0.45,-0.55) .. (0.0,0.0);
+
+  \coordinate (x) at (-1.45,0.95);
+  \coordinate (a) at (0.25,0.35);
+  \coordinate (b) at (1.05,-0.45);
+  \coordinate (c) at (2.25,0.35);
+  \coordinate (p) at (0.25,0.35);
+
+  \foreach \q in {a,b,c}
+    \fill[black] (\q) circle (1.8pt);
+
+  \fill[red!75] (x) circle (2.2pt);
+  \node[above left] at (x) {\(x\)};
+  \node[blue!70] at (1.65,0.95) {\(A\)};
+
+  \draw[gray!60] (x) -- (b);
+  \draw[gray!60] (x) -- (c);
+  \draw[red!75,very thick] (x) -- (p)
+    node[midway,above,sloped] {\(d(x,A)\)};
+
+  \node[below right] at (p) {\(a\)};
+  \node[align=center] at (0.85,-1.9)
+    {\(d(x,A)=\inf\{d(x,a):a\in A\}\)};
+\end{tikzpicture}
