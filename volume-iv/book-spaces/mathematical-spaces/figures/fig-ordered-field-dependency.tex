@@ -1,0 +1,16 @@
+\begin{tikzpicture}[
+  >=Stealth,
+  every node/.style={font=\small},
+  box/.style={draw, rounded corners=2pt, align=center, inner sep=5pt}
+]
+  \node[box] (axioms) at (0,0) {ordered field\\axioms};
+  \node[box] (translation) at (3.0,0) {translation\\invariance};
+  \node[box] (mult) at (6.0,0) {multiplication\\order laws};
+  \node[box] (reciprocal) at (6.0,-1.8) {reciprocal\\sign laws};
+  \node[box] (division) at (3.0,-1.8) {division\\order laws};
+  \draw[->, thick] (axioms) -- (translation);
+  \draw[->, thick] (translation) -- (mult);
+  \draw[->, thick] (mult) -- (reciprocal);
+  \draw[->, thick] (reciprocal) -- (division);
+  \draw[->, thick] (mult) -- (division);
+\end{tikzpicture}
