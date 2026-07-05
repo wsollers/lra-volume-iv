@@ -151,7 +151,8 @@ Completed in this tracker: 0
 
 15. () `thm:metric-closed-balls-contain-open-balls` — **Closed Balls Contain Open Balls**
    > **Statement.**
-   > Let \((X,d)\) be a metric space. For every \(x\in X\) and every \(r>0\),
+   > Let \((X,d)\) be a metric space. For every \(x
+   > \in X\) and every \(r>0\),
    > \[
    >  B_d(x;r)\subseteq \overline{B}_d(x;r).
    > \]
