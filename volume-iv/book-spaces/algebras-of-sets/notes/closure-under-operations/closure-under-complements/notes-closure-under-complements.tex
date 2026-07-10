@@ -1,0 +1,45 @@
+% Subsection: Closure Under Complements  (notes stub; content authored later)
+\subsection{Closure Under Complements}
+
+\begin{remark*}[Exposition]
+Complement closure is different from union or intersection closure because it
+depends explicitly on the ambient set.  The complement of \(A\) is not
+absolute; it is the part of the fixed universe \(X\) outside \(A\).
+\end{remark*}
+
+\begin{definition}[Closed Under Complements]\label{def:closed-under-complements}
+Let \(X\) be a set and let \(\mathcal{F}\subseteq\mathcal{P}(X)\).  The family
+\(\mathcal{F}\) is \emph{closed under complements} if
+\[
+  A\in\mathcal{F}
+  \quad\Longrightarrow\quad
+  X\setminus A\in\mathcal{F}.
+\]
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\in\mathcal{F},\qquad A^c=X\setminus A\in\mathcal{F}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complement closure says that whenever a subset is admitted, its ambient
+opposite is admitted too.  This makes the family stable under switching a
+membership condition to its negation.
+\end{remark*}
+
+\begin{remark*}[Examples]
+The full power set \(\mathcal{P}(X)\) is closed under complements.  The family
+\(\{\varnothing,X\}\) is also closed under complements.  The family of finite
+subsets of an infinite set \(X\) is not closed under complements, because the
+complement of a finite subset of \(X\) may be infinite.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closed-under-operation]{Closed Under an Operation}
+  \item \hyperref[def:complement]{Complement}
+  \item \hyperref[def:power-set]{Power Set}
+\end{itemize}
+\end{dependencies}

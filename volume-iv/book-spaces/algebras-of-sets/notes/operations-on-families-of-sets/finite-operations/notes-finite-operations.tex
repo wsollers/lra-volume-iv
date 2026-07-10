@@ -1,0 +1,60 @@
+% Subsection: Finite Operations  (notes stub; content authored later)
+\subsection{Finite Operations}
+
+\begin{remark*}[Exposition]
+Finite operations combine only finitely many selected subsets at a time.
+They are the first algebraic layer because they mirror ordinary algebraic
+manipulation: take two sets, then three, then any finite list, and ask how the
+family behaves under those finite combinations.
+\end{remark*}
+
+\begin{definition}[Finite Operation on a Family]\label{def:finite-operation-on-family}
+Let \(X\) be a set and let \(\mathcal{F}\subseteq\mathcal{P}(X)\).  A
+\emph{finite operation on \(\mathcal{F}\)} is an operation formed from finitely
+many inputs \(A_1,\dots,A_n\in\mathcal{F}\), where \(n\geq 1\), using a fixed
+finite set-theoretic rule.
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+A typical finite union operation on \(\mathcal{F}\) has the form
+\[
+  A_1,\dots,A_n\in\mathcal{F}
+  \quad\Longmapsto\quad
+  \bigcup_{k=1}^{n}A_k\subseteq X,
+  \qquad n\geq 1.
+\]
+A typical finite intersection operation has the form
+\[
+  A_1,\dots,A_n\in\mathcal{F}
+  \quad\Longmapsto\quad
+  \bigcap_{k=1}^{n}A_k\subseteq X,
+  \qquad n\geq 1.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Finite operations are insensitive to infinite limiting behavior.  They ask
+what can be built from a bounded amount of set manipulation.  Rings and
+algebras of sets will be organized around this finite level.
+\end{remark*}
+
+\begin{remark*}[Examples]
+If \(A,B,C\in\mathcal{F}\), then
+\[
+  (A\cup B)\cap C,
+  \qquad
+  A\setminus(B\cap C),
+  \qquad
+  (A^c\cup B)\cap C
+\]
+are all outputs of finite operations on members of \(\mathcal{F}\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:family-of-subsets]{Family of Subsets}
+  \item \hyperref[def:finite-infinite]{Finite and Infinite Sets}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+\end{itemize}
+\end{dependencies}

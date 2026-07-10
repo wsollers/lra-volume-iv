@@ -1,0 +1,52 @@
+% Subsection: Examples of Seed Families  (notes stub; content authored later)
+\subsection{Examples of Seed Families}
+
+\begin{remark*}[Exposition]
+Most useful set systems are not specified by listing every admitted subset.
+Instead, one begins with a small family whose members are easy to describe,
+then enlarges it by enforcing chosen closure rules.  The initial family is the
+seed data.  Later sections make the generated enlargement precise.
+\end{remark*}
+
+\begin{definition}[Seed Family]\label{def:seed-family}
+Let \(X\) be a set.  A \emph{seed family on \(X\)} is a family
+\(\mathcal{G}\subseteq\mathcal{P}(X)\) chosen as initial data for constructing
+or generating a larger set system on \(X\).
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \mathcal{G}\text{ is a seed family on }X
+  \quad\Longrightarrow\quad
+  \mathcal{G}\subseteq\mathcal{P}(X).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The word ``seed'' does not add a new set-theoretic condition beyond being a
+family of subsets.  It records the intended use of the family: the members of
+\(\mathcal{G}\) are the starting pieces from which a larger admissible system
+will be generated.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The same pattern will recur throughout the book.  A family of basic sets is
+chosen first; then a structural operation closes that family into the kind of
+system needed for the theory.  Metric-space chapters will use balls as basic
+sets.  Topological chapters will study systems of open sets.  Measure-theory
+chapters will use sigma-algebras to specify the measurable subsets.
+\end{remark*}
+
+\begin{remark*}[Examples]
+Typical seed families include intervals in \(\mathbb{R}\), rectangles in
+\(\mathbb{R}^{n}\), balls in a metric setting, and any named collection of
+subsets whose closure under later operations is intended to produce a larger
+system.  At this stage these are only families of subsets.  Their later role
+depends on which closure rule is imposed.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:family-of-subsets]{Family of Subsets}
+\end{itemize}
+\end{dependencies}

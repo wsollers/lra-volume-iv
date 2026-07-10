@@ -1,0 +1,61 @@
+% Subsection: Countable Operations  (notes stub; content authored later)
+\subsection{Countable Operations}
+
+\begin{remark*}[Exposition]
+Countable operations are the step from finite algebraic manipulation to the
+operations used by analysis.  They allow a sequence of selected subsets to be
+combined into a single subset of the ambient set.
+\end{remark*}
+
+\begin{definition}[Countable Operation on a Family]\label{def:countable-operation-on-family}
+Let \(X\) be a set and let \(\mathcal{F}\subseteq\mathcal{P}(X)\).  A
+\emph{countable operation on \(\mathcal{F}\)} is an operation whose inputs are
+a countable family \(\{A_n\}_{n\in\mathbb{N}}\) of members of \(\mathcal{F}\)
+and whose output is a subset of \(X\).
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+The standard countable union and countable intersection operations have the
+forms
+\[
+  \{A_n\}_{n\in\mathbb{N}}\subseteq\mathcal{F}
+  \quad\Longmapsto\quad
+  \bigcup_{n=1}^{\infty}A_n\subseteq X
+\]
+and
+\[
+  \{A_n\}_{n\in\mathbb{N}}\subseteq\mathcal{F}
+  \quad\Longmapsto\quad
+  \bigcap_{n=1}^{\infty}A_n\subseteq X.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Countable operations are stronger than finite operations because the input
+list may continue indefinitely.  Sigma-algebras are built to tolerate this
+countable level of set formation.  Topologies will tolerate arbitrary unions
+but only finite intersections; this contrast will be handled in the later
+topology chapter.
+\end{remark*}
+
+\begin{remark*}[Examples]
+If each \(A_n\) belongs to a family \(\mathcal{F}\), then the increasing union
+\[
+  A_1\cup A_2\cup A_3\cup\cdots
+\]
+and the decreasing intersection
+\[
+  A_1\cap A_2\cap A_3\cap\cdots
+\]
+are countable operations on members of \(\mathcal{F}\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:family-of-subsets]{Family of Subsets}
+  \item \hyperref[def:countable]{Countable Set}
+  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
+  \item \hyperref[def:indexed-union]{Indexed Union}
+  \item \hyperref[def:indexed-intersection]{Indexed Intersection}
+\end{itemize}
+\end{dependencies}

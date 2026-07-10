@@ -1,0 +1,45 @@
+% Subsection: Symmetric Difference  (notes stub; content authored later)
+\subsection{Symmetric Difference}
+
+\begin{remark*}[Exposition]
+Symmetric difference is already a primitive set operation from Volume I.  Its
+role here is algebraic: it behaves like addition on subsets.  When subsets of
+an ambient set \(X\) are combined by symmetric difference, elements that appear
+twice cancel out.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For \(A,B\subseteq X\), the set \(A\triangle B\) contains the points where
+membership in \(A\) and membership in \(B\) disagree.  Thus symmetric
+difference measures change of membership rather than accumulation of
+membership.  This is why it becomes the additive operation in the Boolean-ring
+view of set algebras.
+\end{remark*}
+
+\begin{remark*}[Algebraic Role]
+Inside \(\mathcal{P}(X)\), the empty set acts as the identity for symmetric
+difference:
+\[
+  A\triangle\varnothing=A.
+\]
+Every subset is its own inverse:
+\[
+  A\triangle A=\varnothing.
+\]
+These identities are the set-theoretic source of the characteristic-two
+behavior that later appears in Boolean rings.
+\end{remark*}
+
+\begin{remark*}[Examples]
+If \(A\) and \(B\) are admitted subsets in a family \(\mathcal{F}\), then
+\(A\triangle B\) is a subset of the same ambient set \(X\).  Whether it is
+again a member of \(\mathcal{F}\) is a closure question.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:family-of-subsets]{Family of Subsets}
+  \item \hyperref[def:sym-diff]{Symmetric Difference}
+  \item \hyperref[def:empty-set]{Empty Set}
+\end{itemize}
+\end{dependencies}

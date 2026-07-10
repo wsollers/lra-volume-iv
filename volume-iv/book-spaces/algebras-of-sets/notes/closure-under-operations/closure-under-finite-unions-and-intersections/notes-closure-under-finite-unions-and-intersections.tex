@@ -1,0 +1,78 @@
+% Subsection: Closure Under Finite Unions and Intersections  (notes stub; content authored later)
+\subsection{Closure Under Finite Unions and Intersections}
+
+\begin{remark*}[Exposition]
+Finite union and finite intersection closure are the basic finite stability
+conditions for a set system.  They say that a family can tolerate finitely
+many join-like or meet-like combinations without leaving the family.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Many finite closure requirements are equivalent to their two-input versions
+provided the family is nonempty in the relevant way.  For example, repeated
+use of binary union gives finite union closure.  The finite formulation is
+nevertheless the more stable statement because it records the full operation
+the family is expected to support.
+\end{remark*}
+
+\begin{definition}[Closed Under Finite Unions]\label{def:closed-under-finite-unions}
+Let \(X\) be a set and let \(\mathcal{F}\subseteq\mathcal{P}(X)\).  The family
+\(\mathcal{F}\) is \emph{closed under finite unions} if for every finite list
+\(A_1,\dots,A_n\in\mathcal{F}\), with \(n\geq 1\), one has
+\[
+  \bigcup_{k=1}^{n} A_k \in \mathcal{F}.
+\]
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall n\in\mathbb{N}_{\geq 1}\,
+  \forall A_1,\dots,A_n\in\mathcal{F},\qquad
+  \bigcup_{k=1}^{n}A_k\in\mathcal{F}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closure under finite unions says that combining finitely many admitted sets by
+``or'' gives another admitted set.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closed-under-operation]{Closed Under an Operation}
+  \item \hyperref[def:finite-operation-on-family]{Finite Operation on a Family}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:finite-infinite]{Finite and Infinite Sets}
+\end{itemize}
+\end{dependencies}
+
+\begin{definition}[Closed Under Finite Intersections]\label{def:closed-under-finite-intersections}
+Let \(X\) be a set and let \(\mathcal{F}\subseteq\mathcal{P}(X)\).  The family
+\(\mathcal{F}\) is \emph{closed under finite intersections} if for every
+finite list \(A_1,\dots,A_n\in\mathcal{F}\), with \(n\geq 1\), one has
+\[
+  \bigcap_{k=1}^{n} A_k \in \mathcal{F}.
+\]
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall n\in\mathbb{N}_{\geq 1}\,
+  \forall A_1,\dots,A_n\in\mathcal{F},\qquad
+  \bigcap_{k=1}^{n}A_k\in\mathcal{F}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closure under finite intersections says that combining finitely many admitted
+sets by ``and'' gives another admitted set.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closed-under-operation]{Closed Under an Operation}
+  \item \hyperref[def:finite-operation-on-family]{Finite Operation on a Family}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:finite-infinite]{Finite and Infinite Sets}
+\end{itemize}
+\end{dependencies}

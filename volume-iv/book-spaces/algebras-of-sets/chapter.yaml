@@ -1,17 +1,34 @@
-# =========================================================
-# chapter.yaml — Algebras Of Sets
-# volume-iv/book-spaces/algebras-of-sets/
-#
-# Machine-readable card data for all labelled environments.
-# Replaces Flash macros in .tex files.
-# =========================================================
-
-chapter: algebras-of-sets
-volume: volume-iv
-path: volume-iv/book-spaces/algebras-of-sets
-book: book-spaces
+subject: algebras-of-sets
 display_title: "Algebras of Sets"
-
-entries:
-  # Add entries here as notes are written.
-  # Schema: see DESIGN.md §10-yaml
+volume: volume-iv
+status: planned
+sections:
+  - subject: from-sets-to-systems-of-sets
+    display_title: "From Sets to Systems of Sets"
+  - subject: operations-on-families-of-sets
+    display_title: "Operations on Families of Sets"
+  - subject: closure-under-operations
+    display_title: "Closure Under Operations"
+  - subject: generated-systems-of-sets
+    display_title: "Generated Systems of Sets"
+  - subject: semirings-and-rings-of-sets
+    display_title: "Semirings and Rings of Sets"
+  - subject: algebras-of-sets
+    display_title: "Algebras of Sets"
+  - subject: sigma-algebras
+    display_title: "Sigma-Algebras"
+  - subject: boolean-viewpoint
+    display_title: "Boolean Viewpoint"
+  - subject: borel-generation
+    display_title: "Borel Generation"
+  - subject: transport-of-set-systems
+    display_title: "Transport of Set Systems"
+  - subject: working-with-set-systems
+    display_title: "Working with Set Systems"
+  - subject: hierarchy-of-set-systems
+    display_title: "Hierarchy of Set Systems"
+  - subject: summary-and-forward-use
+    display_title: "Summary and Forward Use"
+dependencies:
+  prior: 
+  next: 

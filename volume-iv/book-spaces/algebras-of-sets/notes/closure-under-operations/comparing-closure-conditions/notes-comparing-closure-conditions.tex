@@ -1,0 +1,51 @@
+% Subsection: Comparing Closure Conditions  (notes stub; content authored later)
+\subsection{Comparing Closure Conditions}
+
+\begin{remark*}[Exposition]
+Closure conditions are ordered by strength.  A stronger condition supplies a
+larger range of allowed operations; a weaker condition supplies less internal
+stability.  The purpose of comparing closure conditions is to know which
+operations are legitimate inside a given set system.
+\end{remark*}
+
+\begin{remark*}[Comparison Table]
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.34\linewidth}
+                            >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Closure condition} & \textbf{What it permits} \\
+\midrule
+Finite unions & Combine finitely many admitted alternatives. \\
+Finite intersections & Combine finitely many admitted simultaneous conditions. \\
+Complements & Replace an admitted condition by its ambient negation. \\
+Countable unions & Combine a sequence of admitted alternatives. \\
+Countable intersections & Combine a sequence of admitted simultaneous conditions. \\
+Arbitrary unions & Combine any indexed collection of admitted alternatives. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\end{remark*}
+
+\begin{remark*}[Implications]
+Arbitrary union closure implies countable union closure, and countable union
+closure implies finite union closure when the relevant finite family is viewed
+as a countable family by repeating harmless terms or by using the finite case
+directly.  The analogous implication holds from countable intersection closure
+to finite intersection closure.
+\end{remark*}
+
+\begin{remark*}[Non-Implications]
+Finite union closure alone does not imply complement closure.  Complement
+closure alone does not imply union closure.  Countable union closure does not
+imply arbitrary union closure.  These failures are why different theories
+choose different closure packages.
+\end{remark*}
+
+\begin{remark*}[Forward Use]
+The following sections package these closure conditions into named systems.
+Semirings, rings, algebras of sets, sigma-algebras, and topological
+structures differ mainly by which closure operations they require and which
+generating procedures they allow.
+\end{remark*}

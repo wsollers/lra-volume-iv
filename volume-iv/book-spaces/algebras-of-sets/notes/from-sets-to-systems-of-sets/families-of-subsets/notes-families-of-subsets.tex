@@ -1,0 +1,55 @@
+% Subsection: Families of Subsets  (notes stub; content authored later)
+\subsection{Families of Subsets}
+
+\begin{remark*}[Exposition]
+Volume I develops sets, membership, subsets, unions, intersections,
+complements, and power sets as primitive set-theoretic tools.  This chapter
+uses those tools at the next level.  Instead of asking only whether a point
+belongs to a set, it asks which subsets of a fixed set are being selected and
+which operations keep the selected subsets inside the same collection.
+\end{remark*}
+
+\begin{definition}[Family of Subsets]\label{def:family-of-subsets}
+Let \(X\) be a set.  A \emph{family of subsets of \(X\)} is a collection
+\(\mathcal{F}\) such that
+\[
+  \mathcal{F} \subseteq \mathcal{P}(X).
+\]
+Equivalently, every member of \(\mathcal{F}\) is itself a subset of \(X\).
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \mathcal{F}\text{ is a family of subsets of }X
+  \quad\Longleftrightarrow\quad
+  \forall A\,(A\in\mathcal{F}\Rightarrow A\subseteq X).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+There are two membership levels.  The relation \(x\in A\) says that a point
+belongs to a subset \(A\) of \(X\).  The relation \(A\in\mathcal{F}\) says
+that the subset \(A\) has been admitted into the family \(\mathcal{F}\).
+Algebras of sets study the second level.
+\end{remark*}
+
+\begin{remark*}[Examples]
+If \(X=\mathbb{R}\), the collection of all bounded intervals is a family of
+subsets of \(X\).  The collection of all finite subsets of \(X\) is also a
+family of subsets of \(X\).  The full power set \(\mathcal{P}(X)\) is the
+largest possible family of subsets of \(X\).
+\end{remark*}
+
+\begin{remark*}[Non-Examples]
+A collection that contains an object which is not a subset of \(X\) is not a
+family of subsets of \(X\).  For instance, if \(X=\mathbb{R}\), then
+\(\{\{0\},\mathbb{R},\mathbb{C}\}\) is not a family of subsets of \(X\),
+because \(\mathbb{C}\nsubseteq\mathbb{R}\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:power-set]{Power Set}
+\end{itemize}
+\end{dependencies}

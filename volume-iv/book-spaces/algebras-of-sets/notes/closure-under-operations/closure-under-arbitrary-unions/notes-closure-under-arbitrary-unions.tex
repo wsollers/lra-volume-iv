@@ -1,0 +1,47 @@
+% Subsection: Closure Under Arbitrary Unions  (notes stub; content authored later)
+\subsection{Closure Under Arbitrary Unions}
+
+\begin{remark*}[Exposition]
+Arbitrary union closure is stronger than countable union closure because the
+indexing set is unrestricted.  It is the union-side stability condition that
+will later appear in topology.
+\end{remark*}
+
+\begin{definition}[Closed Under Arbitrary Unions]\label{def:closed-under-arbitrary-unions}
+Let \(X\) be a set and let \(\mathcal{F}\subseteq\mathcal{P}(X)\).  The family
+\(\mathcal{F}\) is \emph{closed under arbitrary unions} if for every indexed
+family \(\{A_\alpha\}_{\alpha\in I}\) of members of \(\mathcal{F}\), where
+\(I\) is any indexing set, one has
+\[
+  \bigcup_{\alpha\in I} A_\alpha \in \mathcal{F}.
+\]
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall I\,\forall \{A_\alpha\}_{\alpha\in I}\,
+  \bigl((\forall \alpha\in I,\ A_\alpha\in\mathcal{F})
+  \Rightarrow
+  \bigcup_{\alpha\in I}A_\alpha\in\mathcal{F}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closure under arbitrary unions says that any collection of admitted subsets,
+no matter how large its index set is, may be joined into one admitted subset.
+\end{remark*}
+
+\begin{remark*}[Examples]
+The power set \(\mathcal{P}(X)\) is closed under arbitrary unions.  In later
+chapters, a topology on \(X\) will be a set system whose open sets are closed
+under arbitrary unions and finite intersections.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closed-under-operation]{Closed Under an Operation}
+  \item \hyperref[def:arbitrary-operation-on-family]{Arbitrary Operation on a Family}
+  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
+  \item \hyperref[def:indexed-union]{Indexed Union}
+\end{itemize}
+\end{dependencies}

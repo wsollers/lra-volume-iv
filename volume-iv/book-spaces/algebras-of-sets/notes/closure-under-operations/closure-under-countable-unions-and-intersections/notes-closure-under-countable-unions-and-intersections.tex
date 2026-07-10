@@ -1,0 +1,78 @@
+% Subsection: Closure Under Countable Unions and Intersections  (notes stub; content authored later)
+\subsection{Closure Under Countable Unions and Intersections}
+
+\begin{remark*}[Exposition]
+Countable closure is the analytic strengthening of finite closure.  It allows
+a family to absorb the result of combining an entire sequence of admitted
+subsets.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Countable union closure and countable intersection closure are distinct
+requirements unless complement closure is also available.  With complement
+closure, De Morgan's laws turn one countable condition into the other.
+\end{remark*}
+
+\begin{definition}[Closed Under Countable Unions]\label{def:closed-under-countable-unions}
+Let \(X\) be a set and let \(\mathcal{F}\subseteq\mathcal{P}(X)\).  The family
+\(\mathcal{F}\) is \emph{closed under countable unions} if for every sequence
+\(\{A_n\}_{n\in\mathbb{N}}\) of members of \(\mathcal{F}\), one has
+\[
+  \bigcup_{n=1}^{\infty} A_n \in \mathcal{F}.
+\]
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall \{A_n\}_{n\in\mathbb{N}}\,
+  \bigl((\forall n,\ A_n\in\mathcal{F})
+  \Rightarrow
+  \bigcup_{n=1}^{\infty}A_n\in\mathcal{F}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closure under countable unions says that a countable accumulation of admitted
+alternatives is still admitted.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closed-under-operation]{Closed Under an Operation}
+  \item \hyperref[def:countable-operation-on-family]{Countable Operation on a Family}
+  \item \hyperref[def:countable]{Countable Set}
+  \item \hyperref[def:indexed-union]{Indexed Union}
+\end{itemize}
+\end{dependencies}
+
+\begin{definition}[Closed Under Countable Intersections]\label{def:closed-under-countable-intersections}
+Let \(X\) be a set and let \(\mathcal{F}\subseteq\mathcal{P}(X)\).  The family
+\(\mathcal{F}\) is \emph{closed under countable intersections} if for every
+sequence \(\{A_n\}_{n\in\mathbb{N}}\) of members of \(\mathcal{F}\), one has
+\[
+  \bigcap_{n=1}^{\infty} A_n \in \mathcal{F}.
+\]
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall \{A_n\}_{n\in\mathbb{N}}\,
+  \bigl((\forall n,\ A_n\in\mathcal{F})
+  \Rightarrow
+  \bigcap_{n=1}^{\infty}A_n\in\mathcal{F}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closure under countable intersections says that a countable accumulation of
+admitted simultaneous conditions is still admitted.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closed-under-operation]{Closed Under an Operation}
+  \item \hyperref[def:countable-operation-on-family]{Countable Operation on a Family}
+  \item \hyperref[def:countable]{Countable Set}
+  \item \hyperref[def:indexed-intersection]{Indexed Intersection}
+\end{itemize}
+\end{dependencies}

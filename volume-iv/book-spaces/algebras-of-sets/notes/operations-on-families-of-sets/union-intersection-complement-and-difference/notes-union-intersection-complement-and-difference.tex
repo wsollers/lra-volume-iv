@@ -1,0 +1,61 @@
+% Subsection: Union, Intersection, Complement, and Difference  (notes stub; content authored later)
+\subsection{Union, Intersection, Complement, and Difference}
+
+\begin{remark*}[Exposition]
+The primitive set operations act first on individual subsets of a fixed
+ambient set \(X\).  In this chapter the inputs are usually not arbitrary
+subsets, but members of a selected family \(\mathcal{F}\subseteq\mathcal{P}(X)\).
+The output is still a subset of \(X\), even before one knows whether the output
+belongs to \(\mathcal{F}\).
+\end{remark*}
+
+\begin{definition}[Operation on Members of a Family]\label{def:operation-on-members-of-family}
+Let \(X\) be a set and let \(\mathcal{F}\subseteq\mathcal{P}(X)\).  An
+\emph{operation on members of \(\mathcal{F}\)} is an ordinary set-theoretic
+operation whose inputs are chosen from \(\mathcal{F}\) and whose output is
+regarded as a subset of \(X\).
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+For a binary operation \(\star\) on subsets of \(X\), applying \(\star\) to
+members of \(\mathcal{F}\) means
+\[
+  A,B\in\mathcal{F}
+  \quad\Longrightarrow\quad
+  A\star B\subseteq X.
+\]
+This statement records only that the operation is meaningful inside the
+ambient power set.  It does not assert \(A\star B\in\mathcal{F}\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The distinction between ``the operation is defined'' and ``the family is
+closed under the operation'' is essential.  If \(A,B\in\mathcal{F}\), then
+\(A\cup B\), \(A\cap B\), and \(A\setminus B\) are always subsets of \(X\).
+The next question is whether those resulting subsets remain inside the
+selected family.  That is a closure question, not a definition-of-operation
+question.
+\end{remark*}
+
+\begin{remark*}[Examples]
+The operations most frequently applied to members of a family are union,
+intersection, complement relative to \(X\), set difference, and symmetric
+difference:
+\[
+  A\cup B,\qquad
+  A\cap B,\qquad
+  A^c=X\setminus A,\qquad
+  A\setminus B,\qquad
+  A\triangle B.
+\]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:family-of-subsets]{Family of Subsets}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:complement]{Complement}
+  \item \hyperref[def:set-difference]{Set Difference}
+\end{itemize}
+\end{dependencies}

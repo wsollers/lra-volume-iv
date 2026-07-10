@@ -1,0 +1,56 @@
+% Subsection: Boolean Combinations  (notes stub; content authored later)
+\subsection{Boolean Combinations}
+
+\begin{remark*}[Exposition]
+Boolean combinations are the finite expressions obtained by using the logical
+set operations together.  They are the operational core of algebras of sets:
+start with finitely many subsets and build new subsets by repeatedly applying
+union, intersection, and complement.
+\end{remark*}
+
+\begin{definition}[Finite Boolean Combination]\label{def:finite-boolean-combination}
+Let \(X\) be a set and let \(A_1,\dots,A_n\subseteq X\), where \(n\geq 1\).
+A \emph{finite Boolean combination of \(A_1,\dots,A_n\)} is any subset of
+\(X\) obtained from \(A_1,\dots,A_n\) by finitely many applications of union,
+intersection, and complement relative to \(X\).
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+If \(B\) is a finite Boolean combination of \(A_1,\dots,A_n\), then there is a
+finite expression \(E\) built from the symbols
+\[
+  A_1,\dots,A_n,\quad \cup,\quad \cap,\quad {}^c
+\]
+such that \(B=E(A_1,\dots,A_n)\subseteq X\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Finite Boolean combinations are the subsets describable by a finite logical
+recipe using the input sets.  They are finite because the expression has only
+finitely many operation symbols, even if the input sets themselves are
+infinite.
+\end{remark*}
+
+\begin{remark*}[Examples]
+For \(A,B,C\subseteq X\), each of the following is a finite Boolean
+combination of \(A,B,C\):
+\[
+  A\cap B^c,
+  \qquad
+  (A\cup B)\cap C,
+  \qquad
+  (A^c\cap B)\cup(C\setminus A).
+\]
+Since \(C\setminus A=C\cap A^c\), set difference is expressible using
+intersection and complement.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:complement]{Complement}
+  \item \hyperref[def:set-difference]{Set Difference}
+  \item \hyperref[def:finite-infinite]{Finite and Infinite Sets}
+\end{itemize}
+\end{dependencies}

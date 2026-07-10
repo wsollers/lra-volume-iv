@@ -1,0 +1,58 @@
+% Subsection: Arbitrary Operations  (notes stub; content authored later)
+\subsection{Arbitrary Operations}
+
+\begin{remark*}[Exposition]
+Arbitrary operations allow an indexed family of inputs with no finite or
+countable restriction on the indexing set.  They are broader than countable
+operations and therefore impose stronger demands when a set system is required
+to be closed under them.
+\end{remark*}
+
+\begin{definition}[Arbitrary Operation on a Family]\label{def:arbitrary-operation-on-family}
+Let \(X\) be a set and let \(\mathcal{F}\subseteq\mathcal{P}(X)\).  An
+\emph{arbitrary operation on \(\mathcal{F}\)} is an operation whose inputs are
+an indexed family \(\{A_\alpha\}_{\alpha\in I}\) of members of
+\(\mathcal{F}\), where \(I\) is any indexing set, and whose output is a subset
+of \(X\).
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+The standard arbitrary union and arbitrary intersection operations have the
+forms
+\[
+  \{A_\alpha\}_{\alpha\in I}\subseteq\mathcal{F}
+  \quad\Longmapsto\quad
+  \bigcup_{\alpha\in I}A_\alpha\subseteq X
+\]
+and
+\[
+  \{A_\alpha\}_{\alpha\in I}\subseteq\mathcal{F}
+  \quad\Longmapsto\quad
+  \bigcap_{\alpha\in I}A_\alpha\subseteq X.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every finite or countable operation is an arbitrary operation for a suitable
+indexing set, but not conversely.  Arbitrary unions are central in topology.
+Arbitrary intersections are also the mechanism behind generated structures:
+one often intersects all admissible systems satisfying a condition in order to
+obtain the smallest such system.
+\end{remark*}
+
+\begin{remark*}[Non-Examples]
+A countable union is not arbitrary because it uses a countable index set; it is
+arbitrary only in the broader sense that every countable index set is still an
+index set.  The distinction matters when a definition permits arbitrary
+unions but does not permit arbitrary intersections, or permits countable
+unions but not arbitrary unions.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:family-of-subsets]{Family of Subsets}
+  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
+  \item \hyperref[def:indexed-union]{Indexed Union}
+  \item \hyperref[def:indexed-intersection]{Indexed Intersection}
+\end{itemize}
+\end{dependencies}

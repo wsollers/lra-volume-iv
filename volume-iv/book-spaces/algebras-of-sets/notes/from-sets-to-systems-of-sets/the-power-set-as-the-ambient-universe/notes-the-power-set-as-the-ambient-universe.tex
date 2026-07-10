@@ -1,0 +1,43 @@
+% Subsection: The Power Set as the Ambient Universe  (notes stub; content authored later)
+\subsection{The Power Set as the Ambient Universe}
+
+\begin{remark*}[Exposition]
+Once a base set \(X\) is fixed, the power set \(\mathcal{P}(X)\) becomes the
+ambient universe for this chapter.  Every family of subsets of \(X\) lives
+inside \(\mathcal{P}(X)\).  The full power set is usually too large to be the
+structure of interest, but it supplies the surrounding arena in which smaller
+families can be compared, enlarged, intersected, and closed under operations.
+\end{remark*}
+
+\begin{remark*}[Ambient Set Convention]
+Complements are always relative to the fixed base set.  If
+\(\mathcal{F}\subseteq\mathcal{P}(X)\) and \(A\in\mathcal{F}\), then the
+notation \(A^c\) means
+\[
+  A^c = X\setminus A.
+\]
+Changing the ambient set changes the complement operation.  Thus the same
+subset \(A\) may have different complements when it is considered inside
+different base sets.
+\end{remark*}
+
+\begin{remark*}[Structural View]
+A subset family is not only a list of subsets.  It is a candidate domain for
+set operations.  One can ask whether \(A\cup B\), \(A\cap B\), \(A^c\), or
+\(\bigcup_{n=1}^{\infty}A_n\) remains in the same family after the operation
+is performed.  Those closure questions are the mechanism by which raw subset
+families become mathematical structures.
+\end{remark*}
+
+\begin{remark*}[Boundary Cases]
+For every set \(X\), the two extreme families
+\[
+  \varnothing
+  \qquad\text{and}\qquad
+  \mathcal{P}(X)
+\]
+are both families of subsets of \(X\).  They play different roles.  The empty
+family contains no admitted subsets at all.  The power set admits every subset
+of \(X\), so every set operation whose output is a subset of \(X\) stays inside
+\(\mathcal{P}(X)\).
+\end{remark*}

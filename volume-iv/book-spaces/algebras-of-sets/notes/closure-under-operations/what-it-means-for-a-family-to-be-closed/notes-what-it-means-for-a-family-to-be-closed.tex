@@ -1,0 +1,52 @@
+% Subsection: What It Means for a Family to Be Closed  (notes stub; content authored later)
+\subsection{What It Means for a Family to Be Closed}
+
+\begin{remark*}[Exposition]
+An operation on subsets always produces another subset of the ambient set.
+Closure asks for more: it asks whether the result is still one of the selected
+subsets.  Thus closure is an internal-stability condition on a family of
+subsets.
+\end{remark*}
+
+\begin{definition}[Closed Under an Operation]\label{def:closed-under-operation}
+Let \(X\) be a set, let \(\mathcal{F}\subseteq\mathcal{P}(X)\), and let
+\(\Phi\) be an operation that takes one or more subsets of \(X\) as inputs and
+returns a subset of \(X\).  The family \(\mathcal{F}\) is \emph{closed under}
+\(\Phi\) if every admissible choice of inputs from \(\mathcal{F}\) has output
+again in \(\mathcal{F}\).
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+For a binary operation \(\Phi\), closure under \(\Phi\) means
+\[
+  \forall A,B\in\mathcal{F},\qquad
+  \Phi(A,B)\in\mathcal{F}.
+\]
+For a unary operation \(\Psi\), closure under \(\Psi\) means
+\[
+  \forall A\in\mathcal{F},\qquad
+  \Psi(A)\in\mathcal{F}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closure is not a statement about whether an operation can be performed.  It is
+a statement about whether performing the operation stays inside the chosen
+family.  The ambient power set \(\mathcal{P}(X)\) is closed under all ordinary
+set operations, but a smaller family may fail closure for some of them.
+\end{remark*}
+
+\begin{remark*}[Examples]
+If \(\mathcal{F}\) is the family of finite subsets of \(X\), then
+\(\mathcal{F}\) is closed under finite unions.  If \(X\) is infinite, the same
+family is not closed under complements, because the complement of a finite
+subset may be infinite.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:family-of-subsets]{Family of Subsets}
+  \item \hyperref[def:operation-on-members-of-family]{Operation on Members of a Family}
+  \item \hyperref[def:power-set]{Power Set}
+\end{itemize}
+\end{dependencies}
