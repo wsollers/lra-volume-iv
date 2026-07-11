@@ -260,9 +260,9 @@ open ball disjoint from the closed ball.
 \begin{definitionbox}{Definition --- Metric Closure}
 \begin{definition}[Metric Closure]\label{def:metric-closure}
 Let \((X,d)\) be a metric space and let \(E\subseteq X\).  The
-\emph{closure} of \(E\), denoted \(\operatorname{cl}(E)\), is
+\emph{closure} of \(E\), denoted \(\operatorname{Closure}(E)\), is
 \[
-  \operatorname{cl}(E)
+  \operatorname{Closure}(E)
   =
   \{x\in X:\forall\varepsilon>0,\ B_d(x;\varepsilon)\cap E\neq\varnothing\}.
 \]
@@ -271,7 +271,7 @@ Let \((X,d)\) be a metric space and let \(E\subseteq X\).  The
 
 \begin{remark*}[Standard quantified statement]
 \[
-x\in\operatorname{cl}(E)
+x\in\operatorname{Closure}(E)
 \quad\Longleftrightarrow\quad
 \forall\varepsilon>0{:}\ B_d(x;\varepsilon)\cap E\neq\varnothing.
 \]
@@ -294,7 +294,7 @@ be separated from \(E\) by any positive-radius ball.
 \label{thm:metric-closure-open-ball-contained-closed-ball}
 Let \((X,d)\) be a metric space.  For every \(x\in X\) and every \(r>0\),
 \[
-  \operatorname{cl}\bigl(B_d(x;r)\bigr)\subseteq \overline{B}_d(x;r).
+  \operatorname{Closure}\bigl(B_d(x;r)\bigr)\subseteq \overline{B}_d(x;r).
 \]
 \hyperref[prf:metric-closure-open-ball-contained-closed-ball]{\textit{Go to proof.}}
 \end{theorem}
@@ -302,7 +302,7 @@ Let \((X,d)\) be a metric space.  For every \(x\in X\) and every \(r>0\),
 
 \begin{remark*}[Standard quantified statement]
 \[
-z\in \operatorname{cl}\bigl(B_d(x;r)\bigr)
+z\in \operatorname{Closure}\bigl(B_d(x;r)\bigr)
 \Longrightarrow
 d(x,z)\leq r.
 \]
@@ -313,7 +313,7 @@ Taking the closure of an open ball may add boundary points, but it cannot add
 points whose distance from the center is larger than the radius.  Important
 trap: equality need not hold in every metric space,
 \[
-  \operatorname{cl}\bigl(B_d(x;r)\bigr)\neq \overline{B}_d(x;r),
+  \operatorname{Closure}\bigl(B_d(x;r)\bigr)\neq \overline{B}_d(x;r),
 \]
 and can occur.  For example, in a discrete metric space, the closure of an
 open ball may be strictly smaller than the corresponding closed ball.
@@ -332,7 +332,7 @@ open ball may be strictly smaller than the corresponding closed ball.
 Let \((X,d)\) be a metric space and let \(A\subseteq X\).  The set \(A\) is
 \emph{dense in \(X\)} if
 \[
-  \operatorname{cl}(A)=X.
+  \operatorname{Closure}(A)=X.
 \]
 \end{definition}
 \end{definitionbox}
@@ -341,7 +341,7 @@ Let \((X,d)\) be a metric space and let \(A\subseteq X\).  The set \(A\) is
 \[
 A\text{ is dense in }X
 \quad\Longleftrightarrow\quad
-\operatorname{cl}(A)=X.
+\operatorname{Closure}(A)=X.
 \]
 \end{remark*}
 
@@ -489,7 +489,7 @@ Let \((X,d)\) be a metric space and let \(E\subseteq X\).  The
 \[
   \partial E
   =
-  \operatorname{cl}(E)\cap \operatorname{cl}(X\setminus E).
+  \operatorname{Closure}(E)\cap \operatorname{Closure}(X\setminus E).
 \]
 \end{definition}
 \end{definitionbox}
@@ -498,9 +498,9 @@ Let \((X,d)\) be a metric space and let \(E\subseteq X\).  The
 \[
 x\in\partial E
 \quad\Longleftrightarrow\quad
-x\in\operatorname{cl}(E)
+x\in\operatorname{Closure}(E)
 \;\land\;
-x\in\operatorname{cl}(X\setminus E).
+x\in\operatorname{Closure}(X\setminus E).
 \]
 \end{remark*}
 
