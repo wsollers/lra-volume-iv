@@ -19,7 +19,7 @@ A \emph{metric space} is a pair \((X,d)\), where \(X\) is a nonempty set and
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}
-\operatorname{Metric}(X,d)
+\operatorname{IsMetric}(X,d)
 \;\Longleftrightarrow\;
 &X \neq \varnothing
 \;\land\;
@@ -35,6 +35,13 @@ d(x,y)\geq 0
 \land d(x,y)\leq d(x,z)+d(z,y).
 \end{aligned}
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsMetric}(X,d)
+\]
+means that \(d\) is a metric on the carrier set \(X\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -72,7 +79,7 @@ is called a \emph{pseudo-metric} on \(X\) if for all \(x,y,z \in X\),
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}
-\operatorname{PseudoMetric}(X,d)
+\operatorname{IsPseudoMetric}(X,d)
 \;\Longleftrightarrow\;
 &X \neq \varnothing
 \;\land\;
@@ -87,6 +94,13 @@ d(x,y)\geq 0
 \land d(x,y)\leq d(x,z)+d(z,y).
 \end{aligned}
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsPseudoMetric}(X,d)
+\]
+means that \(d\) is a pseudo-metric on the carrier set \(X\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -119,16 +133,26 @@ The converse is false: there exist pseudo-metrics that are not metrics.
 \[
 \begin{aligned}
 &\forall X\,\forall d{:}\;
-\operatorname{Metric}(X,d)
+\operatorname{IsMetric}(X,d)
 \Longrightarrow
-\operatorname{PseudoMetric}(X,d),
+\operatorname{IsPseudoMetric}(X,d),
 \\
 &\exists X\,\exists d{:}\;
-\operatorname{PseudoMetric}(X,d)
+\operatorname{IsPseudoMetric}(X,d)
 \land
-\neg\operatorname{Metric}(X,d).
+\neg\operatorname{IsMetric}(X,d).
 \end{aligned}
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsMetric}(X,d)
+\Longrightarrow
+\operatorname{IsPseudoMetric}(X,d)
+\]
+means that every metric structure satisfies the pseudo-metric axioms, while
+some pseudo-metric structures fail to be metric structures.
 \end{remark*}
 
 \begin{remark*}[Interpretation]

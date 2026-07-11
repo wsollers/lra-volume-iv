@@ -12,6 +12,37 @@ and
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\operatorname{IsOrderedField}(F,\leq)
+\Longleftrightarrow\;&
+F\text{ is a field}
+\land
+\leq\text{ is a linear order on }F
+\\
+&{}\land
+\forall a,b,c\in F{:}\; a\leq b \Longrightarrow a+c\leq b+c
+\\
+&{}\land
+\forall a,b\in F{:}\; 0\leq a\land 0\leq b \Longrightarrow 0\leq ab.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsOrderedField}(F,\leq)
+\]
+means that \(F\) is a field whose order is compatible with translation and
+with multiplication by nonnegative elements.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An ordered field is the package needed to use algebraic operations and order
+inequalities together.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item TODO: link the canonical field definition.
@@ -41,6 +72,29 @@ a+c<b+c.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsOrderedField}(F,\leq)
+\Longrightarrow
+\forall a,b,c\in F{:}\; a<b \Longrightarrow a+c<b+c.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a<b
+\Longrightarrow
+a+c<b+c
+\]
+means that translating both sides of a strict inequality by the same field
+element preserves the inequality.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Order comparisons in an ordered field do not depend on where the origin is
+placed.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-field]{Ordered Field}
@@ -62,6 +116,28 @@ ac<bc.
 \hyperref[prf:ordered-field-positive-multiplication-preserves-order]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsOrderedField}(F,\leq)
+\Longrightarrow
+\forall a,b,c\in F{:}\; a<b\land c>0 \Longrightarrow ac<bc.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a<b\land c>0
+\Longrightarrow
+ac<bc
+\]
+means that multiplying both sides by a positive field element preserves strict
+order.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positive scaling changes size but not order direction.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -86,6 +162,28 @@ bc<ac.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsOrderedField}(F,\leq)
+\Longrightarrow
+\forall a,b,c\in F{:}\; a<b\land c<0 \Longrightarrow bc<ac.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a<b\land c<0
+\Longrightarrow
+bc<ac
+\]
+means that multiplying both sides by a negative field element reverses strict
+order.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negative scaling reflects the order direction.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-field]{Ordered Field}
@@ -107,6 +205,27 @@ a^{-1}>0.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsOrderedField}(F,\leq)
+\Longrightarrow
+\forall a\in F{:}\; a>0 \Longrightarrow a^{-1}>0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a>0
+\Longrightarrow
+a^{-1}>0
+\]
+means that the reciprocal of a positive nonzero field element is positive.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taking reciprocals preserves positivity.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-field]{Ordered Field}
@@ -127,6 +246,27 @@ a^{-1}<0.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsOrderedField}(F,\leq)
+\Longrightarrow
+\forall a\in F{:}\; a<0 \Longrightarrow a^{-1}<0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a<0
+\Longrightarrow
+a^{-1}<0
+\]
+means that the reciprocal of a negative field element is negative.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Reciprocals preserve the sign of a nonzero element.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-field]{Ordered Field}
@@ -144,6 +284,28 @@ x^2\ge 0.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsOrderedField}(F,\leq)
+\Longrightarrow
+\forall x\in F{:}\; x^2\geq 0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+x\in F
+\Longrightarrow
+x^2\geq 0
+\]
+means that every square in an ordered field is nonnegative.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The order structure forces products of an element with itself to be
+nonnegative.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-field]{Ordered Field}
@@ -159,6 +321,25 @@ In an ordered field,
 \hyperref[prf:ordered-field-one-positive]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsOrderedField}(F,\leq)
+\Longrightarrow
+1_F>0_F.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+1_F>0_F
+\]
+means that the multiplicative identity is positive in any ordered field.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This fixes the positive direction of the order relative to multiplication.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -176,6 +357,25 @@ x^2=-1.
 \hyperref[prf:ordered-field-no-square-root-negative-one]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsOrderedField}(F,\leq)
+\Longrightarrow
+\neg\exists x\in F{:}\; x^2=-1_F.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\neg\exists x\in F{:}\; x^2=-1_F
+\]
+means that \(-1\) has no square root in an ordered field.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Since squares are nonnegative and \(1\) is positive, \(-1\) cannot be a square.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -195,6 +395,38 @@ In an ordered field, the usual product sign laws hold:
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\operatorname{IsOrderedField}(F,\leq)
+\Longrightarrow
+\forall a,b\in F{:}\;&
+(a>0\land b>0 \Longrightarrow ab>0)
+\\
+&{}\land
+(a<0\land b<0 \Longrightarrow ab>0)
+\\
+&{}\land
+(a>0\land b<0 \Longrightarrow ab<0)
+\\
+&{}\land
+(a<0\land b>0 \Longrightarrow ab<0).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{sgn}(ab)=\operatorname{sgn}(a)\operatorname{sgn}(b)
+\]
+means that multiplication follows the usual positive and negative sign rules.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Products are positive when the factors have the same sign and negative when
+the factors have opposite signs.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-field]{Ordered Field}
@@ -210,6 +442,36 @@ division by a negative element reverses order.
 \hyperref[prf:ordered-field-division-order-laws]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\operatorname{IsOrderedField}(F,\leq)
+\Longrightarrow
+\forall a,b,c\in F{:}\;&
+c>0 \Longrightarrow
+\left(a<b \Longleftrightarrow \frac{a}{c}<\frac{b}{c}\right)
+\\
+&{}\land
+c<0 \Longrightarrow
+\left(a<b \Longleftrightarrow \frac{b}{c}<\frac{a}{c}\right).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+c>0\text{ preserves division order},
+\qquad
+c<0\text{ reverses division order}.
+\]
+means that dividing an inequality by a positive element preserves its direction,
+while dividing by a negative element reverses its direction.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Division inherits its order behavior from multiplication by reciprocals.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

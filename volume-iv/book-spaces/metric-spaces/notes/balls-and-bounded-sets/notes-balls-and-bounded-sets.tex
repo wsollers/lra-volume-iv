@@ -89,6 +89,18 @@ B_d(y;r-d(x,y))\subseteq B_d(x;r).
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsBall}(B_d(x;r),x,r,(X,d))
+\land
+\operatorname{Within}(y,B_d(x;r),(X,d))
+\Longrightarrow
+B_d(y;r-d(x,y))\subseteq B_d(x;r)
+\]
+means that a point inside a metric ball has a smaller ball around it that
+remains inside the original ball.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Every point inside an open ball has some positive-radius room that remains
 inside the original ball.  The available radius is the unused distance from

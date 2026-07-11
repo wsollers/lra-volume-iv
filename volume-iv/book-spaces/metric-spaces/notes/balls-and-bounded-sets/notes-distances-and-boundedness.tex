@@ -201,6 +201,15 @@ A\text{ is bounded}
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Bounded}(A,(X,d))
+\Longleftrightarrow
+\exists x\in X\,\exists R>0\,\forall a\in A{:}\ d(x,a)\leq R
+\]
+means that \(A\) has finite radius from some center in the metric space.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 A bounded set has finite spread from at least one center.  The center is
 auxiliary: boundedness records finite reach, not a preferred location.
@@ -258,6 +267,16 @@ A\text{ is bounded}
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Bounded}(A,(X,d))
+\Longleftrightarrow
+\exists x\in X\,\exists R>0\,\forall a\in A{:}\ d(x,a)<R
+\]
+means that strict and non-strict metric radius bounds define the same
+boundedness predicate after enlarging the radius.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Strict and non-strict radius bounds are equivalent after enlarging the radius.
 Both express the same finite-spread condition.
@@ -288,6 +307,16 @@ for every \(a\in A\).  Thus boundedness does not depend on the chosen center.
 \Longrightarrow
 \forall y\in X\,\forall a\in A{:}\ d(y,a)\leq R+d(x,y).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Bounded}(A,(X,d))
+\Longrightarrow
+\forall y\in X\,\exists S>0\,\forall a\in A{:}\ d(y,a)\leq S
+\]
+means that boundedness is independent of which ambient point is used as the
+center.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -416,6 +445,16 @@ A\text{ is bounded}
 \exists C>0\,\forall a,b\in A{:}\ d(a,b)\leq C
 \Bigr).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Bounded}(A,(X,d))
+\Longleftrightarrow
+\exists C>0\,\forall a,b\in A{:}\ d(a,b)\leq C
+\]
+means that a nonempty metric set is bounded exactly when all pairwise
+distances in the set are uniformly bounded.
 \end{remark*}
 
 \begin{remark*}[Interpretation]

@@ -15,6 +15,35 @@ A \emph{topological space} is a pair \((X,\tau)\), where \(X\) is a set and
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\operatorname{IsTopology}(X,\tau)
+\Longleftrightarrow\;&
+\tau\subseteq\mathcal{P}(X)
+\land
+\emptyset\in\tau
+\land
+X\in\tau
+\\
+&{}\land
+\forall \mathcal{A}\subseteq\tau{:}\;
+\bigcup_{U\in\mathcal{A}}U\in\tau
+\\
+&{}\land
+\forall U_1,\ldots,U_n\in\tau{:}\;
+\bigcap_{k=1}^{n}U_k\in\tau.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsTopology}(X,\tau)
+\]
+means that \(\tau\) is a topology on the carrier set \(X\).
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 A topology records which subsets are treated as open.  The axioms say that
 openness includes the impossible and total regions, is preserved under

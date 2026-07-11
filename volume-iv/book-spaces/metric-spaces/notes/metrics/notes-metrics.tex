@@ -27,7 +27,7 @@ such that for all \(x,y\in V\) and all \(\lambda\in\mathbb{R}\),
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}
-\operatorname{Norm}(V,\|\cdot\|)
+\operatorname{IsNorm}(V,\|\cdot\|)
 \Longleftrightarrow\;
 &\|\cdot\|:V\to\mathbb{R}_{\geq 0}
 \\
@@ -42,6 +42,13 @@ such that for all \(x,y\in V\) and all \(\lambda\in\mathbb{R}\),
 \forall x,y\in V{:}\; \|x+y\|\leq \|x\|+\|y\|.
 \end{aligned}
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsNorm}(V,\|\cdot\|)
+\]
+means that \(\|\cdot\|\) is a norm on the real vector space \(V\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -71,12 +78,22 @@ Then \(d_{\|\cdot\|}\) is a metric on \(V\).
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Norm}(V,\|\cdot\|)
+\operatorname{IsNorm}(V,\|\cdot\|)
 \Longrightarrow
-\operatorname{Metric}(V,d_{\|\cdot\|}),
+\operatorname{IsMetric}(V,d_{\|\cdot\|}),
 \qquad
 d_{\|\cdot\|}(x,y)=\|x-y\|.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsNorm}(V,\|\cdot\|)
+\Longrightarrow
+\operatorname{IsMetric}(V,d_{\|\cdot\|})
+\]
+means that a norm on \(V\) induces a metric on \(V\) by distance through
+vector differences.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -125,6 +142,13 @@ x\neq y \Longleftrightarrow d_{\mathrm{disc}}(x,y)=1.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsMetric}(X,d_{\mathrm{disc}})
+\]
+means that the discrete distance is a metric on the nonempty set \(X\).
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The discrete metric treats equality as the only closeness relation.  Distinct
 points are all placed at the same positive distance from each other.
@@ -148,8 +172,15 @@ For every nonempty set \(X\), the discrete distance
 \[
 X\neq\varnothing
 \Longrightarrow
-\operatorname{Metric}(X,d_{\mathrm{disc}}).
+\operatorname{IsMetric}(X,d_{\mathrm{disc}}).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsMetric}(X,d_{\mathrm{disc}})
+\]
+means that the discrete distance is a metric on \(X\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -185,6 +216,13 @@ d_{\mathbb{R}}:\mathbb{R}\times\mathbb{R}\to\mathbb{R}_{\geq 0},
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsMetric}(\mathbb{R},d_{\mathbb{R}})
+\]
+means that absolute difference is a metric on the real line.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The real-line distance records absolute displacement between two real numbers.
 It forgets direction and keeps only separation.
@@ -205,8 +243,15 @@ The function \(d_{\mathbb{R}}(x,y)=|x-y|\) is a metric on \(\mathbb{R}\).
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \operatorname{Metric}(\mathbb{R},d_{\mathbb{R}}).
+  \operatorname{IsMetric}(\mathbb{R},d_{\mathbb{R}}).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsMetric}(\mathbb{R},d_{\mathbb{R}})
+\]
+means that absolute difference is a metric on the real line.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -230,9 +275,17 @@ Euclidean norm, and Euclidean distance.
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
-For each \(n\in\mathbb{N}\), \(\operatorname{EuclideanSpace}(n)\) denotes
+For each \(n\in\mathbb{N}\), \(\operatorname{IsEuclideanSpace}(n)\) denotes
 \(\mathbb{R}^n\) together with its standard coordinate structure, dot product,
 Euclidean norm, and Euclidean distance.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsEuclideanSpace}(n)
+\]
+means that \(\mathbb{R}^n\) carries its standard Euclidean coordinate,
+inner-product, norm, and metric structure.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -298,6 +351,16 @@ Equality holds if and only if \(x\) and \(y\) are linearly dependent.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+x,y\in\mathbb{R}^n
+\Longrightarrow
+|x\cdot y|\leq |x|\,|y|
+\]
+means that the absolute value of the dot product is bounded by the product of
+Euclidean lengths.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Cauchy--Schwarz controls the dot product by the lengths of the two vectors.
 It is the algebraic estimate behind Euclidean triangle inequalities.
@@ -329,6 +392,16 @@ For every \(x,y\in\mathbb{R}^n\),
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+x,y\in\mathbb{R}^n
+\Longrightarrow
+|x+y|\leq |x|+|y|
+\]
+means that the Euclidean length of a sum is at most the sum of the Euclidean
+lengths.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Minkowski's inequality is the triangle inequality for Euclidean length.
 \end{remark*}
@@ -353,8 +426,16 @@ The function \(d_2\) is a metric on \(\mathbb{R}^n\).
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \operatorname{Metric}(\mathbb{R}^n,d_2).
+  \operatorname{IsMetric}(\mathbb{R}^n,d_2).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsMetric}(\mathbb{R}^n,d_2)
+\]
+means that the Euclidean distance satisfies the metric axioms on
+\(\mathbb{R}^n\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -386,8 +467,16 @@ Then \((\mathbb{R}^n,d_2)\) is a metric space.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Metric}(\mathbb{R}^n,d_2).
+\operatorname{IsMetric}(\mathbb{R}^n,d_2).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsMetric}(\mathbb{R}^n,d_2)
+\]
+means that \(d_2\) gives the standard Euclidean metric-space structure on
+\(\mathbb{R}^n\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -439,8 +528,16 @@ The function \(d_1\) is a metric on \(\mathbb{R}^n\).
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Metric}(\mathbb{R}^n,d_1).
+\operatorname{IsMetric}(\mathbb{R}^n,d_1).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsMetric}(\mathbb{R}^n,d_1)
+\]
+means that the taxicab distance satisfies the metric axioms on
+\(\mathbb{R}^n\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -497,8 +594,16 @@ For every \(1\leq p<\infty\), the function \(d_p\) is a metric on
 \[
 1\leq p<\infty
 \Longrightarrow
-\operatorname{Metric}(\mathbb{R}^n,d_p).
+\operatorname{IsMetric}(\mathbb{R}^n,d_p).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsMetric}(\mathbb{R}^n,d_p)
+\]
+means that the \(p\)-distance satisfies the metric axioms on \(\mathbb{R}^n\)
+for \(1\leq p<\infty\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -550,8 +655,15 @@ The pair \((\mathbb{C},d_{\mathbb{C}})\) is a metric space.
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \operatorname{Metric}(\mathbb{C},d_{\mathbb{C}}).
+  \operatorname{IsMetric}(\mathbb{C},d_{\mathbb{C}}).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsMetric}(\mathbb{C},d_{\mathbb{C}})
+\]
+means that modulus distance is a metric on the complex plane.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -616,8 +728,15 @@ The function \(d_\infty\) is a metric on \(\ell^\infty(\mathbb{R})\).
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \operatorname{Metric}(\ell^\infty(\mathbb{R}),d_\infty).
+  \operatorname{IsMetric}(\ell^\infty(\mathbb{R}),d_\infty).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsMetric}(\ell^\infty(\mathbb{R}),d_\infty)
+\]
+means that the supremum distance is a metric on bounded real sequences.
 \end{remark*}
 
 \begin{remark*}[Interpretation]

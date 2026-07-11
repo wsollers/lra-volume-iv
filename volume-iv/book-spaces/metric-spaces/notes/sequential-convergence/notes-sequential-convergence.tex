@@ -33,6 +33,14 @@ d(x_n,x_0)<\varepsilon.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ConvergesTo}(x_n,x_0,(X,d))
+\]
+means that the sequence \(x_n\) eventually lies inside every metric tolerance
+around \(x_0\).
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 A sequence converges to \(x_0\) when its tail eventually lies inside every
 metric tolerance around \(x_0\).  The metric supplies the meaning of
@@ -156,6 +164,16 @@ x_n\to x
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsNeighborhood}(U,x,(X,d))
+\Longrightarrow
+\exists N\in\mathbb{N}\,\forall n\geq N{:}\ x_n\in U
+\]
+means that a convergent sequence is eventually contained in every
+neighborhood of its limit.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Sequential convergence can be tested by neighborhoods instead of numerical
 \(\varepsilon\)-bounds.  A convergent sequence eventually remains inside every
@@ -199,6 +217,14 @@ d(x_n,x_m)<\varepsilon.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsCauchy}(x_n,(X,d))
+\]
+means that the sequence \(x_n\) is eventually internally stable in the metric
+space \((X,d)\).
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 A Cauchy sequence is eventually internally stable: sufficiently late terms are
 close to one another, regardless of whether a limit point has already been
@@ -235,6 +261,16 @@ In metric spaces, convergent sequences have unique limits.
 \Longrightarrow
 x=y.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ConvergesTo}(x_n,x,(X,d))
+\land
+\operatorname{ConvergesTo}(x_n,y,(X,d))
+\Longrightarrow x=y
+\]
+means that a metric sequence has at most one limit.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -286,6 +322,20 @@ Then \(x_n\to x\).
 x_n\to x.
 \end{aligned}
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsCauchy}(x_n,(X,d))
+\land
+\operatorname{IsSubsequence}(x_{n_k},x_n)
+\land
+\operatorname{ConvergesTo}(x_{n_k},x,(X,d))
+\Longrightarrow
+\operatorname{ConvergesTo}(x_n,x,(X,d))
+\]
+means that a Cauchy sequence follows any convergent subsequence to the same
+limit.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -344,6 +394,17 @@ x_n\to x_0
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ConvergesTo}(x_n,x_0,\mathbb{R}^m)
+\Longleftrightarrow
+\forall j\in\{1,\ldots,m\}{:}\;
+\operatorname{ConvergesTo}(x_n^{(j)},x_0^{(j)},\mathbb{R})
+\]
+and the analogous Cauchy statement mean that finite-dimensional Euclidean
+sequence behavior is coordinatewise.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 In finite-dimensional Euclidean space, convergence and Cauchy behavior can be
 checked one coordinate at a time.  The Euclidean metric packages the finitely
@@ -385,6 +446,16 @@ Every Cauchy sequence in \(\mathbb{R}^m\) is convergent in \(\mathbb{R}^m\).
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsCauchy}(x_n,\mathbb{R}^m)
+\Longrightarrow
+\exists x\in\mathbb{R}^m{:}\;
+\operatorname{ConvergesTo}(x_n,x,\mathbb{R}^m)
+\]
+means that Euclidean space contains limits of its Cauchy sequences.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 \(\mathbb{R}^m\) contains the limits of all of its Cauchy sequences.  This is
 the finite-dimensional Euclidean completeness property.
@@ -424,6 +495,15 @@ converges in \(\mathbb{R}^m\).
 \exists\{x_{n_k}\}\text{ subsequence }\exists x\in\mathbb{R}^m{:}\;
 x_{n_k}\to x.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Bounded}(x_n,\mathbb{R}^m)
+\Longrightarrow
+\operatorname{HasConvergentSubsequence}(x_n,\mathbb{R}^m)
+\]
+means that every bounded Euclidean sequence has a convergent subsequence.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
