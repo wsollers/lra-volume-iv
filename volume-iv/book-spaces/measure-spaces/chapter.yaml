@@ -2,9 +2,12 @@ subject: measure-spaces
 display_title: Measure Spaces
 volume: volume-iv
 status: planned
+sections:
+  - subject: definitions
+    display_title: "Definitions"
 dependencies:
-  prior: topological-spaces
-  next: ''
+  prior: measurable-spaces
+  next: vector-spaces
 path: volume-iv/book-spaces/measure-spaces
 book: book-spaces
 environments: []

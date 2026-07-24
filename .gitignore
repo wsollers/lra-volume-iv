@@ -119,6 +119,7 @@ desktop.ini
 
 # Local source PDFs
 # These may include personally purchased or otherwise non-redistributable files.
+pdfs/
 *.pdf
 common/
 .claude/

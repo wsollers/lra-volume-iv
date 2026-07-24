@@ -1,0 +1,61 @@
+\begin{definitionbox}{Definition --- Measure Space}
+\begin{definition}[Measure Space]\label{def:measure-space}
+Let \((X,\mathcal{A})\) be a measurable space.  A \emph{measure} on
+\((X,\mathcal{A})\) is a function
+\[
+  \mu:\mathcal{A}\to\mathbb{R}_{\geq 0}\cup\{\infty\}
+\]
+such that:
+\begin{enumerate}
+  \item \(\mu(\emptyset)=0\);
+  \item if \(E_1,E_2,\ldots\in\mathcal{A}\) are pairwise disjoint, then
+        \[
+          \mu\!\left(\bigcup_{n=1}^{\infty}E_n\right)
+          =
+          \sum_{n=1}^{\infty}\mu(E_n).
+        \]
+\end{enumerate}
+A \emph{measure space} is a triple \((X,\mathcal{A},\mu)\), where
+\((X,\mathcal{A})\) is a measurable space and \(\mu\) is a measure on
+\((X,\mathcal{A})\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\text{\((X,\mathcal{A},\mu)\) is a measure space}
+\Longleftrightarrow\;&
+\text{\((X,\mathcal{A})\) is a measurable space}
+\land
+\mu:\mathcal{A}\to\mathbb{R}_{\geq 0}\cup\{\infty\}
+\\
+&{}\land \mu(\emptyset)=0
+\\
+&{}\land
+\forall (E_n)_{n\in\mathbb{N}}\subseteq\mathcal{A}{:}\;
+\text{\((E_n)_{n\in\mathbb{N}}\) is pairwise disjoint}
+\\
+&{}\qquad\Longrightarrow\;
+\mu\!\left(\bigcup_{n=1}^{\infty}E_n\right)
+=
+\sum_{n=1}^{\infty}\mu(E_n).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\text{\((X,\mathcal{A},\mu)\) is a measure space}
+\]
+means that \(\mu\) assigns countably additive size to the measurable sets of
+\((X,\mathcal{A})\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A measurable space says which sets are eligible to be measured.  A measure
+space adds a size function on those eligible sets, with countable additivity
+for decompositions into disjoint measurable pieces.
+\end{remark*}
+
+\DefinitionalRoot

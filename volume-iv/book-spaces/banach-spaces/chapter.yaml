@@ -1,10 +1,10 @@
-subject: normed-linear-spaces
-display_title: "Normed Linear Spaces"
+subject: banach-spaces
+display_title: "Banach Spaces"
 volume: volume-iv
 status: planned
 sections:
   - subject: definitions
     display_title: "Definitions"
 dependencies:
-  prior: vector-spaces
-  next: banach-spaces
+  prior: normed-linear-spaces
+  next: inner-product-spaces

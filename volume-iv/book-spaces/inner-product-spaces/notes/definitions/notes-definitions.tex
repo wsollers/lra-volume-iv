@@ -1,0 +1,61 @@
+\begin{definitionbox}{Definition --- Inner Product Space}
+\begin{definition}[Inner Product Space]\label{def:inner-product-space}
+Let \(V\) be a real vector space.  An \emph{inner product} on \(V\) is a
+function
+\[
+  \langle\cdot,\cdot\rangle:V\times V\to\mathbb{R}
+\]
+such that for all \(x,y,z\in V\) and all \(\lambda\in\mathbb{R}\),
+\begin{enumerate}
+  \item \(\langle x,x\rangle\geq 0\), and
+        \(\langle x,x\rangle=0\) if and only if \(x=0\);
+  \item \(\langle x,y\rangle=\langle y,x\rangle\);
+  \item \(\langle x+z,y\rangle=\langle x,y\rangle+\langle z,y\rangle\);
+  \item \(\langle \lambda x,y\rangle=\lambda\langle x,y\rangle\).
+\end{enumerate}
+An \emph{inner product space} is a pair
+\((V,\langle\cdot,\cdot\rangle)\), where \(V\) is a real vector space and
+\(\langle\cdot,\cdot\rangle\) is an inner product on \(V\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\text{\((V,\langle\cdot,\cdot\rangle)\) is an inner product space}
+\Longleftrightarrow\;&
+V\text{ is a real vector space}
+\land
+\langle\cdot,\cdot\rangle:V\times V\to\mathbb{R}
+\\
+&{}\land
+\forall x,y,z\in V\;\forall \lambda\in\mathbb{R}{:}\;
+\langle x,x\rangle\geq0
+\\
+&{}\land
+\bigl(\langle x,x\rangle=0\Longleftrightarrow x=0\bigr)
+\land
+\langle x,y\rangle=\langle y,x\rangle
+\\
+&{}\land
+\langle x+z,y\rangle=\langle x,y\rangle+\langle z,y\rangle
+\land
+\langle\lambda x,y\rangle=\lambda\langle x,y\rangle.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\text{\((V,\langle\cdot,\cdot\rangle)\) is an inner product space}
+\]
+means that the real vector space \(V\) is equipped with an inner product.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An inner product adds angle and length information to a vector space.  Its
+associated length is \(\|x\|=\sqrt{\langle x,x\rangle}\), which is the norm
+used when inner product spaces are viewed metrically.
+\end{remark*}
+
+\DefinitionalRoot

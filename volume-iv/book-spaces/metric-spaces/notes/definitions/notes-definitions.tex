@@ -60,6 +60,57 @@ Kainth's \emph{A Comprehensive Textbook on Metric Spaces}
 
 \DefinitionalRoot
 
+\begin{theorembox}{Theorem}
+\begin{theorem}[Rearranged Triangle Inequality]
+\label{thm:metric-rearranged-triangle-inequality}
+Let \((X,d)\) be a metric space.  For all \(a,b,c\in X\),
+\[
+  \bigl|d(a,b)-d(b,c)\bigr|
+  \leq
+  d(a,c).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:metric-rearranged-triangle-inequality]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b,c\in X{:}\;
+\bigl|d(a,b)-d(b,c)\bigr|
+\leq d(a,c).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\bigl|d(a,b)-d(b,c)\bigr|
+\leq d(a,c)
+\]
+means that the two distances from \(b\) to \(a\) and \(c\) differ by no more
+than the distance between \(a\) and \(c\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+In a metric space, the distances from a fixed point \(b\) to two other points
+cannot differ by more than the distance between those two points.  This is the
+triangle inequality viewed after moving one distance term to the other side.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This is Theorem~1.1.2 in
+{\'O} Searc{\'o}id's \emph{Metric Spaces}
+\cite{OSearcoidMetricSpaces}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+\end{itemize}
+\end{dependencies}
+
 \begin{definition}[Pseudo-Metric]\label{def:pseudo-metric}
 Let \(X\) be a nonempty set.  A function
 \[

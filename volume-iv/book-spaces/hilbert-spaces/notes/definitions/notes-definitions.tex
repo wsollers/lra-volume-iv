@@ -1,0 +1,47 @@
+\begin{definitionbox}{Definition --- Hilbert Space}
+\begin{definition}[Hilbert Space]\label{def:hilbert-space}
+A \emph{Hilbert space} is an inner product space
+\((H,\langle\cdot,\cdot\rangle)\) such that every Cauchy sequence with
+respect to the induced norm
+\[
+  \|x\|=\sqrt{\langle x,x\rangle}
+\]
+converges to a point of \(H\).  Equivalently, it is an inner product space
+that is complete for the metric \(d(x,y)=\|x-y\|\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\text{\((H,\langle\cdot,\cdot\rangle)\) is a Hilbert space}
+\Longleftrightarrow\;&
+\text{\((H,\langle\cdot,\cdot\rangle)\) is an inner product space}
+\\
+&{}\land
+\forall (x_n)_{n\in\mathbb{N}}\subseteq H{:}\;
+\operatorname{IsCauchy}(x_n,d)
+\Longrightarrow
+\exists x\in H{:}\;x_n\to x,
+\\
+&\text{where }\|x\|=\sqrt{\langle x,x\rangle}
+\text{ and }d(x,y)=\|x-y\|.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\text{\((H,\langle\cdot,\cdot\rangle)\) is a Hilbert space}
+\]
+means that \((H,\langle\cdot,\cdot\rangle)\) is a complete inner product
+space.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A Hilbert space is to inner product spaces what a Banach space is to normed
+linear spaces: it has no missing limits for Cauchy sequences measured by the
+natural metric coming from its length structure.
+\end{remark*}
+
+\DefinitionalRoot

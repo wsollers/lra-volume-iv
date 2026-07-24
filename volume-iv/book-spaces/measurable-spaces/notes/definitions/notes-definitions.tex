@@ -1,0 +1,49 @@
+\begin{definitionbox}{Definition --- Measurable Space}
+\begin{definition}[Measurable Space]\label{def:measurable-space}
+Let \(X\) be a set.  A \emph{\(\sigma\)-algebra} on \(X\) is a collection
+\(\mathcal{A}\subseteq\mathcal{P}(X)\) such that:
+\begin{enumerate}
+  \item \(X\in\mathcal{A}\);
+  \item if \(E\in\mathcal{A}\), then \(X\setminus E\in\mathcal{A}\);
+  \item if \(E_1,E_2,\ldots\in\mathcal{A}\), then
+        \(\bigcup_{n=1}^{\infty}E_n\in\mathcal{A}\).
+\end{enumerate}
+A \emph{measurable space} is a pair \((X,\mathcal{A})\), where \(X\) is a set
+and \(\mathcal{A}\) is a \(\sigma\)-algebra on \(X\).  The members of
+\(\mathcal{A}\) are called the \emph{measurable sets} of the space.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\text{\((X,\mathcal{A})\) is a measurable space}
+\Longleftrightarrow\;&
+\mathcal{A}\subseteq\mathcal{P}(X)
+\land X\in\mathcal{A}
+\\
+&{}\land
+\forall E\in\mathcal{A}{:}\;X\setminus E\in\mathcal{A}
+\\
+&{}\land
+\forall (E_n)_{n\in\mathbb{N}}\subseteq\mathcal{A}{:}\;
+\bigcup_{n=1}^{\infty}E_n\in\mathcal{A}.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\text{\((X,\mathcal{A})\) is a measurable space}
+\]
+means that \(\mathcal{A}\) is a \(\sigma\)-algebra on the carrier set \(X\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A measurable space chooses which subsets of \(X\) may be treated as measurable.
+The axioms say that measurable sets are stable under complements and countable
+unions, so they are stable under the countable Boolean operations used by
+measure theory.
+\end{remark*}
+
+\DefinitionalRoot

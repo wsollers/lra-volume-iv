@@ -1,0 +1,148 @@
+\begin{definitionbox}{Definition --- Real Vector Space}
+\begin{definition}[Real Vector Space]\label{def:vector-spaces-real-vector-space}
+A \emph{real vector space} is a set \(V\) equipped with two operations:
+\[
+  +:V\times V\to V,
+  \qquad
+  \cdot:\mathbb{R}\times V\to V,
+\]
+called \emph{vector addition} and \emph{scalar multiplication}, such that for
+all \(u,v,w\in V\) and all \(a,b\in\mathbb{R}\):
+\begin{enumerate}
+  \item \(u+v=v+u\);
+  \item \((u+v)+w=u+(v+w)\);
+  \item there exists an element \(0_V\in V\) such that \(v+0_V=v\);
+  \item for each \(v\in V\), there exists an element \(-v\in V\) such that
+        \(v+(-v)=0_V\);
+  \item \(a\cdot(u+v)=a\cdot u+a\cdot v\);
+  \item \((a+b)\cdot v=a\cdot v+b\cdot v\);
+  \item \((ab)\cdot v=a\cdot(b\cdot v)\);
+  \item \(1\cdot v=v\).
+\end{enumerate}
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\text{\((V,+,\cdot)\) is a real vector space}
+\Longleftrightarrow\;&
++:V\times V\to V
+\land
+\cdot:\mathbb{R}\times V\to V
+\\
+&{}\land
+\text{the eight vector-space axioms above hold.}
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\text{\((V,+,\cdot)\) is a real vector space}
+\]
+means that the set \(V\) supports addition of vectors and multiplication of
+vectors by real scalars, with the usual compatibility laws.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A real vector space is the basic algebraic setting where vectors can be added
+and rescaled.  The axioms guarantee that linear combinations such as
+\(a u+b v\) behave coherently.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{definitionbox}{Definition --- Vector Space Notation}
+\begin{definition}[Vector Space Notation]\label{def:vector-spaces-notation}
+Let \(V\) be a real vector space.
+\begin{enumerate}
+  \item For \(u,v\in V\), the expression \(u+v\) denotes \emph{vector
+        addition}.
+  \item For \(a\in\mathbb{R}\) and \(v\in V\), the expression \(a v\) or
+        \(a\cdot v\) denotes \emph{scalar multiplication}.
+  \item The element \(0_V\) denotes the \emph{zero vector} of \(V\).
+  \item For \(v\in V\), the element \(-v\) denotes the \emph{additive inverse}
+        of \(v\).
+  \item For \(u,v\in V\), the expression \(u-v\) abbreviates
+        \(u+(-v)\).
+\end{enumerate}
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\text{standard notation in \(V\)}
+\Longleftrightarrow\;&
+u+v\text{ denotes vector addition}
+\\
+&{}\land
+a v\text{ denotes scalar multiplication}
+\\
+&{}\land
+0_V\text{ denotes the zero vector}
+\\
+&{}\land
+-v\text{ denotes the additive inverse of \(v\)}
+\\
+&{}\land
+u-v=u+(-v).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The subscript in \(0_V\) identifies the ambient vector space.  When the
+ambient space is clear, it is standard to write \(0\) instead of \(0_V\).
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{definitionbox}{Definition --- Vector Subspace}
+\begin{definition}[Vector Subspace]\label{def:vector-spaces-subspace}
+Let \(V\) be a real vector space.  A subset \(W\subseteq V\) is a
+\emph{vector subspace} of \(V\) if:
+\begin{enumerate}
+  \item \(0_V\in W\);
+  \item if \(u,v\in W\), then \(u+v\in W\);
+  \item if \(a\in\mathbb{R}\) and \(v\in W\), then \(a v\in W\).
+\end{enumerate}
+With the operations inherited from \(V\), a vector subspace is itself a real
+vector space.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\text{\(W\) is a vector subspace of \(V\)}
+\Longleftrightarrow\;&
+W\subseteq V
+\land
+0_V\in W
+\\
+&{}\land
+\forall u,v\in W{:}\;u+v\in W
+\\
+&{}\land
+\forall a\in\mathbb{R}\;\forall v\in W{:}\;a v\in W.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\text{\(W\) is a vector subspace of \(V\)}
+\]
+means that \(W\) is closed under the vector-space operations inherited from
+\(V\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A subspace is a smaller linear arena inside a vector space.  The closure
+conditions ensure that linear combinations of vectors in \(W\) remain in
+\(W\).
+\end{remark*}
+
+\DefinitionalRoot

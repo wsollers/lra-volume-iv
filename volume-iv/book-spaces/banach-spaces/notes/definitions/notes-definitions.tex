@@ -1,0 +1,41 @@
+\begin{definitionbox}{Definition --- Banach Space}
+\begin{definition}[Banach Space]\label{def:banach-space}
+A \emph{Banach space} is a normed linear space \((V,\|\cdot\|)\) such that
+every Cauchy sequence with respect to the induced metric
+\[
+  d_{\|\cdot\|}(x,y)=\|x-y\|
+\]
+converges to a point of \(V\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\text{\((V,\|\cdot\|)\) is a Banach space}
+\Longleftrightarrow\;&
+\text{\((V,\|\cdot\|)\) is a normed linear space}
+\\
+&{}\land
+\forall (x_n)_{n\in\mathbb{N}}\subseteq V{:}\;
+\operatorname{IsCauchy}(x_n,d_{\|\cdot\|})
+\Longrightarrow
+\exists x\in V{:}\;x_n\to x.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\text{\((V,\|\cdot\|)\) is a Banach space}
+\]
+means that \((V,\|\cdot\|)\) is a complete normed linear space.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A Banach space has no missing limits for norm-Cauchy sequences.  Completeness
+turns approximation by vectors inside \(V\) into convergence to a vector still
+inside \(V\).
+\end{remark*}
+
+\DefinitionalRoot
