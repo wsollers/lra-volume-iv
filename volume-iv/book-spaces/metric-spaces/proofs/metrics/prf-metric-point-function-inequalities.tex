@@ -18,15 +18,84 @@ and \(\delta_z(z)=0\).
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for metric-point-function-inequalities.
+Let \(a,b\in X\).  By the triangle inequality,
+\[
+  d(z,b)\leq d(z,a)+d(a,b).
+\]
+Since \(\delta_z(b)=d(z,b)\) and \(\delta_z(a)=d(z,a)\), this gives
+\[
+  \delta_z(b)-\delta_z(a)\leq d(a,b).
+\]
+Also, by the triangle inequality and symmetry,
+\[
+  d(a,b)\leq d(a,z)+d(z,b)=d(z,a)+d(z,b)
+  =\delta_z(a)+\delta_z(b).
+\]
+Thus
+\[
+  \delta_z(b)-\delta_z(a)\leq d(a,b)\leq
+  \delta_z(b)+\delta_z(a).
+\]
+Finally,
+\[
+  \delta_z(z)=d(z,z)=0.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for metric-point-function-inequalities.
+Fix \(a,b\in X\).  The point function at \(z\) is defined by
+\[
+  \delta_z(x)=d(z,x)
+\]
+for every \(x\in X\).  Therefore the desired inequalities are metric
+inequalities with one point frozen at \(z\).
+
+For the left-hand inequality, apply the triangle inequality to the three
+points \(z,a,b\):
+\[
+  d(z,b)\leq d(z,a)+d(a,b).
+\]
+Subtracting \(d(z,a)\) from both sides gives
+\[
+  d(z,b)-d(z,a)\leq d(a,b).
+\]
+Using \(\delta_z(b)=d(z,b)\) and \(\delta_z(a)=d(z,a)\), this becomes
+\[
+  \delta_z(b)-\delta_z(a)\leq d(a,b).
+\]
+
+For the right-hand inequality, apply the triangle inequality through \(z\):
+\[
+  d(a,b)\leq d(a,z)+d(z,b).
+\]
+By symmetry of the metric, \(d(a,z)=d(z,a)\).  Hence
+\[
+  d(a,b)\leq d(z,a)+d(z,b)
+  =\delta_z(a)+\delta_z(b).
+\]
+Since addition is commutative, this is the same as
+\[
+  d(a,b)\leq \delta_z(b)+\delta_z(a).
+\]
+
+Combining the two estimates yields
+\[
+  \delta_z(b)-\delta_z(a)\leq d(a,b)\leq
+  \delta_z(b)+\delta_z(a).
+\]
+The value at the base point is
+\[
+  \delta_z(z)=d(z,z)=0
+\]
+by the zero self-distance axiom for a metric.  This proves the theorem.
 \end{proof}
 
 \begin{remark*}[Proof structure]
+The left inequality is the triangle inequality
+\(d(z,b)\leq d(z,a)+d(a,b)\) rearranged.  The right inequality is the
+triangle inequality \(d(a,b)\leq d(a,z)+d(z,b)\), followed by symmetry and the
+definition of \(\delta_z\).  The zero statement is \(d(z,z)=0\).
 \end{remark*}
 
 \begin{dependencies}

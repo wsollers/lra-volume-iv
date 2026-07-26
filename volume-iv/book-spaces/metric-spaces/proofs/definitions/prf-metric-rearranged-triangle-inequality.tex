@@ -18,15 +18,94 @@ Let \((X,d)\) be a metric space.  For all \(a,b,c\in X\),
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for metric-rearranged-triangle-inequality.
+By the triangle inequality,
+\[
+  d(a,b)\leq d(a,c)+d(c,b)=d(a,c)+d(b,c),
+\]
+where the equality uses symmetry of the metric.  Subtracting \(d(b,c)\) from
+both sides gives
+\[
+  d(a,b)-d(b,c)\leq d(a,c).
+\]
+Applying the triangle inequality again, this time to the points \(b,a,c\),
+gives
+\[
+  d(b,c)\leq d(b,a)+d(a,c)=d(a,b)+d(a,c),
+\]
+and therefore
+\[
+  d(b,c)-d(a,b)\leq d(a,c).
+\]
+Equivalently,
+\[
+  -\bigl(d(a,b)-d(b,c)\bigr)\leq d(a,c).
+\]
+Thus both \(d(a,b)-d(b,c)\) and its negative are bounded above by \(d(a,c)\).
+Hence
+\[
+  \bigl|d(a,b)-d(b,c)\bigr|\leq d(a,c).
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for metric-rearranged-triangle-inequality.
+We prove the absolute-value estimate by proving the two one-sided estimates
+inside it.
+
+First, use the triangle inequality with the path from \(a\) to \(b\) through
+\(c\):
+\[
+  d(a,b)\leq d(a,c)+d(c,b).
+\]
+Since a metric is symmetric, \(d(c,b)=d(b,c)\).  Therefore
+\[
+  d(a,b)\leq d(a,c)+d(b,c).
+\]
+Moving \(d(b,c)\) to the left side gives
+\[
+  d(a,b)-d(b,c)\leq d(a,c).
+\]
+
+Second, use the triangle inequality with the path from \(b\) to \(c\) through
+\(a\):
+\[
+  d(b,c)\leq d(b,a)+d(a,c).
+\]
+Again by symmetry, \(d(b,a)=d(a,b)\), so
+\[
+  d(b,c)\leq d(a,b)+d(a,c).
+\]
+Moving \(d(a,b)\) to the left side gives
+\[
+  d(b,c)-d(a,b)\leq d(a,c).
+\]
+This is the same as
+\[
+  -\bigl(d(a,b)-d(b,c)\bigr)\leq d(a,c).
+\]
+
+Let
+\[
+  t=d(a,b)-d(b,c).
+\]
+The two inequalities above say \(t\leq d(a,c)\) and \(-t\leq d(a,c)\).  By
+the defining property of absolute value, this implies
+\[
+  |t|\leq d(a,c).
+\]
+Substituting back for \(t\), we obtain
+\[
+  \bigl|d(a,b)-d(b,c)\bigr|\leq d(a,c),
+\]
+as required.
 \end{proof}
 
 \begin{remark*}[Proof structure]
+The proof is the standard two-sided rearrangement of the triangle inequality:
+one application of the triangle inequality bounds
+\(d(a,b)-d(b,c)\), and the symmetric application bounds
+\(d(b,c)-d(a,b)\).  These two inequalities combine into the absolute-value
+bound.
 \end{remark*}
 
 \begin{dependencies}
