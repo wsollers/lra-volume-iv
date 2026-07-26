@@ -19,15 +19,92 @@ is a bijection.
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for metric-point-functions-identify-points.
+Let
+\[
+  F:X\to\delta(X),
+  \qquad
+  F(z)=\delta_z.
+\]
+The map \(F\) is surjective because \(\delta(X)\) is defined to be the set of
+all functions \(\delta_z\) with \(z\in X\).  Thus every element of
+\(\delta(X)\) has the form \(F(z)\) for some \(z\in X\).
+
+It remains to prove injectivity.  Suppose \(z_1,z_2\in X\) and
+\[
+  F(z_1)=F(z_2).
+\]
+Then \(\delta_{z_1}=\delta_{z_2}\) as functions.  Evaluating this equality at
+\(z_1\) gives
+\[
+  \delta_{z_1}(z_1)=\delta_{z_2}(z_1).
+\]
+By the definition of point function,
+\[
+  d(z_1,z_1)=d(z_2,z_1).
+\]
+The left side is \(0\), so \(d(z_2,z_1)=0\).  By the identity of
+indiscernibles for a metric, \(z_2=z_1\), and hence \(z_1=z_2\).  Therefore
+\(F\) is injective.
+
+Since \(F\) is both surjective and injective, it is bijective.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for metric-point-functions-identify-points.
+We need to prove that the assignment
+\[
+  F:X\to\delta(X),
+  \qquad
+  F(z)=\delta_z,
+\]
+is a bijection.  This means proving two things: every element of the codomain
+is hit by \(F\), and no two different points of \(X\) are sent to the same
+point function.
+
+First consider surjectivity.  The codomain is
+\[
+  \delta(X)=\{\,\delta_z:z\in X\,\}.
+\]
+So if \(u\in\delta(X)\), then by definition there is some \(z\in X\) such
+that \(u=\delta_z\).  But \(F(z)=\delta_z\), so \(F(z)=u\).  Hence \(F\) is
+surjective onto \(\delta(X)\).
+
+Now consider injectivity.  Suppose two points \(z_1,z_2\in X\) satisfy
+\[
+  F(z_1)=F(z_2).
+\]
+Since \(F(z)=\delta_z\), this says
+\[
+  \delta_{z_1}=\delta_{z_2}.
+\]
+These are functions on \(X\), so they have the same value at every input.
+Choose the input \(x=z_1\).  Then
+\[
+  \delta_{z_1}(z_1)=\delta_{z_2}(z_1).
+\]
+Using the definition \(\delta_z(x)=d(z,x)\), this becomes
+\[
+  d(z_1,z_1)=d(z_2,z_1).
+\]
+A metric has zero self-distance, so \(d(z_1,z_1)=0\).  Therefore
+\[
+  d(z_2,z_1)=0.
+\]
+The identity of indiscernibles says that distance \(0\) occurs only between
+equal points.  Thus \(z_2=z_1\), and so \(z_1=z_2\).  This proves that \(F\)
+is injective.
+
+The map \(F\) is surjective because \(\delta(X)\) is exactly its image, and it
+is injective because equality of distance profiles forces equality of the
+points that produced them.  Therefore \(F\) is bijective.
 \end{proof}
 
 \begin{remark*}[Proof structure]
+Surjectivity is immediate from the definition of \(\delta(X)\).  Injectivity
+uses equality of functions at a strategically chosen input: if
+\(\delta_{z_1}=\delta_{z_2}\), evaluate both sides at \(z_1\).  The metric
+axiom \(d(z_1,z_1)=0\), together with identity of indiscernibles, forces
+\(z_2=z_1\).
 \end{remark*}
 
 \begin{dependencies}

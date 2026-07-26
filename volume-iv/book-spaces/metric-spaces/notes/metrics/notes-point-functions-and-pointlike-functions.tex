@@ -105,6 +105,75 @@ law recovers \(z\) from \(\delta_z\), because \(\delta_z(z)=0\) and no other
 point has zero distance from \(z\).
 \end{remark*}
 
+\begin{remark*}[Exposition]
+The statement that
+\[
+  z\longmapsto\delta_z
+\]
+is a bijection from \(X\) onto \(\delta(X)\) contains two different levels of
+objects.
+
+First, for a fixed point \(z\in X\), the symbol \(\delta_z\) denotes a
+function
+\[
+  \delta_z:X\to\mathbb{R}_{\geq 0},
+  \qquad
+  \delta_z(x)=d(z,x).
+\]
+Here \(x\) is the variable input of the function \(\delta_z\).  The value
+\(\delta_z(x)\) is a number: the distance from the fixed base point \(z\) to
+the point \(x\).
+
+Second, the assignment
+\[
+  F:X\to\delta(X),
+  \qquad
+  F(z)=\delta_z,
+\]
+has a different input and output.  Its input is a point \(z\in X\), but its
+output is not a number.  Its output is the entire function \(\delta_z\).
+Thus \(F\) sends points of \(X\) to distance-from-that-point functions.
+
+To prove that \(F\) is bijective, it is enough to prove surjectivity and
+injectivity.
+
+Surjectivity is built into the definition of the codomain.  By definition,
+\[
+  \delta(X)=\{\,\delta_z:z\in X\,\}.
+\]
+Therefore every element of \(\delta(X)\) is already one of the functions
+produced by some point \(z\in X\).  So \(F:X\to\delta(X)\) is surjective onto
+its declared codomain.
+
+Injectivity is the substantive part.  Suppose \(z_1,z_2\in X\) and
+\[
+  F(z_1)=F(z_2).
+\]
+This means
+\[
+  \delta_{z_1}=\delta_{z_2}
+\]
+as functions.  Equality of functions means equality at every input, so
+\[
+  d(z_1,x)=d(z_2,x)
+\]
+for every \(x\in X\).  Since this holds for every \(x\), choose the particular
+input \(x=z_1\).  Then
+\[
+  d(z_1,z_1)=d(z_2,z_1).
+\]
+The left-hand side is \(0\), so
+\[
+  d(z_2,z_1)=0.
+\]
+By the identity of indiscernibles for a metric, \(z_2=z_1\).  Hence two
+points that determine the same point function must be the same point.
+
+Thus \(F\) is surjective because \(\delta(X)\) is defined as its image, and
+injective because a metric separates distinct points.  Therefore
+\(z\mapsto\delta_z\) is a bijection from \(X\) onto \(\delta(X)\).
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:metric-space]{Definition: Metric Space}
@@ -176,9 +245,9 @@ is \emph{pointlike} on \(X\) if, for all \(a,b\in X\),
 
 \begin{remark*}[Standard quantified statement]
 \[
-u\text{ is pointlike}
+\operatorname{IsPointlike}(u,(X,d))
 \quad\Longleftrightarrow\quad
-u:X\to\mathbb{R}_{\geq 0}
+u\colon X\to\mathbb{R}_{\geq 0}
 \;\land\;
 \forall a,b\in X{:}\ u(a)-u(b)\leq d(a,b)\leq u(a)+u(b).
 \]
@@ -186,11 +255,13 @@ u:X\to\mathbb{R}_{\geq 0}
 
 \begin{remark*}[Predicate reading]
 \[
-u:X\to\mathbb{R}_{\geq 0}
+u\colon X\to\mathbb{R}_{\geq 0}
 \quad\text{and}\quad
-\forall a,b\in X{:}\ u(a)-u(b)\leq d(a,b)\leq u(a)+u(b)
+\operatorname{IsPointlike}(u,(X,d))
 \]
-means that \(u\) is pointlike on the metric space \((X,d)\).
+means that \(u\) is pointlike with respect to the metric space \((X,d)\).
+The predicate depends on the metric space because the inequalities use the
+distance function \(d\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -229,7 +300,7 @@ In that case, there is a unique \(w\in X\) such that \(u(w)=0\), and
 \[
 u\in\delta(X)
 \quad\Longleftrightarrow\quad
-u\text{ is pointlike on }X
+\operatorname{IsPointlike}(u,(X,d))
 \;\land\;
 0\in u(X).
 \]
