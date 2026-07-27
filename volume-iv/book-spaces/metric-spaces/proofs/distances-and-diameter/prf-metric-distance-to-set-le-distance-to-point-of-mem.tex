@@ -1,0 +1,60 @@
+\newpage
+\phantomsection
+\label{prf:metric-distance-to-set-le-distance-to-point-of-mem}
+\LRAProofFor{thm:metric-distance-to-set-le-distance-to-point-of-mem}
+
+\begin{remark*}[Return]
+\hyperref[thm:metric-distance-to-set-le-distance-to-point-of-mem]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Point-to-Set Distance is Bounded by Witness Distances]
+Let \((X,d)\) be a metric space, let \(x\in X\), let \(A\subseteq X\), and let
+\(a\in A\).  Then \(d(x,A)\leq d(x,a)\).
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Since \(a\in A\), the number \(d(x,a)\) belongs to \(D(x,A)\).  By definition,
+\[
+  d(x,A)=\inf D(x,A).
+\]
+The infimum of a set is less than or equal to every element of the set.
+Therefore
+\[
+  d(x,A)\leq d(x,a).
+\]
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The hypothesis \(a\in A\) provides a concrete witness in the point-to-set
+distance set.  Indeed, by definition,
+\[
+  D(x,A)=\{\,d(x,y):y\in A\,\},
+\]
+so \(d(x,a)\in D(x,A)\).
+
+The point-to-set distance is defined as
+\[
+  d(x,A)=\inf D(x,A).
+\]
+An infimum is a lower bound for the set whose infimum it is.  Thus it is less
+than or equal to every member of \(D(x,A)\).  Applying this to the particular
+member \(d(x,a)\) gives
+\[
+  d(x,A)\leq d(x,a).
+\]
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Use \(a\in A\) to show \(d(x,a)\in D(x,A)\), then apply the lower-bound
+property of the infimum.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-point-set-distance]{Definition: Distance from a Point to a Set}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

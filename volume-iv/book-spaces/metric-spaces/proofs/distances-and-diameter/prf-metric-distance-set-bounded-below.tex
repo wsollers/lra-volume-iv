@@ -1,0 +1,51 @@
+\newpage
+\phantomsection
+\label{prf:metric-distance-set-bounded-below}
+\LRAProofFor{thm:metric-distance-set-bounded-below}
+
+\begin{remark*}[Return]
+\hyperref[thm:metric-distance-set-bounded-below]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Point-to-Set Distance Sets are Bounded Below]
+Let \((X,d)\) be a metric space, let \(x\in X\), and let \(A\subseteq X\).
+Then \(D(x,A)\) is bounded below by \(0\).
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let \(r\in D(x,A)\).  Then \(r=d(x,a)\) for some \(a\in A\).  Since \(d\) is
+a metric, \(d(x,a)\geq 0\).  Hence \(r\geq 0\).  Therefore \(0\) is a lower
+bound for \(D(x,A)\).
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+To show that \(D(x,A)\) is bounded below by \(0\), we must show that every
+element of \(D(x,A)\) is at least \(0\).  Take \(r\in D(x,A)\).  By the
+definition of the point-to-set distance set, there is some \(a\in A\) such
+that
+\[
+  r=d(x,a).
+\]
+Metrics are nonnegative, so
+\[
+  d(x,a)\geq 0.
+\]
+Substituting \(r=d(x,a)\), we get \(r\geq 0\).  Thus every element of
+\(D(x,A)\) is at least \(0\), so \(0\) is a lower bound.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Unpack an arbitrary member of \(D(x,A)\) as a metric distance and apply
+nonnegativity of the metric.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-point-set-distance-set]{Definition: Point-to-Set Distance Set}
+  \item \hyperref[def:metric-on-set]{Definition: Metric}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

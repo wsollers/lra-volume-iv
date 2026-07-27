@@ -1,0 +1,198 @@
+\begin{definitionbox}{Definition --- Topology}
+\begin{definition}[Topology]\label{def:topology-on-set}
+Let \(X\) be a set.  A \emph{topology} on \(X\) is a collection \(\tau\) of
+subsets of \(X\), whose members are called \emph{open sets}, such that:
+\begin{enumerate}
+  \item \(X\in\tau\) and \(\emptyset\in\tau\);
+  \item the union of any family of members of \(\tau\) belongs to \(\tau\);
+  \item the intersection of any two members of \(\tau\) belongs to \(\tau\).
+\end{enumerate}
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&X\in\tau
+\land
+\emptyset\in\tau
+\\
+&{}\land
+\forall \mathcal{U}\subseteq\tau{:}\;
+\bigcup_{U\in\mathcal{U}}U\in\tau
+\\
+&{}\land
+\forall U,V\in\tau{:}\;
+U\cap V\in\tau.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+U\in\tau
+\]
+means that \(U\) is an open subset of the topological space whose topology is
+\(\tau\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A topology selects which subsets of \(X\) count as open.  The axioms require
+the whole set and the empty set to be open, allow arbitrary unions of open
+sets, and preserve openness under finite intersections.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This definition is modeled on Definition~3.1 of Willard's
+\emph{General Topology} \cite{WillardGeneralTopology}.
+\end{remark*}
+
+\LeanFormalizes{def:topology-on-set}{lra-lean}{LRA.VolumeIV.TopologicalSpaces.TopologicalSpace}{TopologyDefinition}{statement}
+
+\DefinitionalRoot
+
+\begin{definitionbox}{Definition --- Topological Space}
+\begin{definition}[Topological Space]\label{def:topological-space}
+A \emph{topological space} is a pair \((X,\tau)\), where \(X\) is a set and
+\(\tau\) is a topology on \(X\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(X,\tau)
+\quad\text{with}\quad
+\tau \text{ a topology on } X.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A topological space is a set together with a chosen topology.  The set
+supplies the points, and the topology supplies the open subsets used to speak
+about neighborhood, limit, and continuity behavior.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This definition is modeled on Definition~3.1 of Willard's
+\emph{General Topology} \cite{WillardGeneralTopology}.
+\end{remark*}
+
+\LeanFormalizes{def:topological-space}{lra-lean}{LRA.VolumeIV.TopologicalSpaces.TopologicalSpace}{TopologicalSpaceDefinition}{statement}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topology-on-set]{Definition: Topology}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Closed Sets in a Topological Space]
+\label{thm:closed-sets-in-topological-space}
+Let \((X,\tau)\) be a topological space.  The closed subsets of \(X\) include
+\(X\) and \(\emptyset\), are closed under arbitrary intersections, and are
+closed under finite unions.
+
+\smallskip
+\noindent
+\hyperref[prf:closed-sets-in-topological-space]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+X,\emptyset\text{ are closed}
+\quad\land\quad
+\bigcap_{C\in\mathcal{C}}C\text{ is closed whenever every }C\in\mathcal{C}
+\text{ is closed}
+\quad\land\quad
+C\cup D\text{ is closed whenever }C,D\text{ are closed}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closed sets obey the dual closure rules to open sets.  Complements turn
+arbitrary unions of open sets into arbitrary intersections of closed sets, and
+turn finite intersections of open sets into finite unions of closed sets.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This theorem is modeled on Theorem~3.4 of Willard's
+\emph{General Topology} \cite{WillardGeneralTopology}.
+\end{remark*}
+
+\LeanFormalizes{thm:closed-sets-in-topological-space}{lra-lean}{LRA.VolumeIV.TopologicalSpaces.TopologicalSpace}{closed_sets_in_topological_space}{statement}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Topology from Closed-Set Axioms]
+\label{thm:closed-set-characterization-topologies}
+Let \(X\) be a set, and let \(\mathcal{C}\) be a collection of subsets of
+\(X\).  Suppose that \(X\in\mathcal{C}\), \(\emptyset\in\mathcal{C}\),
+arbitrary intersections of members of \(\mathcal{C}\) belong to
+\(\mathcal{C}\), and unions of two members of \(\mathcal{C}\) belong to
+\(\mathcal{C}\).  Then \(\mathcal{C}\) determines a topology on \(X\) whose
+closed sets are exactly the members of \(\mathcal{C}\).
+
+\smallskip
+\noindent
+\hyperref[prf:closed-set-characterization-topologies]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&X\in\mathcal{C}
+\land
+\emptyset\in\mathcal{C}
+\land
+\forall\mathcal{A}\subseteq\mathcal{C}{:}\;
+\bigcap_{A\in\mathcal{A}}A\in\mathcal{C}
+\\
+&{}\land
+\forall C,D\in\mathcal{C}{:}\;
+C\cup D\in\mathcal{C}
+\\
+&\Longrightarrow
+\exists\tau{:}\;
+\tau\text{ is a topology on }X
+\land
+\mathcal{C}
+=
+\{C\subseteq X:X\setminus C\in\tau\}.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+C\in\mathcal{C}
+\]
+means that \(C\) is one of the subsets being prescribed as closed.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The closed-set axioms are sufficient to recover the corresponding topology:
+declare a subset open exactly when its complement belongs to
+\(\mathcal{C}\).  The stated closed-set closure laws become the topology
+axioms after taking complements.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This theorem is modeled on Theorem~3.4 of Willard's
+\emph{General Topology} \cite{WillardGeneralTopology}.
+\end{remark*}
+
+\LeanFormalizes{thm:closed-set-characterization-topologies}{lra-lean}{LRA.VolumeIV.TopologicalSpaces.TopologicalSpace}{topology_from_closed_set_axioms}{statement}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+  \item \hyperref[thm:closed-sets-in-topological-space]{Theorem: Closed Sets in a Topological Space}
+\end{itemize}
+\end{dependencies}

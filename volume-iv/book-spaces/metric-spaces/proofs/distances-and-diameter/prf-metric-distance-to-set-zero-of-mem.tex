@@ -1,0 +1,64 @@
+\newpage
+\phantomsection
+\label{prf:metric-distance-to-set-zero-of-mem}
+\LRAProofFor{thm:metric-distance-to-set-zero-of-mem}
+
+\begin{remark*}[Return]
+\hyperref[thm:metric-distance-to-set-zero-of-mem]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Point-to-Set Distance is Zero at Points of the Set]
+Let \((X,d)\) be a metric space, let \(A\subseteq X\), and let \(x\in A\).
+Then \(d(x,A)=0\).
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Since every element of \(D(x,A)\) is nonnegative, \(0\) is a lower bound for
+\(D(x,A)\).  Hence \(0\leq d(x,A)\).  On the other hand, \(x\in A\), so
+\[
+  d(x,A)\leq d(x,x)=0.
+\]
+Thus \(d(x,A)\leq 0\) and \(0\leq d(x,A)\), so \(d(x,A)=0\).
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+We prove the equality by proving both inequalities.
+
+First, the point-to-set distance set \(D(x,A)\) consists of metric distances.
+Every metric distance is nonnegative, so \(0\) is a lower bound for
+\(D(x,A)\).  Since \(d(x,A)=\inf D(x,A)\), the infimum cannot be smaller than
+this lower bound in the present nonnegative situation.  Hence
+\[
+  0\leq d(x,A).
+\]
+
+Second, because \(x\in A\), the witness-distance theorem gives
+\[
+  d(x,A)\leq d(x,x).
+\]
+The metric identity axiom gives \(d(x,x)=0\), so
+\[
+  d(x,A)\leq 0.
+\]
+Combining \(0\leq d(x,A)\) and \(d(x,A)\leq 0\), we conclude
+\[
+  d(x,A)=0.
+\]
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Nonnegativity gives the lower bound \(0\leq d(x,A)\).  The witness \(x\in A\)
+gives the upper bound \(d(x,A)\leq d(x,x)=0\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-point-set-distance]{Definition: Distance from a Point to a Set}
+  \item \hyperref[thm:metric-distance-set-bounded-below]{Theorem: Point-to-Set Distance Sets are Bounded Below}
+  \item \hyperref[thm:metric-distance-to-set-le-distance-to-point-of-mem]{Theorem: Point-to-Set Distance is Bounded by Witness Distances}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

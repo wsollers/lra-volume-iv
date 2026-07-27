@@ -1,0 +1,53 @@
+\newpage
+\phantomsection
+\label{prf:metric-diameter-set-monotone}
+\LRAProofFor{thm:metric-diameter-set-monotone}
+
+\begin{remark*}[Return]
+\hyperref[thm:metric-diameter-set-monotone]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Diameter Distance Sets are Monotone]
+Let \((X,d)\) be a metric space and let \(A,B\subseteq X\).  If
+\(A\subseteq B\), then \(D(A)\subseteq D(B)\).
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Assume \(A\subseteq B\).  Let \(r\in D(A)\).  By definition of \(D(A)\), there
+exist \(a,b\in A\) such that \(r=d(a,b)\).  Since \(A\subseteq B\), both
+\(a\) and \(b\) also belong to \(B\).  Hence the same equality \(r=d(a,b)\)
+witnesses that \(r\in D(B)\).  Therefore \(D(A)\subseteq D(B)\).
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+To prove \(D(A)\subseteq D(B)\), take an arbitrary element of \(D(A)\).  Call
+it \(r\).  Membership in \(D(A)\) means that \(r\) is not an abstract number
+with no source: it is realized as a distance between two points of \(A\).
+Thus there are points \(a,b\in A\) such that
+\[
+  r=d(a,b).
+\]
+The hypothesis \(A\subseteq B\) says that every point of \(A\) is also a point
+of \(B\).  Therefore \(a,b\in B\).  The same two points now show that
+\[
+  r=d(a,b)
+\]
+is a distance between two points of \(B\).  Hence \(r\in D(B)\).  Since every
+element of \(D(A)\) lies in \(D(B)\), we have \(D(A)\subseteq D(B)\).
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Unpack membership in the diameter distance set, transport the two witnesses
+across the inclusion \(A\subseteq B\), and repack the same distance as an
+element of \(D(B)\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-diameter-distance-set]{Definition: Diameter Distance Set}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

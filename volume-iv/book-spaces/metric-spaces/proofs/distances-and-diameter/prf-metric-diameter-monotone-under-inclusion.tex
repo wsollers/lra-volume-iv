@@ -1,0 +1,70 @@
+\newpage
+\phantomsection
+\label{prf:metric-diameter-monotone-under-inclusion}
+\LRAProofFor{thm:metric-diameter-monotone-under-inclusion}
+
+\begin{remark*}[Return]
+\hyperref[thm:metric-diameter-monotone-under-inclusion]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Diameter is Monotone Under Inclusion]
+Let \((X,d)\) be a metric space and let \(A,B\subseteq X\).  If
+\(A\subseteq B\), \(D(A)\) is nonempty, and \(D(B)\) is bounded above, then
+\(\operatorname{diam}(A)\leq\operatorname{diam}(B)\).
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+By \hyperref[thm:metric-diameter-set-monotone]{monotonicity of diameter
+distance sets}, \(D(A)\subseteq D(B)\).  Since \(D(B)\) is bounded above,
+every upper bound for \(D(B)\) is also an upper bound for \(D(A)\).  The least
+upper bound of \(D(A)\) is therefore no larger than the least upper bound of
+\(D(B)\).  Hence
+\[
+  \operatorname{diam}(A)=\sup D(A)\leq \sup D(B)=\operatorname{diam}(B).
+\]
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The diameter is defined as a supremum:
+\[
+  \operatorname{diam}(A)=\sup D(A),
+  \qquad
+  \operatorname{diam}(B)=\sup D(B).
+\]
+The inclusion \(A\subseteq B\) implies
+\[
+  D(A)\subseteq D(B),
+\]
+because every distance between two points of \(A\) is also a distance between
+two points of \(B\).
+
+Now use the order property of suprema.  Since \(D(B)\) is bounded above and
+\(D(A)\) is nonempty, the supremum \(\sup D(A)\) is controlled by any upper
+bound for \(D(B)\).  In particular, \(\sup D(B)\) is an upper bound for
+\(D(B)\), hence also an upper bound for \(D(A)\).  Because \(\sup D(A)\) is
+the least upper bound of \(D(A)\), it must satisfy
+\[
+  \sup D(A)\leq \sup D(B).
+\]
+Translating back to diameters gives
+\[
+  \operatorname{diam}(A)\leq \operatorname{diam}(B).
+\]
+\end{proof}
+
+\begin{remark*}[Proof structure]
+First reduce the claim to \(D(A)\subseteq D(B)\).  Then apply the elementary
+supremum principle that the supremum of a nonempty subset is at most the
+supremum of a bounded-above containing set.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-diameter]{Definition: Diameter}
+  \item \hyperref[thm:metric-diameter-set-monotone]{Theorem: Diameter Distance Sets are Monotone}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
