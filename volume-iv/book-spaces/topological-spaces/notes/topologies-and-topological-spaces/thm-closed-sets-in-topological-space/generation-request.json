@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:closed-sets-in-topological-space",
+  "kind": "theorem",
+  "title": "Closed Sets in a Topological Space",
+  "source": {
+    "label": "thm:closed-sets-in-topological-space",
+    "kind": "theorem",
+    "title": "Closed Sets in a Topological Space",
+    "book": "book-spaces",
+    "chapter": "topological-spaces",
+    "section": "topologies-and-topological-spaces",
+    "book_root": "volume-iv-mathematical-spaces.tex",
+    "source_file": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/notes-topologies-and-topological-spaces.tex",
+    "source_line_start": 181,
+    "source_line_end": 190,
+    "artifact_package": {
+      "directory": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/thm-closed-sets-in-topological-space",
+      "artifact": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/thm-closed-sets-in-topological-space/artifact.yaml",
+      "corrected_tex": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/thm-closed-sets-in-topological-space/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/thm-closed-sets-in-topological-space",
+    "artifact": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/thm-closed-sets-in-topological-space/artifact.yaml",
+    "corrected_tex": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/thm-closed-sets-in-topological-space/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iv",
+      "file": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/notes-topologies-and-topological-spaces.tex",
+      "label": "thm:closed-sets-in-topological-space",
+      "environment_kind": "theorem",
+      "source_line_start": 181,
+      "source_line_end": 190,
+      "current_tex": "\\begin{theorem}[Closed Sets in a Topological Space]\n\\label{thm:closed-sets-in-topological-space}\nLet \\((X,\\tau)\\) be a topological space.  Its closed-set family\n\\(\\mathcal{F}_{\\tau}\\) contains \\(X\\) and \\(\\emptyset\\), is closed under\narbitrary intersections, and is closed under finite unions.\n\n\\smallskip\n\\noindent\n\\hyperref[prf:closed-sets-in-topological-space]{\\textit{Go to proof.}}\n\\end{theorem}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

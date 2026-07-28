@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:topological-closure",
+  "kind": "definition",
+  "title": "Topological Closure",
+  "source": {
+    "label": "def:topological-closure",
+    "kind": "definition",
+    "title": "Topological Closure",
+    "book": "book-spaces",
+    "chapter": "topological-spaces",
+    "section": "topologies-and-topological-spaces",
+    "book_root": "volume-iv-mathematical-spaces.tex",
+    "source_file": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/notes-topologies-and-topological-spaces.tex",
+    "source_line_start": 202,
+    "source_line_end": 212,
+    "artifact_package": {
+      "directory": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-topological-closure",
+      "artifact": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-topological-closure/artifact.yaml",
+      "corrected_tex": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-topological-closure/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-topological-closure",
+    "artifact": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-topological-closure/artifact.yaml",
+    "corrected_tex": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-topological-closure/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iv",
+      "file": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/notes-topologies-and-topological-spaces.tex",
+      "label": "def:topological-closure",
+      "environment_kind": "definition",
+      "source_line_start": 202,
+      "source_line_end": 212,
+      "current_tex": "\\begin{definition}[Topological Closure]\\label{def:topological-closure}\nLet \\(X\\) be a topological space, and let \\(E\\subseteq X\\).  The\n\\emph{closure} of \\(E\\) in \\(X\\) is\n\\[\n\\overline{E}^{\\,X}\n=\n\\mathrm{Cl}_{X}(E)\n=\n\\bigcap\\{K\\subseteq X:E\\subseteq K\\text{ and }K\\text{ is closed in }X\\}.\n\\]\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

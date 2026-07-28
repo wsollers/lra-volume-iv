@@ -12,7 +12,7 @@ APIs, not against the reference structures.
 
 ### Topology
 
-- Lean file: `LRA/VolumeIV/Topology/TopologicalSpace.lean`
+- Lean file: `LRA/VolumeIV/TopologicalSpaces/TopologicalSpace.lean`
 - Source: Willard, *General Topology*, Definition 3.1
 - Book-modeled statement: A topology on a set `X` is a collection of subsets of
   `X`, called open sets, containing `X` and `∅`, closed under arbitrary unions,
@@ -32,7 +32,7 @@ structure TopologyDefinition (X : Type u) where
 
 ### Topological Space
 
-- Lean file: `LRA/VolumeIV/Topology/TopologicalSpace.lean`
+- Lean file: `LRA/VolumeIV/TopologicalSpaces/TopologicalSpace.lean`
 - Source: Willard, *General Topology*, Definition 3.1
 - Book-modeled statement: A topological space is a pair `(X, τ)` consisting of a
   carrier set `X` and a topology `τ` on `X`.
@@ -44,9 +44,35 @@ structure TopologicalSpaceDefinition where
   topology : TopologyDefinition Carrier
 ```
 
+### Closed Set
+
+- Lean file: `LRA/VolumeIV/TopologicalSpaces/TopologicalSpace.lean`
+- Source: Willard, *General Topology*, Definition 3.3
+- Book-modeled statement: A subset `E` of a topological space `X` is closed in
+  `X` exactly when its complement in `X` is open.
+- Lean declaration:
+
+```lean
+def ClosedSetDefinition {X : Type u} [TopologicalSpace X] (E : Set X) : Prop :=
+  IsOpen (Eᶜ)
+```
+
+### Closed-Set Family of a Topology
+
+- Lean file: `LRA/VolumeIV/TopologicalSpaces/TopologicalSpace.lean`
+- Source: Willard, *General Topology*, Theorem 3.4 setup
+- Book-modeled statement: The closed-set family associated to a topology is
+  the family of subsets whose complements are open.
+- Lean declaration:
+
+```lean
+def ClosedSetFamilyOfTopology (X : Type u) [TopologicalSpace X] : Set (Set X) :=
+  {F | ClosedSetDefinition F}
+```
+
 ### Closed Set Axioms
 
-- Lean file: `LRA/VolumeIV/Topology/TopologicalSpace.lean`
+- Lean file: `LRA/VolumeIV/TopologicalSpaces/TopologicalSpace.lean`
 - Source: Willard, *General Topology*, Theorem 3.4
 - Book-modeled statement: In a topological space, the closed sets include `X`
   and `∅`, are closed under arbitrary intersections, and are closed under finite
@@ -66,7 +92,7 @@ theorem closed_sets_in_topological_space
 
 ### Topology From Closed Set Axioms
 
-- Lean file: `LRA/VolumeIV/Topology/TopologicalSpace.lean`
+- Lean file: `LRA/VolumeIV/TopologicalSpaces/TopologicalSpace.lean`
 - Source: Willard, *General Topology*, Theorem 3.4
 - Book-modeled statement: Conversely, any family of subsets satisfying the
   closed-set axioms determines a topology whose closed sets are exactly that

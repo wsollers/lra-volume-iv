@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:closed-set-family-of-topology",
+  "kind": "definition",
+  "title": "Closed-Set Family of a Topology",
+  "source": {
+    "label": "def:closed-set-family-of-topology",
+    "kind": "definition",
+    "title": "Closed-Set Family of a Topology",
+    "book": "book-spaces",
+    "chapter": "topological-spaces",
+    "section": "topologies-and-topological-spaces",
+    "book_root": "volume-iv-mathematical-spaces.tex",
+    "source_file": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/notes-topologies-and-topological-spaces.tex",
+    "source_line_start": 132,
+    "source_line_end": 140,
+    "artifact_package": {
+      "directory": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-closed-set-family-of-topology",
+      "artifact": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-closed-set-family-of-topology/artifact.yaml",
+      "corrected_tex": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-closed-set-family-of-topology/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-closed-set-family-of-topology",
+    "artifact": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-closed-set-family-of-topology/artifact.yaml",
+    "corrected_tex": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-closed-set-family-of-topology/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iv",
+      "file": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/notes-topologies-and-topological-spaces.tex",
+      "label": "def:closed-set-family-of-topology",
+      "environment_kind": "definition",
+      "source_line_start": 132,
+      "source_line_end": 140,
+      "current_tex": "\\begin{definition}[Closed-Set Family of a Topology]\\label{def:closed-set-family-of-topology}\nLet \\((X,\\tau)\\) be a topological space.  The \\emph{closed-set family}\nassociated to \\(\\tau\\) is\n\\[\n\\mathcal{F}_{\\tau}\n=\n\\{F\\subseteq X:X\\setminus F\\in\\tau\\}.\n\\]\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

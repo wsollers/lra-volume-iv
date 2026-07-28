@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:topological-closed-set",
+  "kind": "definition",
+  "title": "Closed Set",
+  "source": {
+    "label": "def:topological-closed-set",
+    "kind": "definition",
+    "title": "Closed Set",
+    "book": "book-spaces",
+    "chapter": "topological-spaces",
+    "section": "topologies-and-topological-spaces",
+    "book_root": "volume-iv-mathematical-spaces.tex",
+    "source_file": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/notes-topologies-and-topological-spaces.tex",
+    "source_line_start": 89,
+    "source_line_end": 92,
+    "artifact_package": {
+      "directory": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-topological-closed-set",
+      "artifact": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-topological-closed-set/artifact.yaml",
+      "corrected_tex": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-topological-closed-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-topological-closed-set",
+    "artifact": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-topological-closed-set/artifact.yaml",
+    "corrected_tex": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/def-topological-closed-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iv",
+      "file": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/notes-topologies-and-topological-spaces.tex",
+      "label": "def:topological-closed-set",
+      "environment_kind": "definition",
+      "source_line_start": 89,
+      "source_line_end": 92,
+      "current_tex": "\\begin{definition}[Closed Set]\\label{def:topological-closed-set}\nLet \\((X,\\tau)\\) be a topological space, and let \\(E\\subseteq X\\).  The set\n\\(E\\) is \\emph{closed in \\(X\\)} if \\(X\\setminus E\\) is open in \\(X\\).\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

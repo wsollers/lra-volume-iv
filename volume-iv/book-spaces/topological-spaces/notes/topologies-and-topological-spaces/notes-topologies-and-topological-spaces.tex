@@ -85,12 +85,104 @@ This definition is modeled on Definition~3.1 of Willard's
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition --- Closed Set}
+\begin{definition}[Closed Set]\label{def:topological-closed-set}
+Let \((X,\tau)\) be a topological space, and let \(E\subseteq X\).  The set
+\(E\) is \emph{closed in \(X\)} if \(X\setminus E\) is open in \(X\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall (X,\tau),\ \forall E\subseteq X,\quad
+E\text{ is closed in }X
+\Longleftrightarrow
+X\setminus E\in\tau.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+E\text{ is closed in }X
+\]
+means that the complement of \(E\), taken relative to the ambient set \(X\),
+is open in the topology on \(X\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closed sets are the subsets whose outside is open.  In a topological space,
+closedness is therefore not an independent primitive: it is the complement-side
+language determined by the chosen open sets.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This definition is modeled on Definition~3.3 of Willard's
+\emph{General Topology} \cite{WillardGeneralTopology}.
+\end{remark*}
+
+\LeanFormalizes{def:topological-closed-set}{lra-lean}{LRA.VolumeIV.TopologicalSpaces.TopologicalSpace}{ClosedSetDefinition}{statement}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Closed-Set Family of a Topology}
+\begin{definition}[Closed-Set Family of a Topology]\label{def:closed-set-family-of-topology}
+Let \((X,\tau)\) be a topological space.  The \emph{closed-set family}
+associated to \(\tau\) is
+\[
+\mathcal{F}_{\tau}
+=
+\{F\subseteq X:X\setminus F\in\tau\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall X,\ \forall\tau\subseteq\mathcal{P}(X){:}\quad
+\mathcal{F}_{\tau}
+=
+\{F\subseteq X:X\setminus F\in\tau\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+F\in\mathcal{F}_{\tau}
+\quad\Longleftrightarrow\quad
+F\text{ is closed in }(X,\tau).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The topology \(\tau\) lists the open subsets of \(X\).  The closed-set family
+\(\mathcal{F}_{\tau}\) lists the complementary subsets: a subset belongs to
+\(\mathcal{F}_{\tau}\) exactly when its complement belongs to \(\tau\).
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This definition names the closed-set family used in Theorem~3.4 of Willard's
+\emph{General Topology} \cite{WillardGeneralTopology}.
+\end{remark*}
+
+\LeanFormalizes{def:closed-set-family-of-topology}{lra-lean}{LRA.VolumeIV.TopologicalSpaces.TopologicalSpace}{ClosedSetFamilyOfTopology}{statement}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+  \item \hyperref[def:topological-closed-set]{Definition: Closed Set}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[Closed Sets in a Topological Space]
 \label{thm:closed-sets-in-topological-space}
-Let \((X,\tau)\) be a topological space.  The closed subsets of \(X\) include
-\(X\) and \(\emptyset\), are closed under arbitrary intersections, and are
-closed under finite unions.
+Let \((X,\tau)\) be a topological space.  Its closed-set family
+\(\mathcal{F}_{\tau}\) contains \(X\) and \(\emptyset\), is closed under
+arbitrary intersections, and is closed under finite unions.
 
 \smallskip
 \noindent
@@ -100,12 +192,16 @@ closed under finite unions.
 
 \begin{remark*}[Standard quantified statement]
 \[
-X,\emptyset\text{ are closed}
+\forall X,\ \forall\tau\subseteq\mathcal{P}(X){:}\quad
+\mathcal{F}_{\tau}\text{ is the closed-set family of }(X,\tau)
+\Longrightarrow
+X,\emptyset\in\mathcal{F}_{\tau}
 \quad\land\quad
-\bigcap_{C\in\mathcal{C}}C\text{ is closed whenever every }C\in\mathcal{C}
-\text{ is closed}
+\bigcap_{C\in\mathcal{C}}C\in\mathcal{F}_{\tau}
+\text{ whenever }\mathcal{C}\subseteq\mathcal{F}_{\tau}
 \quad\land\quad
-C\cup D\text{ is closed whenever }C,D\text{ are closed}.
+C\cup D\in\mathcal{F}_{\tau}
+\text{ whenever }C,D\in\mathcal{F}_{\tau}.
 \]
 \end{remark*}
 
@@ -125,6 +221,8 @@ This theorem is modeled on Theorem~3.4 of Willard's
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:topological-space]{Definition: Topological Space}
+  \item \hyperref[def:topological-closed-set]{Definition: Closed Set}
+  \item \hyperref[def:closed-set-family-of-topology]{Definition: Closed-Set Family of a Topology}
 \end{itemize}
 \end{dependencies}
 
@@ -147,7 +245,8 @@ closed sets are exactly the members of \(\mathcal{C}\).
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}
-&X\in\mathcal{C}
+&\forall X,\ \forall\mathcal{C}\subseteq\mathcal{P}(X){:}\;
+X\in\mathcal{C}
 \land
 \emptyset\in\mathcal{C}
 \land
@@ -194,5 +293,105 @@ This theorem is modeled on Theorem~3.4 of Willard's
 \begin{itemize}
   \item \hyperref[def:topological-space]{Definition: Topological Space}
   \item \hyperref[thm:closed-sets-in-topological-space]{Theorem: Closed Sets in a Topological Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Topological Closure}
+\begin{definition}[Topological Closure]\label{def:topological-closure}
+Let \(X\) be a topological space, and let \(E\subseteq X\).  The
+\emph{closure} of \(E\) in \(X\) is
+\[
+\overline{E}^{\,X}
+=
+\mathrm{Cl}_{X}(E)
+=
+\bigcap\{K\subseteq X:E\subseteq K\text{ and }K\text{ is closed in }X\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{gathered}
+X\text{ is a topological space},\quad E\subseteq X,\\
+\mathrm{Cl}_{X}(E)
+=
+\bigcap\{K\subseteq X:E\subseteq K\text{ and }K\text{ is closed in }X\}.
+\end{gathered}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The closure of \(E\) is the smallest closed subset of the ambient space \(X\)
+that contains \(E\).  It keeps every point of \(E\) and adds exactly the points
+forced by closedness in the given topology.
+\end{remark*}
+
+\begin{remark*}[Notation]
+When the ambient space is clear, \(\mathrm{Cl}_{X}(E)\) may be written
+as \(\overline{E}\).  The superscript in \(\overline{E}^{\,X}\) records the
+ambient space when closure in different spaces must be distinguished.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This definition is modeled on Definition~3.5 of Willard's
+\emph{General Topology} \cite{WillardGeneralTopology}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-space]{Definition: Topological Space}
+  \item \hyperref[thm:closed-sets-in-topological-space]{Theorem: Closed Sets in a Topological Space}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemma}[Closure Monotonicity]
+\label{lem:topological-closure-monotone}
+Let \(X\) be a topological space, and let \(A,B\subseteq X\).  If
+\(A\subseteq B\), then
+\[
+\mathrm{Cl}_{X}(A)\subseteq\mathrm{Cl}_{X}(B).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:topological-closure-monotone]{\textit{Go to proof.}}
+\end{lemma}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{gathered}
+X\text{ is a topological space},\quad A,B\subseteq X,\\
+A\subseteq B
+\Longrightarrow
+\mathrm{Cl}_{X}(A)\subseteq\mathrm{Cl}_{X}(B).
+\end{gathered}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&A,B\subseteq X,\\
+&A\subseteq B
+\quad\Longrightarrow\quad
+\overline{A}^{\,X}\subseteq\overline{B}^{\,X}.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closure is monotone with respect to inclusion.  Enlarging the original set can
+only enlarge, or leave unchanged, the smallest closed set that contains it.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This lemma is modeled on Lemma~3.6 of Willard's
+\emph{General Topology} \cite{WillardGeneralTopology}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:topological-closure]{Definition: Topological Closure}
 \end{itemize}
 \end{dependencies}

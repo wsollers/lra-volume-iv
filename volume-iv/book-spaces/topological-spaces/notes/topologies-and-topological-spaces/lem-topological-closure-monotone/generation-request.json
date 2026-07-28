@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:topological-closure-monotone",
+  "kind": "lemma",
+  "title": "Closure Monotonicity",
+  "source": {
+    "label": "lem:topological-closure-monotone",
+    "kind": "lemma",
+    "title": "Closure Monotonicity",
+    "book": "book-spaces",
+    "chapter": "topological-spaces",
+    "section": "topologies-and-topological-spaces",
+    "book_root": "volume-iv-mathematical-spaces.tex",
+    "source_file": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/notes-topologies-and-topological-spaces.tex",
+    "source_line_start": 250,
+    "source_line_end": 261,
+    "artifact_package": {
+      "directory": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/lem-topological-closure-monotone",
+      "artifact": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/lem-topological-closure-monotone/artifact.yaml",
+      "corrected_tex": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/lem-topological-closure-monotone/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/lem-topological-closure-monotone",
+    "artifact": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/lem-topological-closure-monotone/artifact.yaml",
+    "corrected_tex": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/lem-topological-closure-monotone/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iv",
+      "file": "volume-iv/book-spaces/topological-spaces/notes/topologies-and-topological-spaces/notes-topologies-and-topological-spaces.tex",
+      "label": "lem:topological-closure-monotone",
+      "environment_kind": "lemma",
+      "source_line_start": 250,
+      "source_line_end": 261,
+      "current_tex": "\\begin{lemma}[Closure Monotonicity]\n\\label{lem:topological-closure-monotone}\nLet \\(X\\) be a topological space, and let \\(A,B\\subseteq X\\).  If\n\\(A\\subseteq B\\), then\n\\[\n\\mathrm{Cl}_{X}(A)\\subseteq\\mathrm{Cl}_{X}(B).\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:topological-closure-monotone]{\\textit{Go to proof.}}\n\\end{lemma}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}
