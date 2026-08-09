@@ -1,0 +1,503 @@
+% Study source only. Not routed into the Volume IV LaTeX tree.
+% Purpose: stripped Set Theory proof queue from Volume I.
+
+\section*{Gate 1 Set Theory Statements}
+
+\subsection*{Scope}
+
+This is a proof-order source for rebuilding the set-theoretic toolkit.  It
+contains only axioms, definitions, and theorem-like statements.  It stops before
+functions and relations.
+
+\subsection*{Primitive Language and ZFC Axioms}
+
+\paragraph{Primitive: Set and Membership.}
+The objects of discourse are sets.  Membership is a primitive binary relation
+written \(x\in A\).
+
+\paragraph{Logical Equality / Identity.}
+Set theory is formulated in first-order logic with equality.  Equality is the
+logical identity relation:
+\[
+  A=A,
+  \qquad
+  A=B\to(\varphi(A)\Longleftrightarrow \varphi(B))
+\]
+for every formula \(\varphi\) in which substitution is legitimate.
+
+\paragraph{Axiom: Extensionality.}
+\[
+  \forall A\,\forall B,\qquad
+  A=B \Longleftrightarrow \forall x\,(x\in A\Longleftrightarrow x\in B).
+\]
+
+\paragraph{Axiom: Empty Set.}
+\[
+  \exists E\,\forall x,\ x\notin E.
+\]
+
+\paragraph{Axiom: Pairing.}
+\[
+  \forall a\,\forall b\,\exists P\,\forall x,\qquad
+  x\in P \Longleftrightarrow (x=a\lor x=b).
+\]
+
+\paragraph{Axiom: Union.}
+\[
+  \forall A\,\exists U\,\forall x,\qquad
+  x\in U \Longleftrightarrow \exists B\,(B\in A\land x\in B).
+\]
+
+\paragraph{Axiom: Power Set.}
+\[
+  \forall A\,\exists P\,\forall S,\qquad
+  S\in P \Longleftrightarrow S\subseteq A.
+\]
+
+\paragraph{Axiom Schema: Separation.}
+For every formula \(\varphi(x)\),
+\[
+  \forall A\,\exists B\,\forall x,\qquad
+  x\in B \Longleftrightarrow (x\in A\land \varphi(x)).
+\]
+
+\paragraph{Axiom: Infinity.}
+\[
+  \exists A\,
+  \bigl(\varnothing\in A
+  \land
+  \forall x\,(x\in A\to x\cup\{x\}\in A)\bigr).
+\]
+
+\paragraph{Axiom Schema: Replacement.}
+For every formula \(\varphi(x,y)\),
+\[
+  \forall A\,
+  \left(
+  (\forall x\in A\,\exists!y\,\varphi(x,y))
+  \to
+  \exists B\,\forall y\,
+  (y\in B\Longleftrightarrow \exists x\in A\,\varphi(x,y))
+  \right).
+\]
+
+\paragraph{Axiom: Foundation.}
+\[
+  \forall A,\qquad
+  A\neq\varnothing
+  \to
+  \exists x\in A\,(x\cap A=\varnothing).
+\]
+
+\paragraph{Axiom: Choice.}
+\[
+  \forall A,\qquad
+  (\forall B\in A,\ B\neq\varnothing)
+  \to
+  \exists f\,\forall B\in A,\ f(B)\in B.
+\]
+
+\subsection*{Empty Set and Extensional Equality}
+
+\paragraph{Theorem: Existence and Uniqueness of the Empty Set.}
+\[
+  \exists!E\,\forall x,\ x\notin E.
+\]
+
+\paragraph{Definition: Empty Set.}
+\[
+  \varnothing
+  \quad\text{is the unique set satisfying}\quad
+  \forall x,\ x\notin\varnothing.
+\]
+
+\paragraph{Definition: Subset.}
+\[
+  A\subseteq B
+  \Longleftrightarrow
+  \forall x\,(x\in A\to x\in B).
+\]
+
+\paragraph{Definition: Proper Subset.}
+\[
+  A\subsetneq B
+  \Longleftrightarrow
+  A\subseteq B\land A\neq B.
+\]
+
+\paragraph{Definition: Set Equality.}
+\[
+  A=B
+  \Longleftrightarrow
+  \forall x\,(x\in A\Longleftrightarrow x\in B).
+\]
+
+\paragraph{Theorem: Extensional Equality Criteria.}
+\[
+  A=B
+  \Longleftrightarrow
+  \forall x\,(x\in A\Longleftrightarrow x\in B),
+\]
+and
+\[
+  A=B
+  \Longleftrightarrow
+  (A\subseteq B\land B\subseteq A).
+\]
+
+\subsection*{Pairing and Union}
+
+\paragraph{Theorem: Existence and Uniqueness of Pairing's Output.}
+\[
+  \forall a\,\forall b\,\exists!P\,\forall x,\qquad
+  x\in P\Longleftrightarrow (x=a\lor x=b).
+\]
+
+\paragraph{Definition: Pair and Singleton.}
+\[
+  \{a,b\}
+  \quad\text{is the unique set whose members are exactly }a\text{ and }b,
+\]
+and
+\[
+  \{a\}:=\{a,a\}.
+\]
+
+\paragraph{Theorem: Existence and Uniqueness of Union's Output.}
+\[
+  \forall A\,\exists!U\,\forall x,\qquad
+  x\in U\Longleftrightarrow \exists B\,(B\in A\land x\in B).
+\]
+
+\paragraph{Definition: Union Over a Set.}
+\[
+  \bigcup A
+  \quad\text{is the unique set satisfying}\quad
+  x\in\bigcup A
+  \Longleftrightarrow
+  \exists B\,(B\in A\land x\in B).
+\]
+
+\paragraph{Corollary: Existence and Uniqueness of Binary Union.}
+\[
+  \forall A\,\forall B\,\exists!C\,\forall x,\qquad
+  x\in C\Longleftrightarrow (x\in A\lor x\in B).
+\]
+
+\paragraph{Definition: Binary Union.}
+\[
+  A\cup B:=\bigcup\{A,B\},
+  \qquad
+  x\in A\cup B
+  \Longleftrightarrow
+  (x\in A\lor x\in B).
+\]
+
+\paragraph{Theorem: Union is Inclusion-Monotone.}
+If \(A\subseteq B\), then
+\[
+  A\cup C\subseteq B\cup C
+  \quad\text{and}\quad
+  C\cup A\subseteq C\cup B.
+\]
+
+\subsection*{Separation, Intersection, Difference, and Complement}
+
+\paragraph{Theorem: Existence and Uniqueness of Separation's Output.}
+For every formula \(\varphi(x)\),
+\[
+  \forall A\,\exists!B\,\forall x,\qquad
+  x\in B\Longleftrightarrow (x\in A\land\varphi(x)).
+\]
+
+\paragraph{Corollary: Existence and Uniqueness of Intersection.}
+\[
+  \forall A\,\forall B\,\exists!C\,\forall x,\qquad
+  x\in C\Longleftrightarrow (x\in A\land x\in B).
+\]
+
+\paragraph{Definition: Intersection.}
+\[
+  A\cap B:=\{x\in A\mid x\in B\},
+  \qquad
+  x\in A\cap B
+  \Longleftrightarrow
+  (x\in A\land x\in B).
+\]
+
+\paragraph{Theorem: Intersection is Inclusion-Monotone.}
+If \(A\subseteq B\), then
+\[
+  A\cap C\subseteq B\cap C
+  \quad\text{and}\quad
+  C\cap A\subseteq C\cap B.
+\]
+
+\paragraph{Corollary: Existence and Uniqueness of Set Difference.}
+\[
+  \forall A\,\forall B\,\exists!C\,\forall x,\qquad
+  x\in C\Longleftrightarrow (x\in A\land x\notin B).
+\]
+
+\paragraph{Definition: Set Difference.}
+\[
+  A\setminus B:=\{x\in A\mid x\notin B\},
+  \qquad
+  x\in A\setminus B
+  \Longleftrightarrow
+  (x\in A\land x\notin B).
+\]
+
+\paragraph{Theorem: Set Difference is Inclusion-Monotone in the Left Argument.}
+If \(A\subseteq B\), then
+\[
+  A\setminus C\subseteq B\setminus C.
+\]
+
+\paragraph{Theorem: Set Difference is Inclusion-Antitone in the Right Argument.}
+If \(C\subseteq D\), then
+\[
+  A\setminus D\subseteq A\setminus C.
+\]
+
+\paragraph{Corollary: Existence and Uniqueness of Relative Complement.}
+For a fixed ambient set \(U\) and every set \(A\),
+\[
+  \exists!C\,\forall x,\qquad
+  x\in C\Longleftrightarrow (x\in U\land x\notin A).
+\]
+
+\paragraph{Definition: Complement Relative to \(U\).}
+\[
+  A^c:=U\setminus A,
+  \qquad
+  x\in A^c
+  \Longleftrightarrow
+  (x\in U\land x\notin A).
+\]
+
+\paragraph{Theorem: Complement is Inclusion-Antitone.}
+If \(A\subseteq B\subseteq U\), then
+\[
+  B^c\subseteq A^c.
+\]
+
+\paragraph{Corollary: Existence and Uniqueness of Symmetric Difference.}
+\[
+  \forall A\,\forall B\,\exists!C\,\forall x,\qquad
+  x\in C
+  \Longleftrightarrow
+  ((x\in A\land x\notin B)\lor(x\in B\land x\notin A)).
+\]
+
+\paragraph{Definition: Symmetric Difference.}
+\[
+  A\triangle B:=(A\setminus B)\cup(B\setminus A),
+\]
+so
+\[
+  x\in A\triangle B
+  \Longleftrightarrow
+  ((x\in A\land x\notin B)\lor(x\in B\land x\notin A)).
+\]
+
+\subsection*{Power Sets}
+
+\paragraph{Theorem: Existence and Uniqueness of Power Set's Output.}
+\[
+  \forall A\,\exists!P\,\forall S,\qquad
+  S\in P\Longleftrightarrow S\subseteq A.
+\]
+
+\paragraph{Definition: Power Set.}
+\[
+  \mathcal P(A)
+  \quad\text{is the unique set satisfying}\quad
+  S\in\mathcal P(A)\Longleftrightarrow S\subseteq A.
+\]
+
+\paragraph{Theorem: Power Set is Inclusion-Monotone.}
+If \(A\subseteq B\), then
+\[
+  \mathcal P(A)\subseteq\mathcal P(B).
+\]
+
+\subsection*{Boolean Set Laws}
+
+\paragraph{Theorem: De Morgan's Laws.}
+For \(A,B\subseteq U\),
+\[
+  (A\cup B)^c=A^c\cap B^c
+  \quad\text{and}\quad
+  (A\cap B)^c=A^c\cup B^c.
+\]
+
+\paragraph{Theorem: Commutativity.}
+\[
+  A\cup B=B\cup A,
+  \qquad
+  A\cap B=B\cap A.
+\]
+
+\paragraph{Theorem: Associativity.}
+\[
+  (A\cup B)\cup C=A\cup(B\cup C),
+  \qquad
+  (A\cap B)\cap C=A\cap(B\cap C).
+\]
+
+\paragraph{Theorem: Distributivity.}
+\[
+  A\cap(B\cup C)=(A\cap B)\cup(A\cap C),
+\]
+and
+\[
+  A\cup(B\cap C)=(A\cup B)\cap(A\cup C).
+\]
+
+\paragraph{Theorem: Identity and Absorption Laws.}
+\[
+  A\cup\varnothing=A,
+  \qquad
+  A\cap U=A,
+\]
+and
+\[
+  A\cup(A\cap B)=A,
+  \qquad
+  A\cap(A\cup B)=A.
+\]
+
+\paragraph{Theorem: Idempotency.}
+\[
+  A\cup A=A,
+  \qquad
+  A\cap A=A.
+\]
+
+\paragraph{Theorem: Complement Laws.}
+\[
+  A\cup A^c=U,
+  \qquad
+  A\cap A^c=\varnothing,
+\]
+and
+\[
+  \varnothing^c=U,
+  \qquad
+  U^c=\varnothing.
+\]
+
+\paragraph{Theorem: Involution.}
+\[
+  (A^c)^c=A.
+\]
+
+\paragraph{Theorem: Difference Laws.}
+\[
+  A\setminus B=A\cap B^c,
+\]
+\[
+  A\setminus\varnothing=A,
+  \qquad
+  A\setminus A=\varnothing,
+  \qquad
+  \varnothing\setminus A=\varnothing,
+\]
+and
+\[
+  A\setminus(B\cup C)=(A\setminus B)\cap(A\setminus C),
+  \qquad
+  A\setminus(B\cap C)=(A\setminus B)\cup(A\setminus C).
+\]
+
+\paragraph{Theorem: Symmetric Difference Laws.}
+\[
+  A\triangle B=B\triangle A,
+  \qquad
+  A\triangle\varnothing=A,
+  \qquad
+  A\triangle A=\varnothing.
+\]
+Also,
+\[
+  A\triangle B=\varnothing\Longleftrightarrow A=B.
+\]
+
+\paragraph{Theorem: Subset Absorption Criteria.}
+\[
+  A\subseteq B
+  \Longleftrightarrow
+  A\cup B=B,
+\]
+and
+\[
+  A\subseteq B
+  \Longleftrightarrow
+  A\cap B=A.
+\]
+
+\subsection*{Indexed Families of Sets}
+
+\paragraph{Definition: Indexed Family of Sets.}
+An indexed family of sets is a collection \(\{A_i\}_{i\in I}\) assigning a set
+\(A_i\) to each index \(i\in I\).
+
+\paragraph{Definition: Indexed Union.}
+\[
+  \bigcup_{i\in I}A_i
+  :=
+  \{x\mid \exists i\in I,\ x\in A_i\},
+\]
+so
+\[
+  x\in\bigcup_{i\in I}A_i
+  \Longleftrightarrow
+  \exists i\in I,\ x\in A_i.
+\]
+
+\paragraph{Definition: Indexed Intersection.}
+\[
+  \bigcap_{i\in I}A_i
+  :=
+  \{x\mid \forall i\in I,\ x\in A_i\},
+\]
+so
+\[
+  x\in\bigcap_{i\in I}A_i
+  \Longleftrightarrow
+  \forall i\in I,\ x\in A_i.
+\]
+
+\paragraph{Theorem: Indexed De Morgan Laws.}
+\[
+  U\setminus\bigcup_{i\in I}A_i
+  =
+  \bigcap_{i\in I}(U\setminus A_i).
+\]
+If \(I\neq\varnothing\), then
+\[
+  U\setminus\bigcap_{i\in I}A_i
+  =
+  \bigcup_{i\in I}(U\setminus A_i).
+\]
+
+\paragraph{Theorem: Indexed Distributivity.}
+\[
+  A\cap\bigcup_{i\in I}B_i
+  =
+  \bigcup_{i\in I}(A\cap B_i),
+\]
+and
+\[
+  A\cup\bigcap_{i\in I}B_i
+  =
+  \bigcap_{i\in I}(A\cup B_i),
+\]
+with the usual nonempty-index convention for indexed intersections.
+
+\subsection*{Stop Point}
+
+Stop here before functions, relations, images, preimages, order relations,
+set-family closure systems, set algebras, sigma-algebras, topology, or Borel
+generation.
