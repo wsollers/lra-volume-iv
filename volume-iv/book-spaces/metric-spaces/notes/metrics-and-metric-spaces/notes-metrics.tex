@@ -228,6 +228,8 @@ The real-line distance records absolute displacement between two real numbers.
 It forgets direction and keeps only separation.
 \end{remark*}
 
+\LeanFormalizes{def:real-line-euclidean-distance}{lra-lean}{LRA.VolumeIV.MetricSpaces.Metrics}{EuclideanRMetric}{statement}
+
 \DefinitionalRoot
 
 \begin{propositionbox}{Proposition}
@@ -258,6 +260,8 @@ means that absolute difference is a metric on the real line.
 This proposition says that the usual absolute-value distance satisfies the
 abstract metric axioms.
 \end{remark*}
+
+\LeanFormalizes{prop:real-line-euclidean-distance-metric}{lra-lean}{LRA.VolumeIV.MetricSpaces}{EuclideanDistanceIsAMetric}{checked}
 
 \begin{dependencies}
 \begin{itemize}
@@ -640,6 +644,8 @@ As a distance function, the complex metric is the Euclidean metric on
 \(\mathbb{R}^2\) written in complex notation.
 \end{remark*}
 
+\LeanFormalizes{def:complex-metric}{lra-lean}{LRA.VolumeIV.MetricSpaces.Metrics}{ComplexModulusMetric}{statement}
+
 \DefinitionalRoot
 
 \begin{propositionbox}{Proposition}
@@ -670,11 +676,122 @@ means that modulus distance is a metric on the complex plane.
 The metric on \(\mathbb{C}\) is inherited from the Euclidean plane.
 \end{remark*}
 
+\LeanFormalizes{prop:complex-plane-metric-space}{lra-lean}{LRA.VolumeIV.MetricSpaces}{ModulusIsAMetricOnTheComplexNumbers}{checked}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:metric-space]{Definition: Metric Space}
   \item \hyperref[def:complex-metric]{Definition: Complex Metric}
   \item \hyperref[cor:euclidean-metric]{Corollary: Euclidean Metric}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Real Circle Chord Metric}
+\begin{definition}[Real Circle Chord Metric]\label{def:real-circle-chord-metric}
+Let
+\[
+  S^1_{\mathbb{R}}
+  :=
+  \{(x,y)\in\mathbb{R}^2 : x^2+y^2=1\}.
+\]
+For \(p,q\in S^1_{\mathbb{R}}\), the \emph{real circle chord metric} is
+\[
+  d_{\mathrm{chord},\mathbb{R}}(p,q):=d_2(p,q),
+\]
+the Euclidean distance between the two points as points of \(\mathbb{R}^2\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+d_{\mathrm{chord},\mathbb{R}}:
+S^1_{\mathbb{R}}\times S^1_{\mathbb{R}}\to\mathbb{R}_{\geq 0},
+\qquad
+d_{\mathrm{chord},\mathbb{R}}(p,q)=d_2(p,q).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Chord distance measures separation along the straight line segment joining two
+points of the unit circle, not along the circular arc between them.
+\end{remark*}
+
+\LeanFormalizes{def:real-circle-chord-metric}{lra-lean}{LRA.VolumeIV.MetricSpaces.Metrics}{RealCircleChordMetric}{statement}
+
+\DefinitionalRoot
+
+\begin{definitionbox}{Definition --- Complex Circle Chord Metric}
+\begin{definition}[Complex Circle Chord Metric]\label{def:complex-circle-chord-metric}
+Let
+\[
+  S^1_{\mathbb{C}}
+  :=
+  \{z\in\mathbb{C}: |z|=1\}.
+\]
+For \(z,w\in S^1_{\mathbb{C}}\), the \emph{complex circle chord metric} is
+\[
+  d_{\mathrm{chord},\mathbb{C}}(z,w):=|z-w|.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+d_{\mathrm{chord},\mathbb{C}}:
+S^1_{\mathbb{C}}\times S^1_{\mathbb{C}}\to\mathbb{R}_{\geq 0},
+\qquad
+d_{\mathrm{chord},\mathbb{C}}(z,w)=|z-w|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The complex circle chord metric is the complex-plane modulus distance
+restricted to the unit circle.
+\end{remark*}
+
+\LeanFormalizes{def:complex-circle-chord-metric}{lra-lean}{LRA.VolumeIV.MetricSpaces.Metrics}{ComplexCircleChordMetric}{statement}
+
+\DefinitionalRoot
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[The Complex Circle Admits the Chord Metric]
+\label{prop:complex-circle-chord-metric}
+The function \(d_{\mathrm{chord},\mathbb{C}}(z,w)=|z-w|\) is a metric
+on \(S^1_{\mathbb{C}}\).
+
+\smallskip
+\noindent
+\hyperref[prf:complex-circle-chord-metric]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{IsMetric}(S^1_{\mathbb{C}},d_{\mathrm{chord},\mathbb{C}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsMetric}(S^1_{\mathbb{C}},d_{\mathrm{chord},\mathbb{C}})
+\]
+means that chord distance satisfies the metric axioms on the complex unit
+circle.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The chord metric is obtained by restricting the complex modulus metric to the
+unit circle.  Restricting a metric to a subset preserves the metric axioms.
+\end{remark*}
+
+\LeanFormalizes{prop:complex-circle-chord-metric}{lra-lean}{LRA.VolumeIV.MetricSpaces}{CircleAdmitsChordAsMetric}{checked}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:complex-metric]{Definition: Complex Metric}
+  \item \hyperref[def:complex-circle-chord-metric]{Definition: Complex Circle Chord Metric}
+  \item \hyperref[prop:complex-plane-metric-space]{Proposition: The Complex Plane is a Metric Space}
 \end{itemize}
 \end{dependencies}
 

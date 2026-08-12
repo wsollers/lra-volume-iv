@@ -147,6 +147,35 @@ structure MetricSpaceDefinition where
   metric : MetricDefinition Carrier
 ```
 
+### Metric Examples And Catalog IDs
+
+- Lean file: `LRA/VolumeIV/MetricSpaces/Metrics.lean`
+- Source: Volume IV metric spaces, concrete metric examples
+- Book-modeled statement: The metric-space chapter records concrete metrics
+  separately from the propositions asserting that they satisfy the metric
+  axioms.
+- Lean declarations:
+
+```text
+LRA.VolumeIV.MetricSpaces.Metrics.VacuousMetric
+LRA.VolumeIV.MetricSpaces.Metrics.EmptyMetric
+LRA.VolumeIV.MetricSpaces.Metrics.EuclideanRMetric
+LRA.VolumeIV.MetricSpaces.Metrics.SingletonMetric
+LRA.VolumeIV.MetricSpaces.Metrics.ComplexModulusMetric
+LRA.VolumeIV.MetricSpaces.Metrics.RealCircleChordMetric
+LRA.VolumeIV.MetricSpaces.Metrics.ComplexCircleChordMetric
+```
+
+- TeX-facing theorem declarations:
+
+```text
+LRA.VolumeIV.MetricSpaces.EuclideanDistanceIsAMetric
+LRA.VolumeIV.MetricSpaces.EmptySetIsAMetricSpace
+LRA.VolumeIV.MetricSpaces.SingletonSetIsAMetricSpace
+LRA.VolumeIV.MetricSpaces.ModulusIsAMetricOnTheComplexNumbers
+LRA.VolumeIV.MetricSpaces.CircleAdmitsChordAsMetric
+```
+
 ### Rearrangement Of The Triangle Inequality
 
 - Lean file: `LRA/VolumeIV/MetricSpaces/MetricSpace.lean`

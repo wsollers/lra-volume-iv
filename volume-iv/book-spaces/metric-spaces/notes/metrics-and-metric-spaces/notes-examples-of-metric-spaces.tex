@@ -4,6 +4,176 @@ the verified distance functions.  This section records the resulting spaces as
 objects in their own right.
 \end{remark*}
 
+\begin{definitionbox}{Definition --- Vacuous Metric on Empty Types}
+\begin{definition}[Vacuous Metric on Empty Types]
+\label{def:vacuous-metric-empty-types}
+Let \(X\) be an empty type.  The \emph{vacuous metric} on \(X\) is the unique
+function
+\[
+  d_{\varnothing}:X\times X\to\mathbb{R}_{\geq 0}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+X=\varnothing
+\Longrightarrow
+d_{\varnothing}:X\times X\to\mathbb{R}_{\geq 0}.
+\]
+All metric axioms hold vacuously because there are no points of \(X\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An empty type has no pairs of points and therefore no nontrivial distance
+values.  The metric axioms impose no additional conditions.
+\end{remark*}
+
+\LeanFormalizes{def:vacuous-metric-empty-types}{lra-lean}{LRA.VolumeIV.MetricSpaces.Metrics}{VacuousMetric}{statement}
+
+\DefinitionalRoot
+
+\begin{definitionbox}{Definition --- Empty Subtype Metric}
+\begin{definition}[Empty Subtype Metric]\label{def:empty-subtype-metric}
+Let \((X,d)\) be a metric space, and let
+\[
+  \varnothing_X:=\{x\in X : \text{false}\}.
+\]
+The \emph{empty subtype metric} is the restriction of \(d\) to
+\(\varnothing_X\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+d_{\varnothing_X}:
+\varnothing_X\times\varnothing_X\to\mathbb{R}_{\geq 0},
+\qquad
+d_{\varnothing_X}(x,y)=d(x,y).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The empty subtype metric is the inherited metric on an empty subset.  Since
+the subset has no points, the inherited metric axioms are vacuous.
+\end{remark*}
+
+\LeanFormalizes{def:empty-subtype-metric}{lra-lean}{LRA.VolumeIV.MetricSpaces.Metrics}{EmptyMetric}{statement}
+
+\DefinitionalRoot
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[The Empty Set is a Metric Space]
+\label{prop:empty-set-metric-space}
+The empty set equipped with its vacuous metric is a metric space.
+
+\smallskip
+\noindent
+\hyperref[prf:empty-set-metric-space]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \varnothing=\{x:x\neq x\},
+  \qquad
+  \mathsf{MetricSpace}(\varnothing,d_{\varnothing}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\varnothing=\{x:x\neq x\},
+\qquad
+\mathsf{MetricSpace}(\varnothing,d_{\varnothing})
+\]
+means that the empty set carries the metric-space structure whose metric
+axioms hold vacuously.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The empty metric space is the degenerate metric space with no points and no
+distances to check.
+\end{remark*}
+
+\LeanFormalizes{prop:empty-set-metric-space}{lra-lean}{LRA.VolumeIV.MetricSpaces}{EmptySetIsAMetricSpace}{checked}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:vacuous-metric-empty-types]{Definition: Vacuous Metric on Empty Types}
+  \item \hyperref[def:empty-subtype-metric]{Definition: Empty Subtype Metric}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition --- Singleton Subtype Metric}
+\begin{definition}[Singleton Subtype Metric]\label{def:singleton-subtype-metric}
+Let \((X,d)\) be a metric space and let \(a\in X\).  On the singleton
+\(\{a\}\), the \emph{singleton subtype metric} is the restriction of \(d\) to
+\(\{a\}\).  Equivalently, every pair of points in \(\{a\}\) has distance
+\(0\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+d_{\{a\}}:\{a\}\times\{a\}\to\mathbb{R}_{\geq 0},
+\qquad
+d_{\{a\}}(x,y)=d(x,y)=0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A singleton has only one point, so the only distance value forced by the
+metric axioms is the distance from that point to itself.
+\end{remark*}
+
+\LeanFormalizes{def:singleton-subtype-metric}{lra-lean}{LRA.VolumeIV.MetricSpaces.Metrics}{SingletonMetric}{statement}
+
+\DefinitionalRoot
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[A Singleton Set is a Metric Space]
+\label{prop:singleton-set-metric-space}
+Every singleton set equipped with its singleton subtype metric is a metric
+space.
+
+\smallskip
+\noindent
+\hyperref[prf:singleton-set-metric-space]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+a\in X
+\Longrightarrow
+\mathsf{MetricSpace}(\{a\},d_{\{a\}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\mathsf{MetricSpace}(\{a\},d_{\{a\}})
+\]
+means that the inherited singleton distance satisfies the metric axioms on
+\(\{a\}\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The singleton metric space is the one-point metric space.  All metric
+comparisons collapse to the identity distance \(d(a,a)=0\).
+\end{remark*}
+
+\LeanFormalizes{prop:singleton-set-metric-space}{lra-lean}{LRA.VolumeIV.MetricSpaces}{SingletonSetIsAMetricSpace}{checked}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+  \item \hyperref[def:singleton-subtype-metric]{Definition: Singleton Subtype Metric}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition --- Discrete Metric Space}
 \begin{definition}[Discrete Metric Space]\label{def:discrete-metric-space}
 Let \(X\) be a nonempty set.  The \emph{discrete metric space on \(X\)} is the
