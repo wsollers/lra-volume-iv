@@ -10,7 +10,7 @@ Target:
 - Mathlib-interface Lean declaration:
   `rearrangement_of_triangle_inequality`
 - Proof file:
-  `proofs/metrics-and-metric-spaces/prf-metric-rearranged-triangle-inequality.tex`
+  `proofs/metric-spaces/prf-metric-rearranged-triangle-inequality.tex`
 
 The TeX statement uses textbook notation \(d(a,b)\), so the closest Lean
 crosswalk is the custom-record theorem with `metric.distance`.  The Mathlib

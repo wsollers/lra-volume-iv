@@ -6,7 +6,7 @@ Target:
 
 - TeX label: `thm:metric-basic-consequences`
 - Lean declaration: `MetricDefinition.MetricBasicConsequences`
-- Proof file: `proofs/metrics-and-metric-spaces/prf-metric-basic-consequences.tex`
+- Proof file: `proofs/metrics/prf-metric-basic-consequences.tex`
 
 The TeX proof file intentionally remains a TODO stub until the handwritten proof
 gate is owned.

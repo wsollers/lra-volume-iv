@@ -1,0 +1,111 @@
+\begin{remark*}[Exposition]
+A metric is the distance function itself.  A metric space is the set together
+with that function.  This section records standard metric functions and then
+states, one by one, that each function satisfies the metric axioms.
+\end{remark*}
+
+\subsection{Norms Induce Metrics}
+
+\begin{definitionbox}{Definition --- Norm}
+\begin{definition}[Norm]\label{def:norm-on-real-vector-space}
+Let \(V\) be a real vector space.  A \emph{norm} on \(V\) is a function
+\[
+  \|\cdot\|:V\to\mathbb{R}_{\geq 0}
+\]
+such that for all \(x,y\in V\) and all \(\lambda\in\mathbb{R}\),
+\begin{enumerate}
+  \item \(\|x\|=0\) if and only if \(x=0\)
+        \hfill\textit{(positive definiteness)};
+  \item \(\|\lambda x\|=|\lambda|\,\|x\|\)
+        \hfill\textit{(absolute homogeneity)};
+  \item \(\|x+y\|\leq \|x\|+\|y\|\)
+        \hfill\textit{(triangle inequality)}.
+\end{enumerate}
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\operatorname{IsNorm}(V,\|\cdot\|)
+\Longleftrightarrow\;
+&\|\cdot\|:V\to\mathbb{R}_{\geq 0}
+\\
+&{}\land
+\forall x\in V{:}\; \|x\|=0 \Longleftrightarrow x=0
+\\
+&{}\land
+\forall \lambda\in\mathbb{R}\;\forall x\in V{:}\;
+\|\lambda x\|=|\lambda|\,\|x\|
+\\
+&{}\land
+\forall x,y\in V{:}\; \|x+y\|\leq \|x\|+\|y\|.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsNorm}(V,\|\cdot\|)
+\]
+means that \(\|\cdot\|\) is a norm on the real vector space \(V\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A norm measures the size of one vector.  The metric induced by a norm measures
+the size of the displacement vector \(x-y\).  Thus a norm is a length
+structure, and the induced metric is the corresponding distance structure.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[A Norm Induces a Metric]\label{thm:norm-induces-metric}
+Let \(V\) be a real vector space and let \(\|\cdot\|\) be a norm on \(V\).
+Define
+\[
+  d_{\|\cdot\|}:V\times V\to\mathbb{R}_{\geq 0},
+  \qquad
+  d_{\|\cdot\|}(x,y):=\|x-y\|.
+\]
+Then \(d_{\|\cdot\|}\) is a metric on \(V\).
+
+\smallskip
+\noindent
+\hyperref[prf:norm-induces-metric]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsNorm}(V,\|\cdot\|)
+\Longrightarrow
+\operatorname{IsMetric}(V,d_{\|\cdot\|}),
+\qquad
+d_{\|\cdot\|}(x,y)=\|x-y\|.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsNorm}(V,\|\cdot\|)
+\Longrightarrow
+\operatorname{IsMetric}(V,d_{\|\cdot\|})
+\]
+means that a norm on \(V\) induces a metric on \(V\) by distance through
+vector differences.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The metric axioms are exactly the norm axioms applied to displacement
+vectors.  Zero distance says the displacement \(x-y\) has zero norm, hence is
+the zero vector.  Symmetry follows from absolute homogeneity with scalar
+\(-1\).  The triangle inequality follows by writing \(x-y=(x-z)+(z-y)\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:norm-on-real-vector-space]{Definition: Norm}
+  \item \hyperref[def:metric-space]{Definition: Metric Space}
+\end{itemize}
+\end{dependencies}

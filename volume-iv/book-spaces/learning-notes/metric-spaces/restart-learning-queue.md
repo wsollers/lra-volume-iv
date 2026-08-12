@@ -42,7 +42,8 @@ toolkit needed for topology, measure theory, and multivariable analysis.
 As of this queue creation:
 
 - Active Metric Spaces topics are routed through:
-  `notes/metrics-and-metric-spaces`, `notes/metric-subspaces-and-superspaces`,
+  `notes/metrics`, `notes/norms-induce-metrics`, `notes/metric-spaces`,
+  `notes/metric-subspaces-and-superspaces`,
   `notes/metric-isometries`, `notes/distances-and-diameter`,
   `notes/balls-and-bounded-sets`, `notes/open-and-closed-sets`,
   `notes/closures-boundaries-and-bounded-sets`,
@@ -75,10 +76,10 @@ the first real estimate.
 
 | Order | Target | Existing artifact | Core dependencies | Learning point |
 | ---: | --- | --- | --- | --- |
-| M1 | `def:metric-on-set` | `notes/metrics-and-metric-spaces/notes-definitions.tex` | set, function, ordered real numbers | A metric is a distance function plus axioms. |
-| M2 | `def:metric-space` | `notes/metrics-and-metric-spaces/notes-definitions.tex` | `def:metric-on-set` | A metric space is a set equipped with a chosen metric. |
+| M1 | `def:metric-on-set` | `notes/metrics/notes-metrics.tex` | set, function, ordered real numbers | A metric is a distance function plus axioms. |
+| M2 | `def:metric-space` | `notes/metric-spaces/notes-metric-spaces.tex` | `def:metric-on-set` | A metric space is a set equipped with a chosen metric. |
 | M3 | `thm:metric-basic-consequences` | Active TeX theorem and proof stub; Lean `MetricDefinition.MetricBasicConsequences` exists | `def:metric-on-set` | Self-distance, nonnegativity, zero iff equality, symmetry, and triangle inequality are usable projections. |
-| M4 | `thm:metric-rearranged-triangle-inequality` | `proofs/metrics-and-metric-spaces/prf-metric-rearranged-triangle-inequality.tex` | metric axioms, real absolute value inequalities | Distances from one point vary by at most the distance between the other two points. |
+| M4 | `thm:metric-rearranged-triangle-inequality` | `proofs/metric-spaces/prf-metric-rearranged-triangle-inequality.tex` | metric axioms, real absolute value inequalities | Distances from one point vary by at most the distance between the other two points. |
 
 Stop after M4 and verify:
 
@@ -94,18 +95,18 @@ is a controlled exercise in checking axioms.
 
 | Order | Target | Existing artifact | Core dependencies | Learning point |
 | ---: | --- | --- | --- | --- |
-| M5 | `def:norm-on-real-vector-space` | `notes/metrics-and-metric-spaces/notes-metrics.tex` | real vector spaces, ordered real numbers | A norm measures vector length. |
-| M6 | `thm:norm-induces-metric` | `proofs/metrics-and-metric-spaces/prf-norm-induces-metric.tex` | norm axioms, vector subtraction | Distance from a norm is length of displacement. |
+| M5 | `def:norm-on-real-vector-space` | `notes/norms-induce-metrics/notes-norms-induce-metrics.tex` | real vector spaces, ordered real numbers | A norm measures vector length. |
+| M6 | `thm:norm-induces-metric` | `proofs/norms-induce-metrics/prf-norm-induces-metric.tex` | norm axioms, vector subtraction | Distance from a norm is length of displacement. |
 | M7 | `def:discrete-metric` | Active TeX definition; Lean `MetricDefinition.DiscreteDistance` exists | equality, cases | The discrete metric isolates equality as the only closeness relation. |
 | M8 | `prop:discrete-metric-space` | Active TeX proposition and proof stub; Lean `MetricDefinition.DiscreteDistanceIsMetric` exists | metric axioms, case split | The two-value distance is the first full axiom check. |
-| M9 | `def:real-line-euclidean-distance` | `notes/metrics-and-metric-spaces/notes-metrics.tex` | real absolute value | Absolute difference is the metric on \(\mathbb R\). |
-| M10 | `prop:real-line-euclidean-distance-metric` | `proofs/metrics-and-metric-spaces/prf-real-line-euclidean-distance-metric.tex` | absolute value identities | The usual real-line distance satisfies the metric axioms. |
-| M11 | `def:euclidean-distance-rn` | `notes/metrics-and-metric-spaces/notes-metrics.tex` | finite sums, square roots, Euclidean norm | Euclidean distance is norm of coordinate displacement. |
-| M12 | `thm:cauchy-schwarz-inequality` | `proofs/metrics-and-metric-spaces/prf-cauchy-schwarz-inequality.tex` | dot product, quadratic nonnegativity | The dot product is controlled by lengths. |
-| M13 | `cor:minkowski-inequality-rn` | `proofs/metrics-and-metric-spaces/prf-minkowski-inequality-rn.tex` | Cauchy--Schwarz | Euclidean length satisfies a triangle inequality. |
-| M14 | `prop:euclidean-distance-rn-metric` | `proofs/metrics-and-metric-spaces/prf-euclidean-distance-rn-metric.tex` | Euclidean distance, Minkowski | \(\mathbb R^n\) carries the standard metric. |
-| M15 | `prop:taxicab-metric-rn` | `proofs/metrics-and-metric-spaces/prf-taxicab-metric-rn.tex` | absolute value triangle inequality, finite sums | Coordinatewise estimates can be summed. |
-| M16 | `thm:lp-metric-rn` | `proofs/metrics-and-metric-spaces/prf-lp-metric-rn.tex` | \(p\)-norms, Minkowski | The \(\ell^p\) examples unify finite-dimensional metrics. |
+| M9 | `def:real-line-euclidean-distance` | `notes/metrics/notes-metrics.tex` | real absolute value | Absolute difference is the metric on \(\mathbb R\). |
+| M10 | `prop:real-line-euclidean-distance-metric` | `proofs/metrics/prf-real-line-euclidean-distance-metric.tex` | absolute value identities | The usual real-line distance satisfies the metric axioms. |
+| M11 | `def:euclidean-distance-rn` | `notes/metrics/notes-metrics.tex` | finite sums, square roots, Euclidean norm | Euclidean distance is norm of coordinate displacement. |
+| M12 | `thm:cauchy-schwarz-inequality` | `proofs/metrics/prf-cauchy-schwarz-inequality.tex` | dot product, quadratic nonnegativity | The dot product is controlled by lengths. |
+| M13 | `cor:minkowski-inequality-rn` | `proofs/metrics/prf-minkowski-inequality-rn.tex` | Cauchy--Schwarz | Euclidean length satisfies a triangle inequality. |
+| M14 | `prop:euclidean-distance-rn-metric` | `proofs/metrics/prf-euclidean-distance-rn-metric.tex` | Euclidean distance, Minkowski | \(\mathbb R^n\) carries the standard metric. |
+| M15 | `prop:taxicab-metric-rn` | `proofs/metrics/prf-taxicab-metric-rn.tex` | absolute value triangle inequality, finite sums | Coordinatewise estimates can be summed. |
+| M16 | `thm:lp-metric-rn` | `proofs/metrics/prf-lp-metric-rn.tex` | \(p\)-norms, Minkowski | The \(\ell^p\) examples unify finite-dimensional metrics. |
 
 Keep this pass lean.  Examples after M16 are useful but should not delay the
 topology toolkit unless they are needed for a later theorem.

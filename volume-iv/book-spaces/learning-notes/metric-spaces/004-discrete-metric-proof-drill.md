@@ -8,7 +8,7 @@ Targets:
 - M8 TeX label: `prop:discrete-metric-space`
 - Lean distance declaration: `MetricDefinition.DiscreteDistance`
 - Lean metric theorem: `MetricDefinition.DiscreteDistanceIsMetric`
-- Proof file: `proofs/metrics-and-metric-spaces/prf-discrete-metric-space.tex`
+- Proof file: `proofs/metrics/prf-discrete-metric-space.tex`
 
 ## Statement
 
